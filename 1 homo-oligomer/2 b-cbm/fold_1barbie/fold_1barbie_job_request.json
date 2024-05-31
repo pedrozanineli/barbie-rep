@@ -1,0 +1,15 @@
+[{
+ "name": "1barbie",
+ "modelSeeds": [
+  "1733520500"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFYVTFWWFFGYFFSITLKNTGFYPIYYWMLMFLYYGTLTSLYYSRISYKFYYFYVITYYGYNYTIPPYGYYTIGGTGLGLPSFLYFSKLMSY",
+    "count": 1
+   }
+  }
+ ]
+}
+]

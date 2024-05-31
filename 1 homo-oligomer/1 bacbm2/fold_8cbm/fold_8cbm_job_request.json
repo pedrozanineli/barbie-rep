@@ -1,0 +1,15 @@
+[{
+ "name": "8cbm",
+ "modelSeeds": [
+  "1904832724"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFSVTSNWGSGYNFSIVIKNSGTTPIKNWKLEFDYNGNLTQVWDSKISSKINNHYVITNAGWNGEIPPGGSITIGGAGTGTPAELVNASISEN",
+    "count": 8
+   }
+  }
+ ]
+}
+]

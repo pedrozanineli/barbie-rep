@@ -1,0 +1,15 @@
+[{
+ "name": "7cbm",
+ "modelSeeds": [
+  "813482449"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFSVTSNWGSGYNFSIVIKNSGTTPIKNWKLEFDYNGNLTQVWDSKISSKINNHYVITNAGWNGEIPPGGSITIGGAGTGTPAELVNASISEN",
+    "count": 7
+   }
+  }
+ ]
+}
+]

@@ -1,0 +1,15 @@
+[{
+ "name": "4cbm",
+ "modelSeeds": [
+  "248097356"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFSVTSNWGSGYNFSIVIKNSGTTPIKNWKLEFDYNGNLTQVWDSKISSKINNHYVITNAGWNGEIPPGGSITIGGAGTGTPAELVNASISEN",
+    "count": 4
+   }
+  }
+ ]
+}
+]

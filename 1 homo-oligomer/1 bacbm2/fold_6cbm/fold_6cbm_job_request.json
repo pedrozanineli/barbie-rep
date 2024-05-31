@@ -1,0 +1,15 @@
+[{
+ "name": "6cbm",
+ "modelSeeds": [
+  "1645201752"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFSVTSNWGSGYNFSIVIKNSGTTPIKNWKLEFDYNGNLTQVWDSKISSKINNHYVITNAGWNGEIPPGGSITIGGAGTGTPAELVNASISEN",
+    "count": 6
+   }
+  }
+ ]
+}
+]

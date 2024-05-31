@@ -1,0 +1,15 @@
+[{
+ "name": "10cbm",
+ "modelSeeds": [
+  "1495449361"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ATFSVTSNWGSGYNFSIVIKNSGTTPIKNWKLEFDYNGNLTQVWDSKISSKINNHYVITNAGWNGEIPPGGSITIGGAGTGTPAELVNASISEN",
+    "count": 10
+   }
+  }
+ ]
+}
+]
