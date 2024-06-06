@@ -1,0 +1,41 @@
+Loading gromacs/2023.3
+  Loading requirement: cuda/12.2 openmpi/4.1.1 mkl/2023.2.0
+                     :-) GROMACS - gmx trjconv, 2023.3 (-:
+
+Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
+Data prefix:  /opt/apps/gromacs/2023.3/build
+Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/barbie-solution-builder/gromacs
+Command line:
+  gmx_mpi trjconv -s step4.1_equilibration.tpr -f step4.1_equilibration.xtc -o traj_equilibration.pdb
+
+Will write pdb: Protein data bank file
+Reading file step4.1_equilibration.tpr, VERSION 2023.3 (single precision)
+Reading file step4.1_equilibration.tpr, VERSION 2023.3 (single precision)
+Group     0 (         System) has 34936 elements
+Group     1 (        Protein) has  1609 elements
+Group     2 (      Protein-H) has   832 elements
+Group     3 (        C-alpha) has    94 elements
+Group     4 (       Backbone) has   282 elements
+Group     5 (      MainChain) has   375 elements
+Group     6 (   MainChain+Cb) has   460 elements
+Group     7 (    MainChain+H) has   464 elements
+Group     8 (      SideChain) has  1145 elements
+Group     9 (    SideChain-H) has   457 elements
+Group    10 (    Prot-Masses) has  1609 elements
+Group    11 (    non-Protein) has 33327 elements
+Group    12 (          Other) has 33327 elements
+Group    13 (            SOD) has    31 elements
+Group    14 (            CLA) has    35 elements
+Group    15 (           TIP3) has 33261 elements
+Select a group: Reading frame       0 time    0.000   
+Precision of step4.1_equilibration.xtc is 0.001 (nm)
+Reading frame       1 time    5.000    ->  frame      0 time    0.000      Reading frame       2 time   10.000    ->  frame      1 time    5.000      Reading frame       3 time   15.000    ->  frame      2 time   10.000      Reading frame       4 time   20.000    ->  frame      3 time   15.000      Reading frame       5 time   25.000    ->  frame      4 time   20.000      Reading frame       6 time   30.000    ->  frame      5 time   25.000      Reading frame       7 time   35.000    ->  frame      6 time   30.000      Reading frame       8 time   40.000    ->  frame      7 time   35.000      Reading frame       9 time   45.000    ->  frame      8 time   40.000      Reading frame      10 time   50.000    ->  frame      9 time   45.000      Reading frame      11 time   55.000    ->  frame     10 time   50.000      Reading frame      12 time   60.000    ->  frame     11 time   55.000      Reading frame      13 time   65.000    ->  frame     12 time   60.000      Reading frame      14 time   70.000    ->  frame     13 time   65.000      Reading frame      15 time   75.000    ->  frame     14 time   70.000      Reading frame      16 time   80.000    ->  frame     15 time   75.000      Reading frame      17 time   85.000    ->  frame     16 time   80.000      Reading frame      18 time   90.000    ->  frame     17 time   85.000      Reading frame      19 time   95.000    ->  frame     18 time   90.000      Reading frame      20 time  100.000    ->  frame     19 time   95.000      
+
+Last written: frame     25 time  125.000
+
+
+GROMACS reminds you: "When I asked a younger colleague at the university how he had been able to change his research field several times within a decade or so, he answered: "It's just a question of new software"" (Paul Verhaeghe)
+
+Note that major changes are planned in future for trjconv, to improve usability and utility.
+Select group for output
+Selected 0: 'System'
