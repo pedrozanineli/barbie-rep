@@ -1,0 +1,837 @@
+Loading gromacs/2023.3
+  Loading requirement: cuda/12.2 openmpi/4.1.1 mkl/2023.2.0
+                      :-) GROMACS - gmx grompp, 2023.3 (-:
+
+Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
+Data prefix:  /opt/apps/gromacs/2023.3/build
+Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/spidroin-solution-build/gromacs
+Command line:
+  gmx_mpi grompp -f step4.0_minimization.mdp -o step4.0_minimization.tpr -c step3_input.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn 0
+
+Generating 1-4 interactions: fudge = 1
+Number of degrees of freedom in T-Coupling group rest is 288954.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 1 [file step4.0_minimization.mdp]:
+  Removing center of mass motion in the presence of position restraints
+  might cause artifacts. When you are using position restraints to
+  equilibrate a macro-molecule, the artifacts are usually negligible.
+
+
+There was 1 NOTE
+
+GROMACS reminds you: "There's a limit to how many times you can read how great you are and what an inspiration you are, but I'm not there yet." (Randy Pausch)
+
+Setting the LD random seed to -1677758465
+
+Generated 859 of the 861 non-bonded parameter combinations
+
+Generated 496 of the 861 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'PROA'
+
+turning H bonds into constraints...
+
+Excluding 1 bonded neighbours molecule type 'SOD'
+
+turning H bonds into constraints...
+
+Excluding 1 bonded neighbours molecule type 'CLA'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'TIP3'
+
+turning H bonds into constraints...
+
+The largest distance between excluded atoms is 0.421 nm between atom 7 and 14
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 96x96x96, spacing 0.120 0.120 0.120
+
+Estimate for the relative computational load of the PME mesh part: 0.17
+
+This run will generate roughly 11 Mb of data
+                      :-) GROMACS - gmx mdrun, 2023.3 (-:
+
+Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
+Data prefix:  /opt/apps/gromacs/2023.3/build
+Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/spidroin-solution-build/gromacs
+Command line:
+  gmx_mpi mdrun -v -deffnm step4.0_minimization
+
+Compiled SIMD is AVX2_256, but AVX_512 might be faster (see log).
+Reading file step4.0_minimization.tpr, VERSION 2023.3 (single precision)
+1 GPU selected for this run.
+Mapping of GPU IDs to the 1 GPU task in the 1 rank on this node:
+  PP:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+Using 1 MPI process
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =         5000
+Step=    0, Dmax= 1.0e-02 nm, Epot= -2.17373e+06 Fmax= 2.33213e+03, atom= 2465
+Step=    1, Dmax= 1.0e-02 nm, Epot= -2.17283e+06 Fmax= 6.43008e+03, atom= 2465Step=    2, Dmax= 5.0e-03 nm, Epot= -2.17555e+06 Fmax= 2.28482e+03, atom= 956
+Step=    3, Dmax= 6.0e-03 nm, Epot= -2.17611e+06 Fmax= 5.55394e+03, atom= 956
+Step=    4, Dmax= 7.2e-03 nm, Epot= -2.17804e+06 Fmax= 3.66140e+03, atom= 956
+Step=    5, Dmax= 8.6e-03 nm, Epot= -2.17816e+06 Fmax= 7.59532e+03, atom= 956
+Step=    6, Dmax= 1.0e-02 nm, Epot= -2.17961e+06 Fmax= 5.76400e+03, atom= 956
+Step=    7, Dmax= 1.2e-02 nm, Epot= -2.17886e+06 Fmax= 1.03455e+04, atom= 956Step=    8, Dmax= 6.2e-03 nm, Epot= -2.18092e+06 Fmax= 2.28353e+03, atom= 956
+Step=    9, Dmax= 7.5e-03 nm, Epot= -2.18139e+06 Fmax= 7.27548e+03, atom= 956
+Step=   10, Dmax= 9.0e-03 nm, Epot= -2.18287e+06 Fmax= 4.29404e+03, atom= 956
+Step=   11, Dmax= 1.1e-02 nm, Epot= -2.18231e+06 Fmax= 9.52371e+03, atom= 956Step=   12, Dmax= 5.4e-03 nm, Epot= -2.18376e+06 Fmax= 2.61863e+03, atom= 956
+Step=   13, Dmax= 6.4e-03 nm, Epot= -2.18432e+06 Fmax= 5.73773e+03, atom= 956
+Step=   14, Dmax= 7.7e-03 nm, Epot= -2.18530e+06 Fmax= 4.22468e+03, atom= 956
+Step=   15, Dmax= 9.3e-03 nm, Epot= -2.18532e+06 Fmax= 7.79022e+03, atom= 956
+Step=   16, Dmax= 1.1e-02 nm, Epot= -2.18637e+06 Fmax= 6.61492e+03, atom= 920
+Step=   17, Dmax= 1.3e-02 nm, Epot= -2.18568e+06 Fmax= 1.09067e+04, atom= 920Step=   18, Dmax= 6.7e-03 nm, Epot= -2.18774e+06 Fmax= 2.17999e+03, atom= 920
+Step=   19, Dmax= 8.0e-03 nm, Epot= -2.18816e+06 Fmax= 8.31500e+03, atom= 920
+Step=   20, Dmax= 9.6e-03 nm, Epot= -2.18965e+06 Fmax= 4.32972e+03, atom= 920
+Step=   21, Dmax= 1.2e-02 nm, Epot= -2.18922e+06 Fmax= 1.08532e+04, atom= 920Step=   22, Dmax= 5.8e-03 nm, Epot= -2.19036e+06 Fmax= 3.23634e+03, atom= 920
+Step=   23, Dmax= 6.9e-03 nm, Epot= -2.19092e+06 Fmax= 5.86288e+03, atom= 920
+Step=   24, Dmax= 8.3e-03 nm, Epot= -2.19167e+06 Fmax= 5.04776e+03, atom= 920
+Step=   25, Dmax= 1.0e-02 nm, Epot= -2.19199e+06 Fmax= 8.03620e+03, atom= 920
+Step=   26, Dmax= 1.2e-02 nm, Epot= -2.19271e+06 Fmax= 7.68976e+03, atom= 920
+Step=   27, Dmax= 1.4e-02 nm, Epot= -2.19274e+06 Fmax= 1.11342e+04, atom= 920
+Step=   28, Dmax= 1.7e-02 nm, Epot= -2.19334e+06 Fmax= 1.15296e+04, atom= 920
+Step=   29, Dmax= 2.1e-02 nm, Epot= -2.19297e+06 Fmax= 1.55523e+04, atom= 920Step=   30, Dmax= 1.0e-02 nm, Epot= -2.19512e+06 Fmax= 2.09387e+03, atom= 920
+Step=   31, Dmax= 1.2e-02 nm, Epot= -2.19579e+06 Fmax= 1.42044e+04, atom= 920
+Step=   32, Dmax= 1.5e-02 nm, Epot= -2.19765e+06 Fmax= 5.37309e+03, atom= 920
+Step=   33, Dmax= 1.8e-02 nm, Epot= -2.19673e+06 Fmax= 1.82499e+04, atom= 920Step=   34, Dmax= 8.9e-03 nm, Epot= -2.19821e+06 Fmax= 6.37685e+03, atom= 920
+Step=   35, Dmax= 1.1e-02 nm, Epot= -2.19872e+06 Fmax= 7.68397e+03, atom= 920
+Step=   36, Dmax= 1.3e-02 nm, Epot= -2.19920e+06 Fmax= 9.24333e+03, atom= 920
+Step=   37, Dmax= 1.5e-02 nm, Epot= -2.19959e+06 Fmax= 1.09934e+04, atom= 920
+Step=   38, Dmax= 1.9e-02 nm, Epot= -2.19989e+06 Fmax= 1.33979e+04, atom= 920
+Step=   39, Dmax= 2.2e-02 nm, Epot= -2.20013e+06 Fmax= 1.57204e+04, atom= 920
+Step=   40, Dmax= 2.7e-02 nm, Epot= -2.20009e+06 Fmax= 1.94315e+04, atom= 920Step=   41, Dmax= 1.3e-02 nm, Epot= -2.20186e+06 Fmax= 1.72118e+03, atom= 920
+Step=   42, Dmax= 1.6e-02 nm, Epot= -2.20331e+06 Fmax= 1.93259e+04, atom= 920
+Step=   43, Dmax= 1.9e-02 nm, Epot= -2.20532e+06 Fmax= 5.90406e+03, atom= 920
+Step=   44, Dmax= 2.3e-02 nm, Epot= -2.20416e+06 Fmax= 2.40224e+04, atom= 920Step=   45, Dmax= 1.2e-02 nm, Epot= -2.20575e+06 Fmax= 9.16049e+03, atom= 920
+Step=   46, Dmax= 1.4e-02 nm, Epot= -2.20627e+06 Fmax= 9.04162e+03, atom= 920
+Step=   47, Dmax= 1.7e-02 nm, Epot= -2.20656e+06 Fmax= 1.26869e+04, atom= 920
+Step=   48, Dmax= 2.0e-02 nm, Epot= -2.20701e+06 Fmax= 1.35295e+04, atom= 920
+Step=   49, Dmax= 2.4e-02 nm, Epot= -2.20708e+06 Fmax= 1.77416e+04, atom= 920
+Step=   50, Dmax= 2.9e-02 nm, Epot= -2.20732e+06 Fmax= 2.00382e+04, atom= 920
+Step=   51, Dmax= 3.4e-02 nm, Epot= -2.20705e+06 Fmax= 2.49368e+04, atom= 920Step=   52, Dmax= 1.7e-02 nm, Epot= -2.20909e+06 Fmax= 2.68000e+03, atom= 920
+Step=   53, Dmax= 2.1e-02 nm, Epot= -2.20972e+06 Fmax= 2.44444e+04, atom= 920
+Step=   54, Dmax= 2.5e-02 nm, Epot= -2.21166e+06 Fmax= 8.15854e+03, atom= 920
+Step=   55, Dmax= 3.0e-02 nm, Epot= -2.21020e+06 Fmax= 3.13947e+04, atom= 920Step=   56, Dmax= 1.5e-02 nm, Epot= -2.21204e+06 Fmax= 1.14554e+04, atom= 920
+Step=   57, Dmax= 1.8e-02 nm, Epot= -2.21248e+06 Fmax= 1.19183e+04, atom= 920
+Step=   58, Dmax= 2.1e-02 nm, Epot= -2.21270e+06 Fmax= 1.62953e+04, atom= 920
+Step=   59, Dmax= 2.6e-02 nm, Epot= -2.21308e+06 Fmax= 1.73454e+04, atom= 920
+Step=   60, Dmax= 3.1e-02 nm, Epot= -2.21299e+06 Fmax= 2.33098e+04, atom= 920Step=   61, Dmax= 1.5e-02 nm, Epot= -2.21413e+06 Fmax= 2.80167e+03, atom= 920
+Step=   62, Dmax= 1.9e-02 nm, Epot= -2.21488e+06 Fmax= 2.14523e+04, atom= 920
+Step=   63, Dmax= 2.2e-02 nm, Epot= -2.21623e+06 Fmax= 7.67747e+03, atom= 920
+Step=   64, Dmax= 2.7e-02 nm, Epot= -2.21551e+06 Fmax= 2.69350e+04, atom= 920Step=   65, Dmax= 1.3e-02 nm, Epot= -2.21663e+06 Fmax= 9.76297e+03, atom= 920
+Step=   66, Dmax= 1.6e-02 nm, Epot= -2.21702e+06 Fmax= 1.12705e+04, atom= 920
+Step=   67, Dmax= 1.9e-02 nm, Epot= -2.21735e+06 Fmax= 1.38410e+04, atom= 920
+Step=   68, Dmax= 2.3e-02 nm, Epot= -2.21764e+06 Fmax= 1.64653e+04, atom= 920
+Step=   69, Dmax= 2.8e-02 nm, Epot= -2.21782e+06 Fmax= 1.96626e+04, atom= 920
+Step=   70, Dmax= 3.3e-02 nm, Epot= -2.21787e+06 Fmax= 2.40180e+04, atom= 920
+Step=   71, Dmax= 4.0e-02 nm, Epot= -2.21784e+06 Fmax= 2.79266e+04, atom= 920Step=   72, Dmax= 2.0e-02 nm, Epot= -2.21941e+06 Fmax= 2.26581e+03, atom= 920
+Step=   73, Dmax= 2.4e-02 nm, Epot= -2.22064e+06 Fmax= 2.89101e+04, atom= 920
+Step=   74, Dmax= 2.9e-02 nm, Epot= -2.22236e+06 Fmax= 8.77126e+03, atom= 920
+Step=   75, Dmax= 3.4e-02 nm, Epot= -2.22101e+06 Fmax= 3.71125e+04, atom= 920Step=   76, Dmax= 1.7e-02 nm, Epot= -2.22265e+06 Fmax= 1.39809e+04, atom= 920
+Step=   77, Dmax= 2.1e-02 nm, Epot= -2.22307e+06 Fmax= 1.30189e+04, atom= 920
+Step=   78, Dmax= 2.5e-02 nm, Epot= -2.22317e+06 Fmax= 1.96133e+04, atom= 920
+Step=   79, Dmax= 3.0e-02 nm, Epot= -2.22358e+06 Fmax= 1.92550e+04, atom= 920
+Step=   80, Dmax= 3.6e-02 nm, Epot= -2.22336e+06 Fmax= 2.77585e+04, atom= 920Step=   81, Dmax= 1.8e-02 nm, Epot= -2.22446e+06 Fmax= 4.01036e+03, atom= 920
+Step=   82, Dmax= 2.1e-02 nm, Epot= -2.22476e+06 Fmax= 2.39835e+04, atom= 920
+Step=   83, Dmax= 2.6e-02 nm, Epot= -2.22590e+06 Fmax= 9.65554e+03, atom= 920
+Step=   84, Dmax= 3.1e-02 nm, Epot= -2.22518e+06 Fmax= 3.03347e+04, atom= 920Step=   85, Dmax= 1.5e-02 nm, Epot= -2.22627e+06 Fmax= 1.05191e+04, atom= 920
+Step=   86, Dmax= 1.8e-02 nm, Epot= -2.22656e+06 Fmax= 1.37812e+04, atom= 920
+Step=   87, Dmax= 2.2e-02 nm, Epot= -2.22687e+06 Fmax= 1.52385e+04, atom= 920
+Step=   88, Dmax= 2.7e-02 nm, Epot= -2.22701e+06 Fmax= 1.97914e+04, atom= 920
+Step=   89, Dmax= 3.2e-02 nm, Epot= -2.22723e+06 Fmax= 2.19446e+04, atom= 920
+Step=   90, Dmax= 3.8e-02 nm, Epot= -2.22710e+06 Fmax= 2.85539e+04, atom= 920Step=   91, Dmax= 1.9e-02 nm, Epot= -2.22825e+06 Fmax= 3.02723e+03, atom= 920
+Step=   92, Dmax= 2.3e-02 nm, Epot= -2.22874e+06 Fmax= 2.71581e+04, atom= 920
+Step=   93, Dmax= 2.8e-02 nm, Epot= -2.23014e+06 Fmax= 9.01022e+03, atom= 920
+Step=   94, Dmax= 3.3e-02 nm, Epot= -2.22910e+06 Fmax= 3.38244e+04, atom= 920Step=   95, Dmax= 1.7e-02 nm, Epot= -2.23041e+06 Fmax= 1.26153e+04, atom= 920
+Step=   96, Dmax= 2.0e-02 nm, Epot= -2.23074e+06 Fmax= 1.35010e+04, atom= 920
+Step=   97, Dmax= 2.4e-02 nm, Epot= -2.23092e+06 Fmax= 1.76538e+04, atom= 920
+Step=   98, Dmax= 2.9e-02 nm, Epot= -2.23114e+06 Fmax= 1.99781e+04, atom= 920
+Step=   99, Dmax= 3.4e-02 nm, Epot= -2.23114e+06 Fmax= 2.48316e+04, atom= 920
+Step=  100, Dmax= 4.1e-02 nm, Epot= -2.23112e+06 Fmax= 2.94176e+04, atom= 920Step=  101, Dmax= 2.1e-02 nm, Epot= -2.23236e+06 Fmax= 1.97564e+03, atom= 920
+Step=  102, Dmax= 2.5e-02 nm, Epot= -2.23341e+06 Fmax= 3.07308e+04, atom= 920
+Step=  103, Dmax= 3.0e-02 nm, Epot= -2.23519e+06 Fmax= 8.22850e+03, atom= 920
+Step=  104, Dmax= 3.6e-02 nm, Epot= -2.23369e+06 Fmax= 3.74609e+04, atom= 920Step=  105, Dmax= 1.8e-02 nm, Epot= -2.23537e+06 Fmax= 1.48625e+04, atom= 920
+Step=  106, Dmax= 2.1e-02 nm, Epot= -2.23575e+06 Fmax= 1.32110e+04, atom= 920
+Step=  107, Dmax= 2.6e-02 nm, Epot= -2.23573e+06 Fmax= 2.02281e+04, atom= 920Step=  108, Dmax= 1.3e-02 nm, Epot= -2.23623e+06 Fmax= 3.63542e+03, atom= 920
+Step=  109, Dmax= 1.5e-02 nm, Epot= -2.23668e+06 Fmax= 1.66149e+04, atom= 920
+Step=  110, Dmax= 1.8e-02 nm, Epot= -2.23726e+06 Fmax= 7.60924e+03, atom= 920
+Step=  111, Dmax= 2.2e-02 nm, Epot= -2.23718e+06 Fmax= 2.16254e+04, atom= 920Step=  112, Dmax= 1.1e-02 nm, Epot= -2.23757e+06 Fmax= 6.91264e+03, atom= 920
+Step=  113, Dmax= 1.3e-02 nm, Epot= -2.23786e+06 Fmax= 1.04751e+04, atom= 920
+Step=  114, Dmax= 1.6e-02 nm, Epot= -2.23816e+06 Fmax= 1.04629e+04, atom= 920
+Step=  115, Dmax= 1.9e-02 nm, Epot= -2.23836e+06 Fmax= 1.45510e+04, atom= 920
+Step=  116, Dmax= 2.3e-02 nm, Epot= -2.23863e+06 Fmax= 1.56250e+04, atom= 920
+Step=  117, Dmax= 2.8e-02 nm, Epot= -2.23869e+06 Fmax= 2.03585e+04, atom= 920
+Step=  118, Dmax= 3.3e-02 nm, Epot= -2.23884e+06 Fmax= 2.31367e+04, atom= 920
+Step=  119, Dmax= 4.0e-02 nm, Epot= -2.23868e+06 Fmax= 2.85981e+04, atom= 920Step=  120, Dmax= 2.0e-02 nm, Epot= -2.23984e+06 Fmax= 3.03838e+03, atom= 920
+Step=  121, Dmax= 2.4e-02 nm, Epot= -2.24022e+06 Fmax= 2.81361e+04, atom= 920
+Step=  122, Dmax= 2.9e-02 nm, Epot= -2.24145e+06 Fmax= 9.41271e+03, atom= 920
+Step=  123, Dmax= 3.4e-02 nm, Epot= -2.24041e+06 Fmax= 3.61737e+04, atom= 920Step=  124, Dmax= 1.7e-02 nm, Epot= -2.24168e+06 Fmax= 1.31701e+04, atom= 920
+Step=  125, Dmax= 2.1e-02 nm, Epot= -2.24195e+06 Fmax= 1.37327e+04, atom= 920
+Step=  126, Dmax= 2.5e-02 nm, Epot= -2.24206e+06 Fmax= 1.87461e+04, atom= 920
+Step=  127, Dmax= 3.0e-02 nm, Epot= -2.24228e+06 Fmax= 1.99670e+04, atom= 920
+Step=  128, Dmax= 3.6e-02 nm, Epot= -2.24218e+06 Fmax= 2.68416e+04, atom= 920Step=  129, Dmax= 1.8e-02 nm, Epot= -2.24300e+06 Fmax= 3.19735e+03, atom= 920
+Step=  130, Dmax= 2.1e-02 nm, Epot= -2.24334e+06 Fmax= 2.47608e+04, atom= 920
+Step=  131, Dmax= 2.6e-02 nm, Epot= -2.24434e+06 Fmax= 8.75622e+03, atom= 920
+Step=  132, Dmax= 3.1e-02 nm, Epot= -2.24363e+06 Fmax= 3.10411e+04, atom= 920Step=  133, Dmax= 1.5e-02 nm, Epot= -2.24458e+06 Fmax= 1.13212e+04, atom= 920
+Step=  134, Dmax= 1.8e-02 nm, Epot= -2.24482e+06 Fmax= 1.28826e+04, atom= 920
+Step=  135, Dmax= 2.2e-02 nm, Epot= -2.24499e+06 Fmax= 1.60194e+04, atom= 920
+Step=  136, Dmax= 2.7e-02 nm, Epot= -2.24516e+06 Fmax= 1.88622e+04, atom= 920
+Step=  137, Dmax= 3.2e-02 nm, Epot= -2.24520e+06 Fmax= 2.27063e+04, atom= 920
+Step=  138, Dmax= 3.8e-02 nm, Epot= -2.24518e+06 Fmax= 2.75787e+04, atom= 920Step=  139, Dmax= 1.9e-02 nm, Epot= -2.24611e+06 Fmax= 2.16145e+03, atom= 920
+Step=  140, Dmax= 2.3e-02 nm, Epot= -2.24676e+06 Fmax= 2.80727e+04, atom= 920
+Step=  141, Dmax= 2.8e-02 nm, Epot= -2.24806e+06 Fmax= 8.00189e+03, atom= 920
+Step=  142, Dmax= 3.3e-02 nm, Epot= -2.24699e+06 Fmax= 3.45318e+04, atom= 920Step=  143, Dmax= 1.7e-02 nm, Epot= -2.24822e+06 Fmax= 1.34750e+04, atom= 920
+Step=  144, Dmax= 2.0e-02 nm, Epot= -2.24852e+06 Fmax= 1.25424e+04, atom= 920
+Step=  145, Dmax= 2.4e-02 nm, Epot= -2.24856e+06 Fmax= 1.84826e+04, atom= 920
+Step=  146, Dmax= 2.9e-02 nm, Epot= -2.24879e+06 Fmax= 1.89954e+04, atom= 920
+Step=  147, Dmax= 3.4e-02 nm, Epot= -2.24863e+06 Fmax= 2.56338e+04, atom= 920Step=  148, Dmax= 1.7e-02 nm, Epot= -2.24948e+06 Fmax= 3.54664e+03, atom= 920
+Step=  149, Dmax= 2.1e-02 nm, Epot= -2.24967e+06 Fmax= 2.34088e+04, atom= 920
+Step=  150, Dmax= 2.5e-02 nm, Epot= -2.25051e+06 Fmax= 8.95786e+03, atom= 920
+Step=  151, Dmax= 3.0e-02 nm, Epot= -2.24989e+06 Fmax= 3.02025e+04, atom= 920Step=  152, Dmax= 1.5e-02 nm, Epot= -2.25074e+06 Fmax= 1.04556e+04, atom= 920
+Step=  153, Dmax= 1.8e-02 nm, Epot= -2.25095e+06 Fmax= 1.27532e+04, atom= 920
+Step=  154, Dmax= 2.1e-02 nm, Epot= -2.25112e+06 Fmax= 1.52206e+04, atom= 920
+Step=  155, Dmax= 2.6e-02 nm, Epot= -2.25125e+06 Fmax= 1.81674e+04, atom= 920
+Step=  156, Dmax= 3.1e-02 nm, Epot= -2.25130e+06 Fmax= 2.21548e+04, atom= 920
+Step=  157, Dmax= 3.7e-02 nm, Epot= -2.25129e+06 Fmax= 2.58519e+04, atom= 920Step=  158, Dmax= 1.8e-02 nm, Epot= -2.25213e+06 Fmax= 2.11448e+03, atom= 920
+Step=  159, Dmax= 2.2e-02 nm, Epot= -2.25288e+06 Fmax= 2.66414e+04, atom= 920
+Step=  160, Dmax= 2.6e-02 nm, Epot= -2.25387e+06 Fmax= 8.15749e+03, atom= 920
+Step=  161, Dmax= 3.2e-02 nm, Epot= -2.25310e+06 Fmax= 3.41594e+04, atom= 920Step=  162, Dmax= 1.6e-02 nm, Epot= -2.25405e+06 Fmax= 1.28306e+04, atom= 920
+Step=  163, Dmax= 1.9e-02 nm, Epot= -2.25430e+06 Fmax= 1.21189e+04, atom= 920
+Step=  164, Dmax= 2.3e-02 nm, Epot= -2.25438e+06 Fmax= 1.80017e+04, atom= 920
+Step=  165, Dmax= 2.7e-02 nm, Epot= -2.25461e+06 Fmax= 1.79136e+04, atom= 920
+Step=  166, Dmax= 3.3e-02 nm, Epot= -2.25447e+06 Fmax= 2.54847e+04, atom= 920Step=  167, Dmax= 1.6e-02 nm, Epot= -2.25514e+06 Fmax= 3.57868e+03, atom= 920
+Step=  168, Dmax= 2.0e-02 nm, Epot= -2.25534e+06 Fmax= 2.23137e+04, atom= 920
+Step=  169, Dmax= 2.4e-02 nm, Epot= -2.25606e+06 Fmax= 8.75331e+03, atom= 920
+Step=  170, Dmax= 2.8e-02 nm, Epot= -2.25559e+06 Fmax= 2.82228e+04, atom= 920Step=  171, Dmax= 1.4e-02 nm, Epot= -2.25627e+06 Fmax= 9.88847e+03, atom= 920
+Step=  172, Dmax= 1.7e-02 nm, Epot= -2.25646e+06 Fmax= 1.25455e+04, atom= 920
+Step=  173, Dmax= 2.1e-02 nm, Epot= -2.25664e+06 Fmax= 1.42712e+04, atom= 920
+Step=  174, Dmax= 2.5e-02 nm, Epot= -2.25674e+06 Fmax= 1.80675e+04, atom= 920
+Step=  175, Dmax= 3.0e-02 nm, Epot= -2.25686e+06 Fmax= 2.05009e+04, atom= 920
+Step=  176, Dmax= 3.5e-02 nm, Epot= -2.25678e+06 Fmax= 2.61182e+04, atom= 920Step=  177, Dmax= 1.8e-02 nm, Epot= -2.25753e+06 Fmax= 2.57112e+03, atom= 920
+Step=  178, Dmax= 2.1e-02 nm, Epot= -2.25786e+06 Fmax= 2.53703e+04, atom= 920
+Step=  179, Dmax= 2.6e-02 nm, Epot= -2.25880e+06 Fmax= 8.03951e+03, atom= 920
+Step=  180, Dmax= 3.1e-02 nm, Epot= -2.25804e+06 Fmax= 3.15567e+04, atom= 920Step=  181, Dmax= 1.5e-02 nm, Epot= -2.25897e+06 Fmax= 1.19375e+04, atom= 920
+Step=  182, Dmax= 1.8e-02 nm, Epot= -2.25918e+06 Fmax= 1.21761e+04, atom= 920
+Step=  183, Dmax= 2.2e-02 nm, Epot= -2.25926e+06 Fmax= 1.66145e+04, atom= 920
+Step=  184, Dmax= 2.6e-02 nm, Epot= -2.25942e+06 Fmax= 1.81299e+04, atom= 920
+Step=  185, Dmax= 3.2e-02 nm, Epot= -2.25936e+06 Fmax= 2.32814e+04, atom= 920Step=  186, Dmax= 1.6e-02 nm, Epot= -2.25998e+06 Fmax= 2.77173e+03, atom= 920
+Step=  187, Dmax= 1.9e-02 nm, Epot= -2.26032e+06 Fmax= 2.21691e+04, atom= 920
+Step=  188, Dmax= 2.3e-02 nm, Epot= -2.26102e+06 Fmax= 7.83850e+03, atom= 920
+Step=  189, Dmax= 2.7e-02 nm, Epot= -2.26055e+06 Fmax= 2.84738e+04, atom= 920Step=  190, Dmax= 1.4e-02 nm, Epot= -2.26121e+06 Fmax= 1.01752e+04, atom= 920
+Step=  191, Dmax= 1.6e-02 nm, Epot= -2.26140e+06 Fmax= 1.13508e+04, atom= 920
+Step=  192, Dmax= 2.0e-02 nm, Epot= -2.26154e+06 Fmax= 1.45874e+04, atom= 920
+Step=  193, Dmax= 2.4e-02 nm, Epot= -2.26169e+06 Fmax= 1.63864e+04, atom= 920
+Step=  194, Dmax= 2.8e-02 nm, Epot= -2.26171e+06 Fmax= 2.09974e+04, atom= 920
+Step=  195, Dmax= 3.4e-02 nm, Epot= -2.26177e+06 Fmax= 2.35431e+04, atom= 920
+Step=  196, Dmax= 4.1e-02 nm, Epot= -2.26155e+06 Fmax= 3.03512e+04, atom= 920Step=  197, Dmax= 2.0e-02 nm, Epot= -2.26260e+06 Fmax= 3.08803e+03, atom= 920
+Step=  198, Dmax= 2.5e-02 nm, Epot= -2.26250e+06 Fmax= 2.91954e+04, atom= 920Step=  199, Dmax= 1.2e-02 nm, Epot= -2.26293e+06 Fmax= 1.31578e+04, atom= 920
+Step=  200, Dmax= 1.5e-02 nm, Epot= -2.26326e+06 Fmax= 6.15278e+03, atom= 920
+Step=  201, Dmax= 1.8e-02 nm, Epot= -2.26329e+06 Fmax= 1.69009e+04, atom= 920
+Step=  202, Dmax= 2.1e-02 nm, Epot= -2.26370e+06 Fmax= 1.08996e+04, atom= 920
+Step=  203, Dmax= 2.5e-02 nm, Epot= -2.26348e+06 Fmax= 2.22948e+04, atom= 920Step=  204, Dmax= 1.3e-02 nm, Epot= -2.26397e+06 Fmax= 5.82172e+03, atom= 920
+Step=  205, Dmax= 1.5e-02 nm, Epot= -2.26409e+06 Fmax= 1.42369e+04, atom= 920
+Step=  206, Dmax= 1.8e-02 nm, Epot= -2.26440e+06 Fmax= 9.79662e+03, atom= 920
+Step=  207, Dmax= 2.2e-02 nm, Epot= -2.26434e+06 Fmax= 1.91597e+04, atom= 920Step=  208, Dmax= 1.1e-02 nm, Epot= -2.26466e+06 Fmax= 4.58742e+03, atom= 920
+Step=  209, Dmax= 1.3e-02 nm, Epot= -2.26484e+06 Fmax= 1.26910e+04, atom= 920
+Step=  210, Dmax= 1.6e-02 nm, Epot= -2.26514e+06 Fmax= 8.06353e+03, atom= 920
+Step=  211, Dmax= 1.9e-02 nm, Epot= -2.26514e+06 Fmax= 1.67546e+04, atom= 920
+Step=  212, Dmax= 2.3e-02 nm, Epot= -2.26547e+06 Fmax= 1.31576e+04, atom= 920
+Step=  213, Dmax= 2.7e-02 nm, Epot= -2.26527e+06 Fmax= 2.25367e+04, atom= 920Step=  214, Dmax= 1.4e-02 nm, Epot= -2.26581e+06 Fmax= 4.83355e+03, atom= 920
+Step=  215, Dmax= 1.6e-02 nm, Epot= -2.26590e+06 Fmax= 1.67319e+04, atom= 920
+Step=  216, Dmax= 2.0e-02 nm, Epot= -2.26632e+06 Fmax= 9.12205e+03, atom= 920
+Step=  217, Dmax= 2.4e-02 nm, Epot= -2.26613e+06 Fmax= 2.20482e+04, atom= 920Step=  218, Dmax= 1.2e-02 nm, Epot= -2.26655e+06 Fmax= 6.35424e+03, atom= 920
+Step=  219, Dmax= 1.4e-02 nm, Epot= -2.26669e+06 Fmax= 1.22136e+04, atom= 920
+Step=  220, Dmax= 1.7e-02 nm, Epot= -2.26692e+06 Fmax= 1.01121e+04, atom= 920
+Step=  221, Dmax= 2.0e-02 nm, Epot= -2.26693e+06 Fmax= 1.65798e+04, atom= 920
+Step=  222, Dmax= 2.5e-02 nm, Epot= -2.26717e+06 Fmax= 1.56011e+04, atom= 920
+Step=  223, Dmax= 2.9e-02 nm, Epot= -2.26702e+06 Fmax= 2.27843e+04, atom= 920Step=  224, Dmax= 1.5e-02 nm, Epot= -2.26760e+06 Fmax= 3.75883e+03, atom= 920
+Step=  225, Dmax= 1.8e-02 nm, Epot= -2.26771e+06 Fmax= 1.94052e+04, atom= 920
+Step=  226, Dmax= 2.1e-02 nm, Epot= -2.26826e+06 Fmax= 8.40516e+03, atom= 920
+Step=  227, Dmax= 2.5e-02 nm, Epot= -2.26790e+06 Fmax= 2.51633e+04, atom= 920Step=  228, Dmax= 1.3e-02 nm, Epot= -2.26845e+06 Fmax= 8.25393e+03, atom= 920
+Step=  229, Dmax= 1.5e-02 nm, Epot= -2.26859e+06 Fmax= 1.17054e+04, atom= 920
+Step=  230, Dmax= 1.8e-02 nm, Epot= -2.26876e+06 Fmax= 1.23145e+04, atom= 920
+Step=  231, Dmax= 2.2e-02 nm, Epot= -2.26881e+06 Fmax= 1.63919e+04, atom= 920
+Step=  232, Dmax= 2.6e-02 nm, Epot= -2.26893e+06 Fmax= 1.82319e+04, atom= 920
+Step=  233, Dmax= 3.2e-02 nm, Epot= -2.26888e+06 Fmax= 2.30490e+04, atom= 920Step=  234, Dmax= 1.6e-02 nm, Epot= -2.26948e+06 Fmax= 2.60364e+03, atom= 920
+Step=  235, Dmax= 1.9e-02 nm, Epot= -2.26975e+06 Fmax= 2.22223e+04, atom= 920
+Step=  236, Dmax= 2.3e-02 nm, Epot= -2.27042e+06 Fmax= 7.68573e+03, atom= 920
+Step=  237, Dmax= 2.7e-02 nm, Epot= -2.26990e+06 Fmax= 2.85105e+04, atom= 920Step=  238, Dmax= 1.4e-02 nm, Epot= -2.27057e+06 Fmax= 1.02720e+04, atom= 920
+Step=  239, Dmax= 1.6e-02 nm, Epot= -2.27074e+06 Fmax= 1.11841e+04, atom= 920
+Step=  240, Dmax= 2.0e-02 nm, Epot= -2.27083e+06 Fmax= 1.46663e+04, atom= 920
+Step=  241, Dmax= 2.4e-02 nm, Epot= -2.27096e+06 Fmax= 1.62078e+04, atom= 920
+Step=  242, Dmax= 2.8e-02 nm, Epot= -2.27095e+06 Fmax= 2.10483e+04, atom= 920Step=  243, Dmax= 1.4e-02 nm, Epot= -2.27139e+06 Fmax= 2.26750e+03, atom= 920
+Step=  244, Dmax= 1.7e-02 nm, Epot= -2.27175e+06 Fmax= 2.00630e+04, atom= 920
+Step=  245, Dmax= 2.0e-02 nm, Epot= -2.27235e+06 Fmax= 6.64841e+03, atom= 920
+Step=  246, Dmax= 2.4e-02 nm, Epot= -2.27197e+06 Fmax= 2.51320e+04, atom= 920Step=  247, Dmax= 1.2e-02 nm, Epot= -2.27250e+06 Fmax= 9.35627e+03, atom= 920
+Step=  248, Dmax= 1.5e-02 nm, Epot= -2.27267e+06 Fmax= 9.91856e+03, atom= 920
+Step=  249, Dmax= 1.8e-02 nm, Epot= -2.27277e+06 Fmax= 1.31302e+04, atom= 920
+Step=  250, Dmax= 2.1e-02 nm, Epot= -2.27291e+06 Fmax= 1.46422e+04, atom= 920
+Step=  251, Dmax= 2.5e-02 nm, Epot= -2.27293e+06 Fmax= 1.85151e+04, atom= 920
+Step=  252, Dmax= 3.0e-02 nm, Epot= -2.27296e+06 Fmax= 2.15159e+04, atom= 920
+Step=  253, Dmax= 3.7e-02 nm, Epot= -2.27284e+06 Fmax= 2.61577e+04, atom= 920Step=  254, Dmax= 1.8e-02 nm, Epot= -2.27367e+06 Fmax= 2.58297e+03, atom= 920
+Step=  255, Dmax= 2.2e-02 nm, Epot= -2.27379e+06 Fmax= 2.60472e+04, atom= 920
+Step=  256, Dmax= 2.6e-02 nm, Epot= -2.27467e+06 Fmax= 8.52305e+03, atom= 920
+Step=  257, Dmax= 3.2e-02 nm, Epot= -2.27380e+06 Fmax= 3.34088e+04, atom= 920Step=  258, Dmax= 1.6e-02 nm, Epot= -2.27478e+06 Fmax= 1.22637e+04, atom= 920
+Step=  259, Dmax= 1.9e-02 nm, Epot= -2.27495e+06 Fmax= 1.25213e+04, atom= 920
+Step=  260, Dmax= 2.3e-02 nm, Epot= -2.27497e+06 Fmax= 1.73671e+04, atom= 920
+Step=  261, Dmax= 2.7e-02 nm, Epot= -2.27509e+06 Fmax= 1.82996e+04, atom= 920
+Step=  262, Dmax= 3.3e-02 nm, Epot= -2.27495e+06 Fmax= 2.47755e+04, atom= 920Step=  263, Dmax= 1.6e-02 nm, Epot= -2.27562e+06 Fmax= 3.03396e+03, atom= 920
+Step=  264, Dmax= 2.0e-02 nm, Epot= -2.27566e+06 Fmax= 2.27373e+04, atom= 920
+Step=  265, Dmax= 2.4e-02 nm, Epot= -2.27637e+06 Fmax= 8.11213e+03, atom= 920
+Step=  266, Dmax= 2.8e-02 nm, Epot= -2.27573e+06 Fmax= 2.85911e+04, atom= 920Step=  267, Dmax= 1.4e-02 nm, Epot= -2.27651e+06 Fmax= 1.03921e+04, atom= 920
+Step=  268, Dmax= 1.7e-02 nm, Epot= -2.27664e+06 Fmax= 1.18791e+04, atom= 920
+Step=  269, Dmax= 2.0e-02 nm, Epot= -2.27671e+06 Fmax= 1.47504e+04, atom= 920
+Step=  270, Dmax= 2.4e-02 nm, Epot= -2.27679e+06 Fmax= 1.73491e+04, atom= 920
+Step=  271, Dmax= 2.9e-02 nm, Epot= -2.27679e+06 Fmax= 2.09500e+04, atom= 920Step=  272, Dmax= 1.5e-02 nm, Epot= -2.27728e+06 Fmax= 1.96848e+03, atom= 920
+Step=  273, Dmax= 1.8e-02 nm, Epot= -2.27769e+06 Fmax= 2.09830e+04, atom= 920
+Step=  274, Dmax= 2.1e-02 nm, Epot= -2.27830e+06 Fmax= 6.74147e+03, atom= 920
+Step=  275, Dmax= 2.5e-02 nm, Epot= -2.27786e+06 Fmax= 2.68312e+04, atom= 920Step=  276, Dmax= 1.3e-02 nm, Epot= -2.27843e+06 Fmax= 9.92642e+03, atom= 920
+Step=  277, Dmax= 1.5e-02 nm, Epot= -2.27859e+06 Fmax= 9.97243e+03, atom= 920
+Step=  278, Dmax= 1.8e-02 nm, Epot= -2.27867e+06 Fmax= 1.39966e+04, atom= 920
+Step=  279, Dmax= 2.2e-02 nm, Epot= -2.27880e+06 Fmax= 1.46431e+04, atom= 920
+Step=  280, Dmax= 2.6e-02 nm, Epot= -2.27876e+06 Fmax= 1.98970e+04, atom= 920Step=  281, Dmax= 1.3e-02 nm, Epot= -2.27916e+06 Fmax= 2.49509e+03, atom= 920
+Step=  282, Dmax= 1.6e-02 nm, Epot= -2.27939e+06 Fmax= 1.81862e+04, atom= 920
+Step=  283, Dmax= 1.9e-02 nm, Epot= -2.27988e+06 Fmax= 6.57262e+03, atom= 920
+Step=  284, Dmax= 2.3e-02 nm, Epot= -2.27958e+06 Fmax= 2.29474e+04, atom= 920Step=  285, Dmax= 1.1e-02 nm, Epot= -2.28002e+06 Fmax= 8.28563e+03, atom= 920
+Step=  286, Dmax= 1.4e-02 nm, Epot= -2.28016e+06 Fmax= 9.58014e+03, atom= 920
+Step=  287, Dmax= 1.6e-02 nm, Epot= -2.28028e+06 Fmax= 1.18032e+04, atom= 920
+Step=  288, Dmax= 2.0e-02 nm, Epot= -2.28037e+06 Fmax= 1.39436e+04, atom= 920
+Step=  289, Dmax= 2.4e-02 nm, Epot= -2.28042e+06 Fmax= 1.68165e+04, atom= 920
+Step=  290, Dmax= 2.8e-02 nm, Epot= -2.28043e+06 Fmax= 2.02951e+04, atom= 920
+Step=  291, Dmax= 3.4e-02 nm, Epot= -2.28036e+06 Fmax= 2.39353e+04, atom= 920Step=  292, Dmax= 1.7e-02 nm, Epot= -2.28105e+06 Fmax= 2.04622e+03, atom= 920
+Step=  293, Dmax= 2.0e-02 nm, Epot= -2.28132e+06 Fmax= 2.44302e+04, atom= 920
+Step=  294, Dmax= 2.4e-02 nm, Epot= -2.28209e+06 Fmax= 7.61419e+03, atom= 920
+Step=  295, Dmax= 2.9e-02 nm, Epot= -2.28133e+06 Fmax= 3.12728e+04, atom= 920Step=  296, Dmax= 1.5e-02 nm, Epot= -2.28218e+06 Fmax= 1.16780e+04, atom= 920
+Step=  297, Dmax= 1.8e-02 nm, Epot= -2.28234e+06 Fmax= 1.13074e+04, atom= 920
+Step=  298, Dmax= 2.1e-02 nm, Epot= -2.28234e+06 Fmax= 1.64048e+04, atom= 920Step=  299, Dmax= 1.1e-02 nm, Epot= -2.28258e+06 Fmax= 2.46373e+03, atom= 920
+Step=  300, Dmax= 1.3e-02 nm, Epot= -2.28285e+06 Fmax= 1.41068e+04, atom= 920
+Step=  301, Dmax= 1.5e-02 nm, Epot= -2.28317e+06 Fmax= 5.75893e+03, atom= 920
+Step=  302, Dmax= 1.8e-02 nm, Epot= -2.28309e+06 Fmax= 1.79944e+04, atom= 920Step=  303, Dmax= 9.1e-03 nm, Epot= -2.28331e+06 Fmax= 6.18128e+03, atom= 920
+Step=  304, Dmax= 1.1e-02 nm, Epot= -2.28345e+06 Fmax= 8.14796e+03, atom= 920
+Step=  305, Dmax= 1.3e-02 nm, Epot= -2.28358e+06 Fmax= 9.02631e+03, atom= 920
+Step=  306, Dmax= 1.6e-02 nm, Epot= -2.28368e+06 Fmax= 1.16285e+04, atom= 920
+Step=  307, Dmax= 1.9e-02 nm, Epot= -2.28379e+06 Fmax= 1.30787e+04, atom= 920
+Step=  308, Dmax= 2.3e-02 nm, Epot= -2.28382e+06 Fmax= 1.66906e+04, atom= 920
+Step=  309, Dmax= 2.7e-02 nm, Epot= -2.28386e+06 Fmax= 1.88460e+04, atom= 920
+Step=  310, Dmax= 3.3e-02 nm, Epot= -2.28374e+06 Fmax= 2.40662e+04, atom= 920Step=  311, Dmax= 1.6e-02 nm, Epot= -2.28441e+06 Fmax= 2.40747e+03, atom= 920
+Step=  312, Dmax= 2.0e-02 nm, Epot= -2.28443e+06 Fmax= 2.33397e+04, atom= 920
+Step=  313, Dmax= 2.3e-02 nm, Epot= -2.28522e+06 Fmax= 7.41495e+03, atom= 920
+Step=  314, Dmax= 2.8e-02 nm, Epot= -2.28442e+06 Fmax= 2.91059e+04, atom= 920Step=  315, Dmax= 1.4e-02 nm, Epot= -2.28530e+06 Fmax= 1.09981e+04, atom= 920
+Step=  316, Dmax= 1.7e-02 nm, Epot= -2.28544e+06 Fmax= 1.11963e+04, atom= 920
+Step=  317, Dmax= 2.0e-02 nm, Epot= -2.28545e+06 Fmax= 1.53321e+04, atom= 920
+Step=  318, Dmax= 2.4e-02 nm, Epot= -2.28554e+06 Fmax= 1.66478e+04, atom= 920
+Step=  319, Dmax= 2.9e-02 nm, Epot= -2.28543e+06 Fmax= 2.15090e+04, atom= 920Step=  320, Dmax= 1.5e-02 nm, Epot= -2.28601e+06 Fmax= 2.59776e+03, atom= 920
+Step=  321, Dmax= 1.8e-02 nm, Epot= -2.28608e+06 Fmax= 2.03448e+04, atom= 920
+Step=  322, Dmax= 2.1e-02 nm, Epot= -2.28667e+06 Fmax= 7.28987e+03, atom= 920
+Step=  323, Dmax= 2.5e-02 nm, Epot= -2.28614e+06 Fmax= 2.61004e+04, atom= 920Step=  324, Dmax= 1.3e-02 nm, Epot= -2.28678e+06 Fmax= 9.28376e+03, atom= 920
+Step=  325, Dmax= 1.5e-02 nm, Epot= -2.28690e+06 Fmax= 1.05491e+04, atom= 920
+Step=  326, Dmax= 1.8e-02 nm, Epot= -2.28697e+06 Fmax= 1.33210e+04, atom= 920
+Step=  327, Dmax= 2.2e-02 nm, Epot= -2.28704e+06 Fmax= 1.52143e+04, atom= 920
+Step=  328, Dmax= 2.6e-02 nm, Epot= -2.28700e+06 Fmax= 1.91897e+04, atom= 920Step=  329, Dmax= 1.3e-02 nm, Epot= -2.28743e+06 Fmax= 1.85703e+03, atom= 920
+Step=  330, Dmax= 1.6e-02 nm, Epot= -2.28768e+06 Fmax= 1.88219e+04, atom= 920
+Step=  331, Dmax= 1.9e-02 nm, Epot= -2.28824e+06 Fmax= 5.85785e+03, atom= 920
+Step=  332, Dmax= 2.3e-02 nm, Epot= -2.28780e+06 Fmax= 2.35159e+04, atom= 920Step=  333, Dmax= 1.1e-02 nm, Epot= -2.28834e+06 Fmax= 8.92766e+03, atom= 920
+Step=  334, Dmax= 1.4e-02 nm, Epot= -2.28848e+06 Fmax= 8.87418e+03, atom= 920
+Step=  335, Dmax= 1.6e-02 nm, Epot= -2.28853e+06 Fmax= 1.24277e+04, atom= 920
+Step=  336, Dmax= 2.0e-02 nm, Epot= -2.28866e+06 Fmax= 1.32210e+04, atom= 920
+Step=  337, Dmax= 2.3e-02 nm, Epot= -2.28861e+06 Fmax= 1.74246e+04, atom= 920Step=  338, Dmax= 1.2e-02 nm, Epot= -2.28899e+06 Fmax= 2.20911e+03, atom= 920
+Step=  339, Dmax= 1.4e-02 nm, Epot= -2.28917e+06 Fmax= 1.62014e+04, atom= 920
+Step=  340, Dmax= 1.7e-02 nm, Epot= -2.28960e+06 Fmax= 5.96664e+03, atom= 920
+Step=  341, Dmax= 2.0e-02 nm, Epot= -2.28933e+06 Fmax= 2.07680e+04, atom= 920Step=  342, Dmax= 1.0e-02 nm, Epot= -2.28972e+06 Fmax= 7.32106e+03, atom= 920
+Step=  343, Dmax= 1.2e-02 nm, Epot= -2.28984e+06 Fmax= 8.60110e+03, atom= 920
+Step=  344, Dmax= 1.5e-02 nm, Epot= -2.28993e+06 Fmax= 1.05424e+04, atom= 920
+Step=  345, Dmax= 1.8e-02 nm, Epot= -2.29001e+06 Fmax= 1.23673e+04, atom= 920
+Step=  346, Dmax= 2.1e-02 nm, Epot= -2.29004e+06 Fmax= 1.52219e+04, atom= 920
+Step=  347, Dmax= 2.5e-02 nm, Epot= -2.29006e+06 Fmax= 1.77313e+04, atom= 920
+Step=  348, Dmax= 3.0e-02 nm, Epot= -2.28995e+06 Fmax= 2.20358e+04, atom= 920Step=  349, Dmax= 1.5e-02 nm, Epot= -2.29060e+06 Fmax= 1.97796e+03, atom= 920
+Step=  350, Dmax= 1.8e-02 nm, Epot= -2.29061e+06 Fmax= 2.19353e+04, atom= 920
+Step=  351, Dmax= 2.2e-02 nm, Epot= -2.29141e+06 Fmax= 6.58407e+03, atom= 920
+Step=  352, Dmax= 2.6e-02 nm, Epot= -2.29057e+06 Fmax= 2.72760e+04, atom= 920Step=  353, Dmax= 1.3e-02 nm, Epot= -2.29147e+06 Fmax= 1.04783e+04, atom= 920
+Step=  354, Dmax= 1.6e-02 nm, Epot= -2.29161e+06 Fmax= 1.00951e+04, atom= 920
+Step=  355, Dmax= 1.9e-02 nm, Epot= -2.29159e+06 Fmax= 1.45037e+04, atom= 920Step=  356, Dmax= 9.4e-03 nm, Epot= -2.29185e+06 Fmax= 2.27318e+03, atom= 920
+Step=  357, Dmax= 1.1e-02 nm, Epot= -2.29203e+06 Fmax= 1.25188e+04, atom= 920
+Step=  358, Dmax= 1.4e-02 nm, Epot= -2.29233e+06 Fmax= 5.26522e+03, atom= 920
+Step=  359, Dmax= 1.6e-02 nm, Epot= -2.29221e+06 Fmax= 1.61321e+04, atom= 920Step=  360, Dmax= 8.1e-03 nm, Epot= -2.29246e+06 Fmax= 5.38173e+03, atom= 920
+Step=  361, Dmax= 9.8e-03 nm, Epot= -2.29256e+06 Fmax= 7.40100e+03, atom= 920
+Step=  362, Dmax= 1.2e-02 nm, Epot= -2.29269e+06 Fmax= 7.94725e+03, atom= 920
+Step=  363, Dmax= 1.4e-02 nm, Epot= -2.29275e+06 Fmax= 1.04414e+04, atom= 920
+Step=  364, Dmax= 1.7e-02 nm, Epot= -2.29285e+06 Fmax= 1.16778e+04, atom= 920
+Step=  365, Dmax= 2.0e-02 nm, Epot= -2.29285e+06 Fmax= 1.47755e+04, atom= 920Step=  366, Dmax= 1.0e-02 nm, Epot= -2.29314e+06 Fmax= 1.62927e+03, atom= 920
+Step=  367, Dmax= 1.2e-02 nm, Epot= -2.29344e+06 Fmax= 1.42227e+04, atom= 920
+Step=  368, Dmax= 1.5e-02 nm, Epot= -2.29382e+06 Fmax= 4.89525e+03, atom= 920
+Step=  369, Dmax= 1.7e-02 nm, Epot= -2.29362e+06 Fmax= 1.81544e+04, atom= 920Step=  370, Dmax= 8.7e-03 nm, Epot= -2.29393e+06 Fmax= 6.57066e+03, atom= 920
+Step=  371, Dmax= 1.0e-02 nm, Epot= -2.29405e+06 Fmax= 7.16762e+03, atom= 920
+Step=  372, Dmax= 1.3e-02 nm, Epot= -2.29414e+06 Fmax= 9.34348e+03, atom= 920
+Step=  373, Dmax= 1.5e-02 nm, Epot= -2.29423e+06 Fmax= 1.04272e+04, atom= 920
+Step=  374, Dmax= 1.8e-02 nm, Epot= -2.29426e+06 Fmax= 1.33652e+04, atom= 920
+Step=  375, Dmax= 2.2e-02 nm, Epot= -2.29430e+06 Fmax= 1.50770e+04, atom= 920
+Step=  376, Dmax= 2.6e-02 nm, Epot= -2.29422e+06 Fmax= 1.92145e+04, atom= 920Step=  377, Dmax= 1.3e-02 nm, Epot= -2.29475e+06 Fmax= 1.93846e+03, atom= 920
+Step=  378, Dmax= 1.6e-02 nm, Epot= -2.29480e+06 Fmax= 1.86560e+04, atom= 920
+Step=  379, Dmax= 1.9e-02 nm, Epot= -2.29544e+06 Fmax= 5.93808e+03, atom= 920
+Step=  380, Dmax= 2.3e-02 nm, Epot= -2.29480e+06 Fmax= 2.33471e+04, atom= 920Step=  381, Dmax= 1.1e-02 nm, Epot= -2.29551e+06 Fmax= 8.80300e+03, atom= 920
+Step=  382, Dmax= 1.4e-02 nm, Epot= -2.29563e+06 Fmax= 8.93823e+03, atom= 920
+Step=  383, Dmax= 1.6e-02 nm, Epot= -2.29563e+06 Fmax= 1.22949e+04, atom= 920Step=  384, Dmax= 8.1e-03 nm, Epot= -2.29584e+06 Fmax= 1.72976e+03, atom= 920
+Step=  385, Dmax= 9.7e-03 nm, Epot= -2.29608e+06 Fmax= 1.10109e+04, atom= 920
+Step=  386, Dmax= 1.2e-02 nm, Epot= -2.29634e+06 Fmax= 4.32835e+03, atom= 920
+Step=  387, Dmax= 1.4e-02 nm, Epot= -2.29628e+06 Fmax= 1.41187e+04, atom= 920Step=  388, Dmax= 7.0e-03 nm, Epot= -2.29646e+06 Fmax= 4.85712e+03, atom= 920
+Step=  389, Dmax= 8.4e-03 nm, Epot= -2.29657e+06 Fmax= 6.17165e+03, atom= 920
+Step=  390, Dmax= 1.0e-02 nm, Epot= -2.29668e+06 Fmax= 7.06579e+03, atom= 920
+Step=  391, Dmax= 1.2e-02 nm, Epot= -2.29676e+06 Fmax= 8.80292e+03, atom= 920
+Step=  392, Dmax= 1.5e-02 nm, Epot= -2.29684e+06 Fmax= 1.02732e+04, atom= 920
+Step=  393, Dmax= 1.7e-02 nm, Epot= -2.29687e+06 Fmax= 1.25575e+04, atom= 920
+Step=  394, Dmax= 2.1e-02 nm, Epot= -2.29688e+06 Fmax= 1.49346e+04, atom= 920
+Step=  395, Dmax= 2.5e-02 nm, Epot= -2.29683e+06 Fmax= 1.79045e+04, atom= 920Step=  396, Dmax= 1.3e-02 nm, Epot= -2.29736e+06 Fmax= 1.60922e+03, atom= 920
+Step=  397, Dmax= 1.5e-02 nm, Epot= -2.29752e+06 Fmax= 1.80400e+04, atom= 920
+Step=  398, Dmax= 1.8e-02 nm, Epot= -2.29812e+06 Fmax= 5.70995e+03, atom= 920
+Step=  399, Dmax= 2.2e-02 nm, Epot= -2.29754e+06 Fmax= 2.30079e+04, atom= 920Step=  400, Dmax= 1.1e-02 nm, Epot= -2.29819e+06 Fmax= 8.56039e+03, atom= 920
+Step=  401, Dmax= 1.3e-02 nm, Epot= -2.29830e+06 Fmax= 8.49625e+03, atom= 920
+Step=  402, Dmax= 1.6e-02 nm, Epot= -2.29832e+06 Fmax= 1.20268e+04, atom= 920
+Step=  403, Dmax= 1.9e-02 nm, Epot= -2.29841e+06 Fmax= 1.25231e+04, atom= 920
+Step=  404, Dmax= 2.3e-02 nm, Epot= -2.29832e+06 Fmax= 1.70498e+04, atom= 920Step=  405, Dmax= 1.1e-02 nm, Epot= -2.29875e+06 Fmax= 2.16604e+03, atom= 920
+Step=  406, Dmax= 1.4e-02 nm, Epot= -2.29877e+06 Fmax= 1.55658e+04, atom= 920
+Step=  407, Dmax= 1.6e-02 nm, Epot= -2.29924e+06 Fmax= 5.64259e+03, atom= 920
+Step=  408, Dmax= 1.9e-02 nm, Epot= -2.29882e+06 Fmax= 1.96875e+04, atom= 920Step=  409, Dmax= 9.7e-03 nm, Epot= -2.29934e+06 Fmax= 7.09517e+03, atom= 920
+Step=  410, Dmax= 1.2e-02 nm, Epot= -2.29943e+06 Fmax= 8.20285e+03, atom= 920
+Step=  411, Dmax= 1.4e-02 nm, Epot= -2.29949e+06 Fmax= 1.01272e+04, atom= 920
+Step=  412, Dmax= 1.7e-02 nm, Epot= -2.29953e+06 Fmax= 1.19188e+04, atom= 920
+Step=  413, Dmax= 2.0e-02 nm, Epot= -2.29953e+06 Fmax= 1.44509e+04, atom= 920Step=  414, Dmax= 1.0e-02 nm, Epot= -2.29987e+06 Fmax= 1.34608e+03, atom= 920
+Step=  415, Dmax= 1.2e-02 nm, Epot= -2.30015e+06 Fmax= 1.44172e+04, atom= 920
+Step=  416, Dmax= 1.5e-02 nm, Epot= -2.30058e+06 Fmax= 4.63576e+03, atom= 920
+Step=  417, Dmax= 1.7e-02 nm, Epot= -2.30027e+06 Fmax= 1.83517e+04, atom= 920Step=  418, Dmax= 8.7e-03 nm, Epot= -2.30067e+06 Fmax= 6.79993e+03, atom= 920
+Step=  419, Dmax= 1.0e-02 nm, Epot= -2.30078e+06 Fmax= 6.89321e+03, atom= 920
+Step=  420, Dmax= 1.3e-02 nm, Epot= -2.30083e+06 Fmax= 9.56371e+03, atom= 920
+Step=  421, Dmax= 1.5e-02 nm, Epot= -2.30092e+06 Fmax= 1.01442e+04, atom= 920
+Step=  422, Dmax= 1.8e-02 nm, Epot= -2.30089e+06 Fmax= 1.35693e+04, atom= 920Step=  423, Dmax= 9.0e-03 nm, Epot= -2.30118e+06 Fmax= 1.64922e+03, atom= 920
+Step=  424, Dmax= 1.1e-02 nm, Epot= -2.30134e+06 Fmax= 1.25950e+04, atom= 920
+Step=  425, Dmax= 1.3e-02 nm, Epot= -2.30169e+06 Fmax= 4.42542e+03, atom= 920
+Step=  426, Dmax= 1.6e-02 nm, Epot= -2.30147e+06 Fmax= 1.59294e+04, atom= 920Step=  427, Dmax= 7.8e-03 nm, Epot= -2.30179e+06 Fmax= 5.79892e+03, atom= 920
+Step=  428, Dmax= 9.4e-03 nm, Epot= -2.30189e+06 Fmax= 6.47193e+03, atom= 920
+Step=  429, Dmax= 1.1e-02 nm, Epot= -2.30195e+06 Fmax= 8.24339e+03, atom= 920
+Step=  430, Dmax= 1.3e-02 nm, Epot= -2.30202e+06 Fmax= 9.43859e+03, atom= 920
+Step=  431, Dmax= 1.6e-02 nm, Epot= -2.30204e+06 Fmax= 1.17334e+04, atom= 920
+Step=  432, Dmax= 1.9e-02 nm, Epot= -2.30206e+06 Fmax= 1.37488e+04, atom= 920
+Step=  433, Dmax= 2.3e-02 nm, Epot= -2.30200e+06 Fmax= 1.67057e+04, atom= 920Step=  434, Dmax= 1.2e-02 nm, Epot= -2.30251e+06 Fmax= 1.58578e+03, atom= 920
+Step=  435, Dmax= 1.4e-02 nm, Epot= -2.30260e+06 Fmax= 1.66389e+04, atom= 920
+Step=  436, Dmax= 1.7e-02 nm, Epot= -2.30316e+06 Fmax= 5.38083e+03, atom= 920
+Step=  437, Dmax= 2.0e-02 nm, Epot= -2.30259e+06 Fmax= 2.12117e+04, atom= 920Step=  438, Dmax= 1.0e-02 nm, Epot= -2.30323e+06 Fmax= 7.83831e+03, atom= 920
+Step=  439, Dmax= 1.2e-02 nm, Epot= -2.30333e+06 Fmax= 7.97949e+03, atom= 920
+Step=  440, Dmax= 1.4e-02 nm, Epot= -2.30334e+06 Fmax= 1.10413e+04, atom= 920
+Step=  441, Dmax= 1.7e-02 nm, Epot= -2.30341e+06 Fmax= 1.17236e+04, atom= 920
+Step=  442, Dmax= 2.1e-02 nm, Epot= -2.30332e+06 Fmax= 1.56857e+04, atom= 920Step=  443, Dmax= 1.0e-02 nm, Epot= -2.30374e+06 Fmax= 1.89675e+03, atom= 920
+Step=  444, Dmax= 1.3e-02 nm, Epot= -2.30377e+06 Fmax= 1.45577e+04, atom= 920
+Step=  445, Dmax= 1.5e-02 nm, Epot= -2.30423e+06 Fmax= 5.10582e+03, atom= 920
+Step=  446, Dmax= 1.8e-02 nm, Epot= -2.30379e+06 Fmax= 1.84898e+04, atom= 614Step=  447, Dmax= 9.0e-03 nm, Epot= -2.30431e+06 Fmax= 6.70487e+03, atom= 920
+Step=  448, Dmax= 1.1e-02 nm, Epot= -2.30440e+06 Fmax= 7.47584e+03, atom= 920
+Step=  449, Dmax= 1.3e-02 nm, Epot= -2.30445e+06 Fmax= 9.53753e+03, atom= 614
+Step=  450, Dmax= 1.6e-02 nm, Epot= -2.30450e+06 Fmax= 1.08790e+04, atom= 920
+Step=  451, Dmax= 1.9e-02 nm, Epot= -2.30446e+06 Fmax= 1.37110e+04, atom= 614Step=  452, Dmax= 9.4e-03 nm, Epot= -2.30481e+06 Fmax= 1.41627e+03, atom= 920
+Step=  453, Dmax= 1.1e-02 nm, Epot= -2.30497e+06 Fmax= 1.32112e+04, atom= 920
+Step=  454, Dmax= 1.3e-02 nm, Epot= -2.30537e+06 Fmax= 4.45466e+03, atom= 920
+Step=  455, Dmax= 1.6e-02 nm, Epot= -2.30504e+06 Fmax= 1.68562e+04, atom= 1763Step=  456, Dmax= 8.1e-03 nm, Epot= -2.30545e+06 Fmax= 6.15514e+03, atom= 1763
+Step=  457, Dmax= 9.7e-03 nm, Epot= -2.30555e+06 Fmax= 6.54183e+03, atom= 1763
+Step=  458, Dmax= 1.2e-02 nm, Epot= -2.30560e+06 Fmax= 8.74931e+03, atom= 1763
+Step=  459, Dmax= 1.4e-02 nm, Epot= -2.30568e+06 Fmax= 9.53024e+03, atom= 1763
+Step=  460, Dmax= 1.7e-02 nm, Epot= -2.30565e+06 Fmax= 1.24983e+04, atom= 1763Step=  461, Dmax= 8.4e-03 nm, Epot= -2.30593e+06 Fmax= 1.43864e+03, atom= 614
+Step=  462, Dmax= 1.0e-02 nm, Epot= -2.30610e+06 Fmax= 1.17449e+04, atom= 614
+Step=  463, Dmax= 1.2e-02 nm, Epot= -2.30643e+06 Fmax= 4.09465e+03, atom= 614
+Step=  464, Dmax= 1.4e-02 nm, Epot= -2.30623e+06 Fmax= 1.50018e+04, atom= 614Step=  465, Dmax= 7.2e-03 nm, Epot= -2.30652e+06 Fmax= 5.41402e+03, atom= 614
+Step=  466, Dmax= 8.7e-03 nm, Epot= -2.30662e+06 Fmax= 5.97147e+03, atom= 614
+Step=  467, Dmax= 1.0e-02 nm, Epot= -2.30669e+06 Fmax= 7.72233e+03, atom= 614
+Step=  468, Dmax= 1.3e-02 nm, Epot= -2.30677e+06 Fmax= 8.66610e+03, atom= 614
+Step=  469, Dmax= 1.5e-02 nm, Epot= -2.30678e+06 Fmax= 1.10629e+04, atom= 614
+Step=  470, Dmax= 1.8e-02 nm, Epot= -2.30681e+06 Fmax= 1.25194e+04, atom= 614
+Step=  471, Dmax= 2.2e-02 nm, Epot= -2.30672e+06 Fmax= 1.59113e+04, atom= 614Step=  472, Dmax= 1.1e-02 nm, Epot= -2.30720e+06 Fmax= 1.66623e+03, atom= 1763
+Step=  473, Dmax= 1.3e-02 nm, Epot= -2.30720e+06 Fmax= 1.53626e+04, atom= 1763
+Step=  474, Dmax= 1.6e-02 nm, Epot= -2.30772e+06 Fmax= 5.06835e+03, atom= 1763
+Step=  475, Dmax= 1.9e-02 nm, Epot= -2.30721e+06 Fmax= 1.96241e+04, atom= 1763Step=  476, Dmax= 9.3e-03 nm, Epot= -2.30778e+06 Fmax= 7.20965e+03, atom= 1763
+Step=  477, Dmax= 1.1e-02 nm, Epot= -2.30788e+06 Fmax= 7.46247e+03, atom= 1763
+Step=  478, Dmax= 1.3e-02 nm, Epot= -2.30790e+06 Fmax= 1.02107e+04, atom= 1763
+Step=  479, Dmax= 1.6e-02 nm, Epot= -2.30797e+06 Fmax= 1.09096e+04, atom= 1763
+Step=  480, Dmax= 1.9e-02 nm, Epot= -2.30788e+06 Fmax= 1.45533e+04, atom= 1763Step=  481, Dmax= 9.7e-03 nm, Epot= -2.30827e+06 Fmax= 1.75873e+03, atom= 614
+Step=  482, Dmax= 1.2e-02 nm, Epot= -2.30830e+06 Fmax= 1.34780e+04, atom= 614
+Step=  483, Dmax= 1.4e-02 nm, Epot= -2.30871e+06 Fmax= 4.82803e+03, atom= 614
+Step=  484, Dmax= 1.7e-02 nm, Epot= -2.30836e+06 Fmax= 1.72504e+04, atom= 614Step=  485, Dmax= 8.4e-03 nm, Epot= -2.30879e+06 Fmax= 6.15814e+03, atom= 614
+Step=  486, Dmax= 1.0e-02 nm, Epot= -2.30887e+06 Fmax= 6.99662e+03, atom= 614
+Step=  487, Dmax= 1.2e-02 nm, Epot= -2.30891e+06 Fmax= 8.82755e+03, atom= 614
+Step=  488, Dmax= 1.4e-02 nm, Epot= -2.30896e+06 Fmax= 1.01050e+04, atom= 614
+Step=  489, Dmax= 1.7e-02 nm, Epot= -2.30895e+06 Fmax= 1.26963e+04, atom= 614Step=  490, Dmax= 8.7e-03 nm, Epot= -2.30924e+06 Fmax= 1.27473e+03, atom= 1763
+Step=  491, Dmax= 1.0e-02 nm, Epot= -2.30943e+06 Fmax= 1.23886e+04, atom= 1763
+Step=  492, Dmax= 1.2e-02 nm, Epot= -2.30978e+06 Fmax= 4.00112e+03, atom= 1763
+Step=  493, Dmax= 1.5e-02 nm, Epot= -2.30954e+06 Fmax= 1.57895e+04, atom= 1763Step=  494, Dmax= 7.5e-03 nm, Epot= -2.30986e+06 Fmax= 5.85040e+03, atom= 1763
+Step=  495, Dmax= 9.0e-03 nm, Epot= -2.30996e+06 Fmax= 5.92549e+03, atom= 1763
+Step=  496, Dmax= 1.1e-02 nm, Epot= -2.31001e+06 Fmax= 8.25321e+03, atom= 1763
+Step=  497, Dmax= 1.3e-02 nm, Epot= -2.31009e+06 Fmax= 8.70061e+03, atom= 1763
+Step=  498, Dmax= 1.6e-02 nm, Epot= -2.31007e+06 Fmax= 1.17244e+04, atom= 1763Step=  499, Dmax= 7.8e-03 nm, Epot= -2.31029e+06 Fmax= 1.47167e+03, atom= 614
+Step=  500, Dmax= 9.3e-03 nm, Epot= -2.31044e+06 Fmax= 1.07554e+04, atom= 614
+Step=  501, Dmax= 1.1e-02 nm, Epot= -2.31072e+06 Fmax= 3.93219e+03, atom= 614
+Step=  502, Dmax= 1.3e-02 nm, Epot= -2.31057e+06 Fmax= 1.37626e+04, atom= 614Step=  503, Dmax= 6.7e-03 nm, Epot= -2.31080e+06 Fmax= 4.88087e+03, atom= 614
+Step=  504, Dmax= 8.1e-03 nm, Epot= -2.31090e+06 Fmax= 5.67786e+03, atom= 614
+Step=  505, Dmax= 9.7e-03 nm, Epot= -2.31096e+06 Fmax= 7.01705e+03, atom= 614
+Step=  506, Dmax= 1.2e-02 nm, Epot= -2.31102e+06 Fmax= 8.18080e+03, atom= 614
+Step=  507, Dmax= 1.4e-02 nm, Epot= -2.31105e+06 Fmax= 1.01094e+04, atom= 614
+Step=  508, Dmax= 1.7e-02 nm, Epot= -2.31108e+06 Fmax= 1.17607e+04, atom= 614
+Step=  509, Dmax= 2.0e-02 nm, Epot= -2.31103e+06 Fmax= 1.45954e+04, atom= 614Step=  510, Dmax= 1.0e-02 nm, Epot= -2.31141e+06 Fmax= 1.39862e+03, atom= 1763
+Step=  511, Dmax= 1.2e-02 nm, Epot= -2.31153e+06 Fmax= 1.43840e+04, atom= 1763
+Step=  512, Dmax= 1.4e-02 nm, Epot= -2.31196e+06 Fmax= 4.55836e+03, atom= 1763
+Step=  513, Dmax= 1.7e-02 nm, Epot= -2.31155e+06 Fmax= 1.83369e+04, atom= 1763Step=  514, Dmax= 8.7e-03 nm, Epot= -2.31202e+06 Fmax= 6.83075e+03, atom= 1763
+Step=  515, Dmax= 1.0e-02 nm, Epot= -2.31211e+06 Fmax= 6.77565e+03, atom= 1763
+Step=  516, Dmax= 1.2e-02 nm, Epot= -2.31213e+06 Fmax= 9.61219e+03, atom= 1763
+Step=  517, Dmax= 1.5e-02 nm, Epot= -2.31222e+06 Fmax= 9.97605e+03, atom= 1763
+Step=  518, Dmax= 1.8e-02 nm, Epot= -2.31214e+06 Fmax= 1.36330e+04, atom= 1763Step=  519, Dmax= 9.0e-03 nm, Epot= -2.31246e+06 Fmax= 1.76552e+03, atom= 1763
+Step=  520, Dmax= 1.1e-02 nm, Epot= -2.31251e+06 Fmax= 1.23380e+04, atom= 1763
+Step=  521, Dmax= 1.3e-02 nm, Epot= -2.31286e+06 Fmax= 4.61859e+03, atom= 614
+Step=  522, Dmax= 1.6e-02 nm, Epot= -2.31258e+06 Fmax= 1.58393e+04, atom= 614Step=  523, Dmax= 7.8e-03 nm, Epot= -2.31294e+06 Fmax= 5.56489e+03, atom= 614
+Step=  524, Dmax= 9.3e-03 nm, Epot= -2.31301e+06 Fmax= 6.63496e+03, atom= 614
+Step=  525, Dmax= 1.1e-02 nm, Epot= -2.31306e+06 Fmax= 8.03556e+03, atom= 614
+Step=  526, Dmax= 1.3e-02 nm, Epot= -2.31310e+06 Fmax= 9.52187e+03, atom= 614
+Step=  527, Dmax= 1.6e-02 nm, Epot= -2.31311e+06 Fmax= 1.16168e+04, atom= 614
+Step=  528, Dmax= 1.9e-02 nm, Epot= -2.31309e+06 Fmax= 1.36458e+04, atom= 614Step=  529, Dmax= 9.6e-03 nm, Epot= -2.31343e+06 Fmax= 1.08527e+03, atom= 614
+Step=  530, Dmax= 1.2e-02 nm, Epot= -2.31370e+06 Fmax= 1.40374e+04, atom= 614
+Step=  531, Dmax= 1.4e-02 nm, Epot= -2.31409e+06 Fmax= 4.20505e+03, atom= 614
+Step=  532, Dmax= 1.7e-02 nm, Epot= -2.31375e+06 Fmax= 1.78600e+04, atom= 614Step=  533, Dmax= 8.3e-03 nm, Epot= -2.31416e+06 Fmax= 6.77697e+03, atom= 614
+Step=  534, Dmax= 1.0e-02 nm, Epot= -2.31425e+06 Fmax= 6.33544e+03, atom= 614
+Step=  535, Dmax= 1.2e-02 nm, Epot= -2.31427e+06 Fmax= 9.44855e+03, atom= 614
+Step=  536, Dmax= 1.4e-02 nm, Epot= -2.31435e+06 Fmax= 9.43024e+03, atom= 614
+Step=  537, Dmax= 1.7e-02 nm, Epot= -2.31429e+06 Fmax= 1.33075e+04, atom= 614Step=  538, Dmax= 8.6e-03 nm, Epot= -2.31457e+06 Fmax= 1.88275e+03, atom= 614
+Step=  539, Dmax= 1.0e-02 nm, Epot= -2.31462e+06 Fmax= 1.17307e+04, atom= 614
+Step=  540, Dmax= 1.2e-02 nm, Epot= -2.31491e+06 Fmax= 4.59312e+03, atom= 614
+Step=  541, Dmax= 1.5e-02 nm, Epot= -2.31470e+06 Fmax= 1.49150e+04, atom= 614Step=  542, Dmax= 7.5e-03 nm, Epot= -2.31499e+06 Fmax= 5.20165e+03, atom= 614
+Step=  543, Dmax= 9.0e-03 nm, Epot= -2.31505e+06 Fmax= 6.56679e+03, atom= 614
+Step=  544, Dmax= 1.1e-02 nm, Epot= -2.31513e+06 Fmax= 7.52940e+03, atom= 614
+Step=  545, Dmax= 1.3e-02 nm, Epot= -2.31516e+06 Fmax= 9.42756e+03, atom= 614
+Step=  546, Dmax= 1.5e-02 nm, Epot= -2.31519e+06 Fmax= 1.08569e+04, atom= 614
+Step=  547, Dmax= 1.9e-02 nm, Epot= -2.31516e+06 Fmax= 1.35783e+04, atom= 614Step=  548, Dmax= 9.3e-03 nm, Epot= -2.31546e+06 Fmax= 1.29610e+03, atom= 614
+Step=  549, Dmax= 1.1e-02 nm, Epot= -2.31560e+06 Fmax= 1.33807e+04, atom= 614
+Step=  550, Dmax= 1.3e-02 nm, Epot= -2.31599e+06 Fmax= 4.17360e+03, atom= 614
+Step=  551, Dmax= 1.6e-02 nm, Epot= -2.31567e+06 Fmax= 1.67501e+04, atom= 614Step=  552, Dmax= 8.0e-03 nm, Epot= -2.31605e+06 Fmax= 6.33496e+03, atom= 614
+Step=  553, Dmax= 9.6e-03 nm, Epot= -2.31613e+06 Fmax= 6.31702e+03, atom= 614
+Step=  554, Dmax= 1.2e-02 nm, Epot= -2.31616e+06 Fmax= 8.82569e+03, atom= 614
+Step=  555, Dmax= 1.4e-02 nm, Epot= -2.31623e+06 Fmax= 9.39887e+03, atom= 614
+Step=  556, Dmax= 1.7e-02 nm, Epot= -2.31619e+06 Fmax= 1.23935e+04, atom= 614Step=  557, Dmax= 8.3e-03 nm, Epot= -2.31645e+06 Fmax= 1.54975e+03, atom= 614
+Step=  558, Dmax= 1.0e-02 nm, Epot= -2.31655e+06 Fmax= 1.15447e+04, atom= 614
+Step=  559, Dmax= 1.2e-02 nm, Epot= -2.31683e+06 Fmax= 4.19407e+03, atom= 614
+Step=  560, Dmax= 1.4e-02 nm, Epot= -2.31664e+06 Fmax= 1.47731e+04, atom= 614Step=  561, Dmax= 7.2e-03 nm, Epot= -2.31691e+06 Fmax= 5.25051e+03, atom= 614
+Step=  562, Dmax= 8.6e-03 nm, Epot= -2.31699e+06 Fmax= 6.06361e+03, atom= 614
+Step=  563, Dmax= 1.0e-02 nm, Epot= -2.31704e+06 Fmax= 7.53969e+03, atom= 614
+Step=  564, Dmax= 1.2e-02 nm, Epot= -2.31709e+06 Fmax= 8.74437e+03, atom= 614
+Step=  565, Dmax= 1.5e-02 nm, Epot= -2.31710e+06 Fmax= 1.08552e+04, atom= 614
+Step=  566, Dmax= 1.8e-02 nm, Epot= -2.31711e+06 Fmax= 1.25771e+04, atom= 614
+Step=  567, Dmax= 2.1e-02 nm, Epot= -2.31704e+06 Fmax= 1.56675e+04, atom= 614Step=  568, Dmax= 1.1e-02 nm, Epot= -2.31745e+06 Fmax= 1.45947e+03, atom= 614
+Step=  569, Dmax= 1.3e-02 nm, Epot= -2.31745e+06 Fmax= 1.55086e+04, atom= 614
+Step=  570, Dmax= 1.5e-02 nm, Epot= -2.31796e+06 Fmax= 4.77764e+03, atom= 614
+Step=  571, Dmax= 1.9e-02 nm, Epot= -2.31742e+06 Fmax= 1.93710e+04, atom= 614Step=  572, Dmax= 9.3e-03 nm, Epot= -2.31799e+06 Fmax= 7.35897e+03, atom= 614
+Step=  573, Dmax= 1.1e-02 nm, Epot= -2.31807e+06 Fmax= 7.26280e+03, atom= 614
+Step=  574, Dmax= 1.3e-02 nm, Epot= -2.31805e+06 Fmax= 1.02294e+04, atom= 614Step=  575, Dmax= 6.7e-03 nm, Epot= -2.31822e+06 Fmax= 1.51648e+03, atom= 614
+Step=  576, Dmax= 8.0e-03 nm, Epot= -2.31835e+06 Fmax= 9.00070e+03, atom= 614
+Step=  577, Dmax= 9.6e-03 nm, Epot= -2.31855e+06 Fmax= 3.62794e+03, atom= 614
+Step=  578, Dmax= 1.2e-02 nm, Epot= -2.31848e+06 Fmax= 1.15668e+04, atom= 614Step=  579, Dmax= 5.8e-03 nm, Epot= -2.31863e+06 Fmax= 3.94385e+03, atom= 614
+Step=  580, Dmax= 6.9e-03 nm, Epot= -2.31870e+06 Fmax= 5.13788e+03, atom= 614
+Step=  581, Dmax= 8.3e-03 nm, Epot= -2.31877e+06 Fmax= 5.77287e+03, atom= 614
+Step=  582, Dmax= 1.0e-02 nm, Epot= -2.31882e+06 Fmax= 7.29755e+03, atom= 614
+Step=  583, Dmax= 1.2e-02 nm, Epot= -2.31887e+06 Fmax= 8.42240e+03, atom= 614
+Step=  584, Dmax= 1.4e-02 nm, Epot= -2.31888e+06 Fmax= 1.03870e+04, atom= 614
+Step=  585, Dmax= 1.7e-02 nm, Epot= -2.31891e+06 Fmax= 1.22638e+04, atom= 614
+Step=  586, Dmax= 2.1e-02 nm, Epot= -2.31885e+06 Fmax= 1.47987e+04, atom= 614Step=  587, Dmax= 1.0e-02 nm, Epot= -2.31924e+06 Fmax= 1.34826e+03, atom= 614
+Step=  588, Dmax= 1.2e-02 nm, Epot= -2.31932e+06 Fmax= 1.48752e+04, atom= 614
+Step=  589, Dmax= 1.5e-02 nm, Epot= -2.31974e+06 Fmax= 4.67632e+03, atom= 614
+Step=  590, Dmax= 1.8e-02 nm, Epot= -2.31932e+06 Fmax= 1.89564e+04, atom= 614Step=  591, Dmax= 8.9e-03 nm, Epot= -2.31979e+06 Fmax= 7.08140e+03, atom= 614
+Step=  592, Dmax= 1.1e-02 nm, Epot= -2.31986e+06 Fmax= 6.96871e+03, atom= 614
+Step=  593, Dmax= 1.3e-02 nm, Epot= -2.31987e+06 Fmax= 9.94246e+03, atom= 614
+Step=  594, Dmax= 1.5e-02 nm, Epot= -2.31994e+06 Fmax= 1.02832e+04, atom= 614
+Step=  595, Dmax= 1.9e-02 nm, Epot= -2.31987e+06 Fmax= 1.40808e+04, atom= 614Step=  596, Dmax= 9.3e-03 nm, Epot= -2.32018e+06 Fmax= 1.83496e+03, atom= 614
+Step=  597, Dmax= 1.1e-02 nm, Epot= -2.32018e+06 Fmax= 1.27610e+04, atom= 614
+Step=  598, Dmax= 1.3e-02 nm, Epot= -2.32050e+06 Fmax= 4.72956e+03, atom= 614
+Step=  599, Dmax= 1.6e-02 nm, Epot= -2.32022e+06 Fmax= 1.61614e+04, atom= 614Step=  600, Dmax= 8.0e-03 nm, Epot= -2.32057e+06 Fmax= 5.76247e+03, atom= 614
+Step=  601, Dmax= 9.6e-03 nm, Epot= -2.32063e+06 Fmax= 6.84723e+03, atom= 614
+Step=  602, Dmax= 1.2e-02 nm, Epot= -2.32069e+06 Fmax= 8.25442e+03, atom= 614
+Step=  603, Dmax= 1.4e-02 nm, Epot= -2.32072e+06 Fmax= 9.91462e+03, atom= 614
+Step=  604, Dmax= 1.7e-02 nm, Epot= -2.32072e+06 Fmax= 1.18159e+04, atom= 614Step=  605, Dmax= 8.3e-03 nm, Epot= -2.32094e+06 Fmax= 1.00266e+03, atom= 614
+Step=  606, Dmax= 1.0e-02 nm, Epot= -2.32119e+06 Fmax= 1.20090e+04, atom= 614
+Step=  607, Dmax= 1.2e-02 nm, Epot= -2.32147e+06 Fmax= 3.67701e+03, atom= 614
+Step=  608, Dmax= 1.4e-02 nm, Epot= -2.32127e+06 Fmax= 1.52628e+04, atom= 614Step=  609, Dmax= 7.2e-03 nm, Epot= -2.32153e+06 Fmax= 5.75521e+03, atom= 614
+Step=  610, Dmax= 8.6e-03 nm, Epot= -2.32161e+06 Fmax= 5.52255e+03, atom= 614
+Step=  611, Dmax= 1.0e-02 nm, Epot= -2.32164e+06 Fmax= 8.04378e+03, atom= 614
+Step=  612, Dmax= 1.2e-02 nm, Epot= -2.32171e+06 Fmax= 8.19305e+03, atom= 614
+Step=  613, Dmax= 1.5e-02 nm, Epot= -2.32170e+06 Fmax= 1.13501e+04, atom= 614Step=  614, Dmax= 7.4e-03 nm, Epot= -2.32188e+06 Fmax= 1.53707e+03, atom= 614
+Step=  615, Dmax= 8.9e-03 nm, Epot= -2.32198e+06 Fmax= 1.01733e+04, atom= 614
+Step=  616, Dmax= 1.1e-02 nm, Epot= -2.32220e+06 Fmax= 3.86328e+03, atom= 614
+Step=  617, Dmax= 1.3e-02 nm, Epot= -2.32208e+06 Fmax= 1.29213e+04, atom= 614Step=  618, Dmax= 6.4e-03 nm, Epot= -2.32228e+06 Fmax= 4.55925e+03, atom= 614
+Step=  619, Dmax= 7.7e-03 nm, Epot= -2.32234e+06 Fmax= 5.55826e+03, atom= 614
+Step=  620, Dmax= 9.2e-03 nm, Epot= -2.32240e+06 Fmax= 6.56449e+03, atom= 614
+Step=  621, Dmax= 1.1e-02 nm, Epot= -2.32244e+06 Fmax= 8.01255e+03, atom= 614
+Step=  622, Dmax= 1.3e-02 nm, Epot= -2.32247e+06 Fmax= 9.43400e+03, atom= 614
+Step=  623, Dmax= 1.6e-02 nm, Epot= -2.32247e+06 Fmax= 1.15695e+04, atom= 614Step=  624, Dmax= 8.0e-03 nm, Epot= -2.32267e+06 Fmax= 1.02041e+03, atom= 614
+Step=  625, Dmax= 9.6e-03 nm, Epot= -2.32289e+06 Fmax= 1.16045e+04, atom= 614
+Step=  626, Dmax= 1.2e-02 nm, Epot= -2.32317e+06 Fmax= 3.49045e+03, atom= 614
+Step=  627, Dmax= 1.4e-02 nm, Epot= -2.32299e+06 Fmax= 1.45399e+04, atom= 745Step=  628, Dmax= 6.9e-03 nm, Epot= -2.32323e+06 Fmax= 5.56604e+03, atom= 745
+Step=  629, Dmax= 8.3e-03 nm, Epot= -2.32331e+06 Fmax= 5.29821e+03, atom= 745
+Step=  630, Dmax= 9.9e-03 nm, Epot= -2.32335e+06 Fmax= 7.76033e+03, atom= 745
+Step=  631, Dmax= 1.2e-02 nm, Epot= -2.32342e+06 Fmax= 7.89683e+03, atom= 745
+Step=  632, Dmax= 1.4e-02 nm, Epot= -2.32340e+06 Fmax= 1.08839e+04, atom= 745Step=  633, Dmax= 7.2e-03 nm, Epot= -2.32357e+06 Fmax= 1.53345e+03, atom= 745
+Step=  634, Dmax= 8.6e-03 nm, Epot= -2.32368e+06 Fmax= 9.65635e+03, atom= 745
+Step=  635, Dmax= 1.0e-02 nm, Epot= -2.32386e+06 Fmax= 3.89809e+03, atom= 745
+Step=  636, Dmax= 1.2e-02 nm, Epot= -2.32378e+06 Fmax= 1.23592e+04, atom= 745Step=  637, Dmax= 6.2e-03 nm, Epot= -2.32394e+06 Fmax= 4.20117e+03, atom= 745
+Step=  638, Dmax= 7.4e-03 nm, Epot= -2.32401e+06 Fmax= 5.56020e+03, atom= 745
+Step=  639, Dmax= 8.9e-03 nm, Epot= -2.32407e+06 Fmax= 6.11807e+03, atom= 745
+Step=  640, Dmax= 1.1e-02 nm, Epot= -2.32411e+06 Fmax= 7.91845e+03, atom= 745
+Step=  641, Dmax= 1.3e-02 nm, Epot= -2.32416e+06 Fmax= 8.91734e+03, atom= 745
+Step=  642, Dmax= 1.5e-02 nm, Epot= -2.32416e+06 Fmax= 1.12693e+04, atom= 745
+Step=  643, Dmax= 1.8e-02 nm, Epot= -2.32417e+06 Fmax= 1.30010e+04, atom= 745
+Step=  644, Dmax= 2.2e-02 nm, Epot= -2.32409e+06 Fmax= 1.60278e+04, atom= 745Step=  645, Dmax= 1.1e-02 nm, Epot= -2.32451e+06 Fmax= 1.60942e+03, atom= 745
+Step=  646, Dmax= 1.3e-02 nm, Epot= -2.32449e+06 Fmax= 1.56700e+04, atom= 745Step=  647, Dmax= 6.6e-03 nm, Epot= -2.32463e+06 Fmax= 6.99388e+03, atom= 745
+Step=  648, Dmax= 8.0e-03 nm, Epot= -2.32475e+06 Fmax= 3.49481e+03, atom= 745
+Step=  649, Dmax= 9.6e-03 nm, Epot= -2.32475e+06 Fmax= 9.06915e+03, atom= 745
+Step=  650, Dmax= 1.1e-02 nm, Epot= -2.32489e+06 Fmax= 6.03024e+03, atom= 745
+Step=  651, Dmax= 1.4e-02 nm, Epot= -2.32482e+06 Fmax= 1.20837e+04, atom= 745Step=  652, Dmax= 6.9e-03 nm, Epot= -2.32499e+06 Fmax= 2.99019e+03, atom= 745
+Step=  653, Dmax= 8.3e-03 nm, Epot= -2.32504e+06 Fmax= 7.90103e+03, atom= 745
+Step=  654, Dmax= 9.9e-03 nm, Epot= -2.32516e+06 Fmax= 5.11035e+03, atom= 745
+Step=  655, Dmax= 1.2e-02 nm, Epot= -2.32512e+06 Fmax= 1.05227e+04, atom= 745Step=  656, Dmax= 6.0e-03 nm, Epot= -2.32524e+06 Fmax= 2.73376e+03, atom= 745
+Step=  657, Dmax= 7.1e-03 nm, Epot= -2.32530e+06 Fmax= 6.61400e+03, atom= 745
+Step=  658, Dmax= 8.6e-03 nm, Epot= -2.32540e+06 Fmax= 4.66316e+03, atom= 745
+Step=  659, Dmax= 1.0e-02 nm, Epot= -2.32541e+06 Fmax= 8.83967e+03, atom= 745
+Step=  660, Dmax= 1.2e-02 nm, Epot= -2.32552e+06 Fmax= 7.38288e+03, atom= 745
+Step=  661, Dmax= 1.5e-02 nm, Epot= -2.32547e+06 Fmax= 1.20915e+04, atom= 745Step=  662, Dmax= 7.4e-03 nm, Epot= -2.32564e+06 Fmax= 2.31188e+03, atom= 745
+Step=  663, Dmax= 8.9e-03 nm, Epot= -2.32569e+06 Fmax= 9.41136e+03, atom= 745
+Step=  664, Dmax= 1.1e-02 nm, Epot= -2.32585e+06 Fmax= 4.57453e+03, atom= 745
+Step=  665, Dmax= 1.3e-02 nm, Epot= -2.32578e+06 Fmax= 1.22197e+04, atom= 745Step=  666, Dmax= 6.4e-03 nm, Epot= -2.32593e+06 Fmax= 3.85393e+03, atom= 745
+Step=  667, Dmax= 7.7e-03 nm, Epot= -2.32599e+06 Fmax= 6.20885e+03, atom= 745
+Step=  668, Dmax= 9.2e-03 nm, Epot= -2.32606e+06 Fmax= 5.90885e+03, atom= 745
+Step=  669, Dmax= 1.1e-02 nm, Epot= -2.32608e+06 Fmax= 8.60905e+03, atom= 745
+Step=  670, Dmax= 1.3e-02 nm, Epot= -2.32615e+06 Fmax= 8.81955e+03, atom= 745
+Step=  671, Dmax= 1.6e-02 nm, Epot= -2.32613e+06 Fmax= 1.21136e+04, atom= 745Step=  672, Dmax= 8.0e-03 nm, Epot= -2.32632e+06 Fmax= 1.59834e+03, atom= 745
+Step=  673, Dmax= 9.6e-03 nm, Epot= -2.32639e+06 Fmax= 1.10464e+04, atom= 745
+Step=  674, Dmax= 1.1e-02 nm, Epot= -2.32662e+06 Fmax= 3.98933e+03, atom= 745
+Step=  675, Dmax= 1.4e-02 nm, Epot= -2.32648e+06 Fmax= 1.40439e+04, atom= 745Step=  676, Dmax= 6.9e-03 nm, Epot= -2.32668e+06 Fmax= 5.06365e+03, atom= 745
+Step=  677, Dmax= 8.3e-03 nm, Epot= -2.32674e+06 Fmax= 5.76167e+03, atom= 745
+Step=  678, Dmax= 9.9e-03 nm, Epot= -2.32679e+06 Fmax= 7.25725e+03, atom= 745
+Step=  679, Dmax= 1.2e-02 nm, Epot= -2.32683e+06 Fmax= 8.34977e+03, atom= 745
+Step=  680, Dmax= 1.4e-02 nm, Epot= -2.32685e+06 Fmax= 1.03738e+04, atom= 745
+Step=  681, Dmax= 1.7e-02 nm, Epot= -2.32687e+06 Fmax= 1.21258e+04, atom= 745
+Step=  682, Dmax= 2.1e-02 nm, Epot= -2.32682e+06 Fmax= 1.48001e+04, atom= 745Step=  683, Dmax= 1.0e-02 nm, Epot= -2.32713e+06 Fmax= 1.41948e+03, atom= 745
+Step=  684, Dmax= 1.2e-02 nm, Epot= -2.32721e+06 Fmax= 1.45828e+04, atom= 745
+Step=  685, Dmax= 1.5e-02 nm, Epot= -2.32754e+06 Fmax= 4.86420e+03, atom= 745
+Step=  686, Dmax= 1.8e-02 nm, Epot= -2.32722e+06 Fmax= 1.85736e+04, atom= 745Step=  687, Dmax= 8.9e-03 nm, Epot= -2.32759e+06 Fmax= 6.79536e+03, atom= 745
+Step=  688, Dmax= 1.1e-02 nm, Epot= -2.32764e+06 Fmax= 7.19315e+03, atom= 745
+Step=  689, Dmax= 1.3e-02 nm, Epot= -2.32767e+06 Fmax= 9.59307e+03, atom= 745
+Step=  690, Dmax= 1.5e-02 nm, Epot= -2.32772e+06 Fmax= 1.05330e+04, atom= 745
+Step=  691, Dmax= 1.8e-02 nm, Epot= -2.32767e+06 Fmax= 1.36647e+04, atom= 745Step=  692, Dmax= 9.2e-03 nm, Epot= -2.32792e+06 Fmax= 1.50125e+03, atom= 745
+Step=  693, Dmax= 1.1e-02 nm, Epot= -2.32798e+06 Fmax= 1.31308e+04, atom= 745
+Step=  694, Dmax= 1.3e-02 nm, Epot= -2.32826e+06 Fmax= 4.24716e+03, atom= 745
+Step=  695, Dmax= 1.6e-02 nm, Epot= -2.32804e+06 Fmax= 1.65536e+04, atom= 745Step=  696, Dmax= 7.9e-03 nm, Epot= -2.32832e+06 Fmax= 6.20204e+03, atom= 745
+Step=  697, Dmax= 9.5e-03 nm, Epot= -2.32838e+06 Fmax= 6.31278e+03, atom= 745
+Step=  698, Dmax= 1.1e-02 nm, Epot= -2.32841e+06 Fmax= 8.72078e+03, atom= 745
+Step=  699, Dmax= 1.4e-02 nm, Epot= -2.32846e+06 Fmax= 9.31848e+03, atom= 745
+Step=  700, Dmax= 1.6e-02 nm, Epot= -2.32844e+06 Fmax= 1.23019e+04, atom= 745Step=  701, Dmax= 8.2e-03 nm, Epot= -2.32863e+06 Fmax= 1.54473e+03, atom= 745
+Step=  702, Dmax= 9.9e-03 nm, Epot= -2.32872e+06 Fmax= 1.13339e+04, atom= 745
+Step=  703, Dmax= 1.2e-02 nm, Epot= -2.32893e+06 Fmax= 4.27500e+03, atom= 745
+Step=  704, Dmax= 1.4e-02 nm, Epot= -2.32880e+06 Fmax= 1.44733e+04, atom= 745Step=  705, Dmax= 7.1e-03 nm, Epot= -2.32899e+06 Fmax= 5.06020e+03, atom= 745
+Step=  706, Dmax= 8.5e-03 nm, Epot= -2.32905e+06 Fmax= 6.17497e+03, atom= 745
+Step=  707, Dmax= 1.0e-02 nm, Epot= -2.32909e+06 Fmax= 7.28179e+03, atom= 745
+Step=  708, Dmax= 1.2e-02 nm, Epot= -2.32912e+06 Fmax= 8.87722e+03, atom= 745
+Step=  709, Dmax= 1.5e-02 nm, Epot= -2.32915e+06 Fmax= 1.05224e+04, atom= 745
+Step=  710, Dmax= 1.8e-02 nm, Epot= -2.32916e+06 Fmax= 1.27170e+04, atom= 745
+Step=  711, Dmax= 2.1e-02 nm, Epot= -2.32913e+06 Fmax= 1.52501e+04, atom= 745Step=  712, Dmax= 1.1e-02 nm, Epot= -2.32943e+06 Fmax= 1.18071e+03, atom= 745
+Step=  713, Dmax= 1.3e-02 nm, Epot= -2.32953e+06 Fmax= 1.58223e+04, atom= 745
+Step=  714, Dmax= 1.5e-02 nm, Epot= -2.32991e+06 Fmax= 4.27554e+03, atom= 745
+Step=  715, Dmax= 1.8e-02 nm, Epot= -2.32955e+06 Fmax= 1.96667e+04, atom= 745Step=  716, Dmax= 9.2e-03 nm, Epot= -2.32994e+06 Fmax= 7.76162e+03, atom= 745
+Step=  717, Dmax= 1.1e-02 nm, Epot= -2.33003e+06 Fmax= 6.70745e+03, atom= 745
+Step=  718, Dmax= 1.3e-02 nm, Epot= -2.33001e+06 Fmax= 1.06473e+04, atom= 745Step=  719, Dmax= 6.6e-03 nm, Epot= -2.33012e+06 Fmax= 2.00383e+03, atom= 745
+Step=  720, Dmax= 7.9e-03 nm, Epot= -2.33020e+06 Fmax= 8.36988e+03, atom= 745
+Step=  721, Dmax= 9.5e-03 nm, Epot= -2.33033e+06 Fmax= 4.15740e+03, atom= 745
+Step=  722, Dmax= 1.1e-02 nm, Epot= -2.33030e+06 Fmax= 1.08538e+04, atom= 745Step=  723, Dmax= 5.7e-03 nm, Epot= -2.33040e+06 Fmax= 3.32313e+03, atom= 745
+Step=  724, Dmax= 6.9e-03 nm, Epot= -2.33045e+06 Fmax= 5.70518e+03, atom= 745
+Step=  725, Dmax= 8.2e-03 nm, Epot= -2.33052e+06 Fmax= 5.08354e+03, atom= 745
+Step=  726, Dmax= 9.9e-03 nm, Epot= -2.33056e+06 Fmax= 7.89130e+03, atom= 745
+Step=  727, Dmax= 1.2e-02 nm, Epot= -2.33063e+06 Fmax= 7.66164e+03, atom= 745
+Step=  728, Dmax= 1.4e-02 nm, Epot= -2.33062e+06 Fmax= 1.09951e+04, atom= 745Step=  729, Dmax= 7.1e-03 nm, Epot= -2.33075e+06 Fmax= 1.70625e+03, atom= 745
+Step=  730, Dmax= 8.5e-03 nm, Epot= -2.33083e+06 Fmax= 9.42314e+03, atom= 745
+Step=  731, Dmax= 1.0e-02 nm, Epot= -2.33098e+06 Fmax= 4.04228e+03, atom= 745
+Step=  732, Dmax= 1.2e-02 nm, Epot= -2.33093e+06 Fmax= 1.21066e+04, atom= 745Step=  733, Dmax= 6.1e-03 nm, Epot= -2.33105e+06 Fmax= 4.00313e+03, atom= 745
+Step=  734, Dmax= 7.4e-03 nm, Epot= -2.33110e+06 Fmax= 5.69471e+03, atom= 745
+Step=  735, Dmax= 8.8e-03 nm, Epot= -2.33116e+06 Fmax= 5.90682e+03, atom= 745
+Step=  736, Dmax= 1.1e-02 nm, Epot= -2.33119e+06 Fmax= 8.03716e+03, atom= 745
+Step=  737, Dmax= 1.3e-02 nm, Epot= -2.33123e+06 Fmax= 8.68737e+03, atom= 745
+Step=  738, Dmax= 1.5e-02 nm, Epot= -2.33123e+06 Fmax= 1.13656e+04, atom= 745
+Step=  739, Dmax= 1.8e-02 nm, Epot= -2.33126e+06 Fmax= 1.27443e+04, atom= 745
+Step=  740, Dmax= 2.2e-02 nm, Epot= -2.33119e+06 Fmax= 1.60922e+04, atom= 745Step=  741, Dmax= 1.1e-02 nm, Epot= -2.33151e+06 Fmax= 1.76859e+03, atom= 745
+Step=  742, Dmax= 1.3e-02 nm, Epot= -2.33151e+06 Fmax= 1.54281e+04, atom= 745
+Step=  743, Dmax= 1.6e-02 nm, Epot= -2.33184e+06 Fmax= 5.41007e+03, atom= 745
+Step=  744, Dmax= 1.9e-02 nm, Epot= -2.33151e+06 Fmax= 1.97019e+04, atom= 745Step=  745, Dmax= 9.5e-03 nm, Epot= -2.33188e+06 Fmax= 7.07702e+03, atom= 745
+Step=  746, Dmax= 1.1e-02 nm, Epot= -2.33193e+06 Fmax= 7.90796e+03, atom= 745
+Step=  747, Dmax= 1.4e-02 nm, Epot= -2.33196e+06 Fmax= 1.00792e+04, atom= 745
+Step=  748, Dmax= 1.6e-02 nm, Epot= -2.33198e+06 Fmax= 1.14777e+04, atom= 745
+Step=  749, Dmax= 2.0e-02 nm, Epot= -2.33194e+06 Fmax= 1.44518e+04, atom= 745Step=  750, Dmax= 9.9e-03 nm, Epot= -2.33218e+06 Fmax= 1.41284e+03, atom= 745
+Step=  751, Dmax= 1.2e-02 nm, Epot= -2.33225e+06 Fmax= 1.42872e+04, atom= 745
+Step=  752, Dmax= 1.4e-02 nm, Epot= -2.33254e+06 Fmax= 4.33665e+03, atom= 745
+Step=  753, Dmax= 1.7e-02 nm, Epot= -2.33229e+06 Fmax= 1.79203e+04, atom= 745Step=  754, Dmax= 8.5e-03 nm, Epot= -2.33258e+06 Fmax= 6.84778e+03, atom= 745
+Step=  755, Dmax= 1.0e-02 nm, Epot= -2.33265e+06 Fmax= 6.56449e+03, atom= 745
+Step=  756, Dmax= 1.2e-02 nm, Epot= -2.33266e+06 Fmax= 9.53625e+03, atom= 745
+Step=  757, Dmax= 1.5e-02 nm, Epot= -2.33271e+06 Fmax= 9.79454e+03, atom= 745
+Step=  758, Dmax= 1.8e-02 nm, Epot= -2.33268e+06 Fmax= 1.33608e+04, atom= 745Step=  759, Dmax= 8.8e-03 nm, Epot= -2.33288e+06 Fmax= 1.84422e+03, atom= 745
+Step=  760, Dmax= 1.1e-02 nm, Epot= -2.33292e+06 Fmax= 1.19803e+04, atom= 745
+Step=  761, Dmax= 1.3e-02 nm, Epot= -2.33313e+06 Fmax= 4.74325e+03, atom= 745
+Step=  762, Dmax= 1.5e-02 nm, Epot= -2.33298e+06 Fmax= 1.53499e+04, atom= 745Step=  763, Dmax= 7.6e-03 nm, Epot= -2.33318e+06 Fmax= 5.25847e+03, atom= 745
+Step=  764, Dmax= 9.2e-03 nm, Epot= -2.33323e+06 Fmax= 6.77668e+03, atom= 745
+Step=  765, Dmax= 1.1e-02 nm, Epot= -2.33328e+06 Fmax= 7.64301e+03, atom= 745
+Step=  766, Dmax= 1.3e-02 nm, Epot= -2.33330e+06 Fmax= 9.66510e+03, atom= 745
+Step=  767, Dmax= 1.6e-02 nm, Epot= -2.33333e+06 Fmax= 1.11226e+04, atom= 745
+Step=  768, Dmax= 1.9e-02 nm, Epot= -2.33331e+06 Fmax= 1.37680e+04, atom= 745Step=  769, Dmax= 9.5e-03 nm, Epot= -2.33352e+06 Fmax= 1.39313e+03, atom= 745
+Step=  770, Dmax= 1.1e-02 nm, Epot= -2.33363e+06 Fmax= 1.34052e+04, atom= 745
+Step=  771, Dmax= 1.4e-02 nm, Epot= -2.33387e+06 Fmax= 4.56826e+03, atom= 745
+Step=  772, Dmax= 1.6e-02 nm, Epot= -2.33367e+06 Fmax= 1.70713e+04, atom= 745Step=  773, Dmax= 8.2e-03 nm, Epot= -2.33391e+06 Fmax= 6.20041e+03, atom= 745
+Step=  774, Dmax= 9.8e-03 nm, Epot= -2.33397e+06 Fmax= 6.73054e+03, atom= 745
+Step=  775, Dmax= 1.2e-02 nm, Epot= -2.33400e+06 Fmax= 8.77895e+03, atom= 745
+Step=  776, Dmax= 1.4e-02 nm, Epot= -2.33404e+06 Fmax= 9.82465e+03, atom= 745
+Step=  777, Dmax= 1.7e-02 nm, Epot= -2.33404e+06 Fmax= 1.25326e+04, atom= 745Step=  778, Dmax= 8.5e-03 nm, Epot= -2.33418e+06 Fmax= 1.29874e+03, atom= 745
+Step=  779, Dmax= 1.0e-02 nm, Epot= -2.33431e+06 Fmax= 1.22404e+04, atom= 745
+Step=  780, Dmax= 1.2e-02 nm, Epot= -2.33452e+06 Fmax= 3.82103e+03, atom= 745
+Step=  781, Dmax= 1.5e-02 nm, Epot= -2.33439e+06 Fmax= 1.54099e+04, atom= 745Step=  782, Dmax= 7.3e-03 nm, Epot= -2.33457e+06 Fmax= 5.83607e+03, atom= 745
+Step=  783, Dmax= 8.8e-03 nm, Epot= -2.33463e+06 Fmax= 5.72932e+03, atom= 745
+Step=  784, Dmax= 1.1e-02 nm, Epot= -2.33466e+06 Fmax= 8.16671e+03, atom= 745
+Step=  785, Dmax= 1.3e-02 nm, Epot= -2.33471e+06 Fmax= 8.50236e+03, atom= 745
+Step=  786, Dmax= 1.5e-02 nm, Epot= -2.33470e+06 Fmax= 1.14828e+04, atom= 745Step=  787, Dmax= 7.6e-03 nm, Epot= -2.33483e+06 Fmax= 1.53548e+03, atom= 745
+Step=  788, Dmax= 9.1e-03 nm, Epot= -2.33493e+06 Fmax= 1.03762e+04, atom= 745
+Step=  789, Dmax= 1.1e-02 nm, Epot= -2.33509e+06 Fmax= 4.04974e+03, atom= 745
+Step=  790, Dmax= 1.3e-02 nm, Epot= -2.33502e+06 Fmax= 1.32670e+04, atom= 745Step=  791, Dmax= 6.6e-03 nm, Epot= -2.33515e+06 Fmax= 4.57513e+03, atom= 745
+Step=  792, Dmax= 7.9e-03 nm, Epot= -2.33520e+06 Fmax= 5.81058e+03, atom= 745
+Step=  793, Dmax= 9.5e-03 nm, Epot= -2.33525e+06 Fmax= 6.62390e+03, atom= 745
+Step=  794, Dmax= 1.1e-02 nm, Epot= -2.33528e+06 Fmax= 8.31255e+03, atom= 745
+Step=  795, Dmax= 1.4e-02 nm, Epot= -2.33532e+06 Fmax= 9.61308e+03, atom= 745
+Step=  796, Dmax= 1.6e-02 nm, Epot= -2.33533e+06 Fmax= 1.18686e+04, atom= 745
+Step=  797, Dmax= 2.0e-02 nm, Epot= -2.33532e+06 Fmax= 1.39727e+04, atom= 745Step=  798, Dmax= 9.8e-03 nm, Epot= -2.33553e+06 Fmax= 9.78483e+02, atom= 745
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 1000 in 799 steps
+Potential Energy  = -2.3355275e+06
+Maximum force     =  9.7848267e+02 on atom 745
+Norm of force     =  1.7028036e+01
+
+GROMACS reminds you: "There are only two hard things in computer science - cache invalidation, naming things and off-by-one errors." (Anonymous)
+
+                      :-) GROMACS - gmx grompp, 2023.3 (-:
+
+Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
+Data prefix:  /opt/apps/gromacs/2023.3/build
+Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/spidroin-solution-build/gromacs
+Command line:
+  gmx_mpi grompp -f step4.1_equilibration.mdp -o step4.1_equilibration.tpr -c step4.0_minimization.gro -r step3_input.gro -p topol.top -n index.ndx
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+
+NOTE 1 [file step4.1_equilibration.mdp]:
+  leapfrog does not yet support Nose-Hoover chains, nhchainlength reset to
+  1
+
+Generating 1-4 interactions: fudge = 1
+Number of degrees of freedom in T-Coupling group SOLU is 11430.00
+Number of degrees of freedom in T-Coupling group SOLV is 277521.00
+
+NOTE 2 [file step4.1_equilibration.mdp]:
+  Removing center of mass motion in the presence of position restraints
+  might cause artifacts. When you are using position restraints to
+  equilibrate a macro-molecule, the artifacts are usually negligible.
+
+
+There were 2 NOTEs
+
+GROMACS reminds you: "There are only two hard things in computer science - cache invalidation, naming things and off-by-one errors." (Anonymous)
+
+Setting the LD random seed to -69305473
+
+Generated 859 of the 861 non-bonded parameter combinations
+
+Generated 496 of the 861 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'PROA'
+
+turning H bonds into constraints...
+
+Excluding 1 bonded neighbours molecule type 'SOD'
+
+turning H bonds into constraints...
+
+Excluding 1 bonded neighbours molecule type 'CLA'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'TIP3'
+
+turning H bonds into constraints...
+
+Setting gen_seed to -1099486643
+
+Velocities were taken from a Maxwell distribution at 303.15 K
+
+The largest distance between excluded atoms is 0.424 nm between atom 1883 and 1891
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 303.15 K
+
+Calculated rlist for 1x1 atom pair-list as 1.238 nm, buffer size 0.038 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.200 nm, buffer size 0.000 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 96x96x96, spacing 0.120 0.120 0.120
+
+Estimate for the relative computational load of the PME mesh part: 0.19
+
+This run will generate roughly 114 Mb of data
+                      :-) GROMACS - gmx mdrun, 2023.3 (-:
+
+Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
+Data prefix:  /opt/apps/gromacs/2023.3/build
+Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/spidroin-solution-build/gromacs
+Command line:
+  gmx_mpi mdrun -v -deffnm step4.1_equilibration
+
+Compiled SIMD is AVX2_256, but AVX_512 might be faster (see log).
+Reading file step4.1_equilibration.tpr, VERSION 2023.3 (single precision)
+Changing nstlist from 20 to 100, rlist from 1.2 to 1.297
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
+  PP:0,PME:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+PME tasks will do all aspects on the GPU
+Using 1 MPI process
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+starting mdrun 'Title'
+125000 steps,    125.0 ps.
+step 0step 100, will finish Fri Jun  7 16:02:27 2024step 200, will finish Fri Jun  7 16:01:57 2024step 300, remaining wall clock time:   298 s          step 400, remaining wall clock time:   293 s          step 500, remaining wall clock time:   289 s          step 600, remaining wall clock time:   288 s          step 700, remaining wall clock time:   286 s          step 800, remaining wall clock time:   285 s          step 900, remaining wall clock time:   284 s          step 1000, remaining wall clock time:   284 s          step 1100, remaining wall clock time:   283 s          step 1200, remaining wall clock time:   282 s          step 1300, remaining wall clock time:   282 s          step 1400, remaining wall clock time:   282 s          step 1500, remaining wall clock time:   281 s          step 1600, remaining wall clock time:   281 s          step 1700, remaining wall clock time:   281 s          step 1800, remaining wall clock time:   280 s          step 1900, remaining wall clock time:   280 s          step 2000, remaining wall clock time:   280 s          step 2100, remaining wall clock time:   280 s          step 2200, remaining wall clock time:   279 s          step 2400: timed with pme grid 96 96 96, coulomb cutoff 1.200: 1028.1 M-cycles
+step 2600: timed with pme grid 80 80 80, coulomb cutoff 1.438: 1105.2 M-cycles
+step 2800: timed with pme grid 72 72 72, coulomb cutoff 1.597: 1173.7 M-cycles
+step 3000: timed with pme grid 80 80 80, coulomb cutoff 1.438: 1105.2 M-cycles
+step 3200: timed with pme grid 84 84 84, coulomb cutoff 1.369: 1086.8 M-cycles
+step 3400: timed with pme grid 96 96 96, coulomb cutoff 1.200: 1024.9 M-cycles
+              optimal pme grid 96 96 96, coulomb cutoff 1.200
+step 3500, remaining wall clock time:   289 s          step 3600, remaining wall clock time:   289 s          step 3700, remaining wall clock time:   288 s          step 3800, remaining wall clock time:   288 s          step 3900, remaining wall clock time:   287 s          step 4000, remaining wall clock time:   287 s          step 4100, remaining wall clock time:   286 s          step 4200, remaining wall clock time:   286 s          step 4300, remaining wall clock time:   286 s          step 4400, remaining wall clock time:   285 s          step 4500, remaining wall clock time:   285 s          step 4600, remaining wall clock time:   284 s          step 4700, remaining wall clock time:   284 s          step 4800, remaining wall clock time:   284 s          step 4900, remaining wall clock time:   283 s          step 5000, remaining wall clock time:   283 s          step 5100, remaining wall clock time:   283 s          step 5200, remaining wall clock time:   282 s          step 5300, remaining wall clock time:   282 s          step 5400, remaining wall clock time:   282 s          step 5500, remaining wall clock time:   281 s          step 5600, remaining wall clock time:   281 s          step 5700, remaining wall clock time:   281 s          step 5800, remaining wall clock time:   280 s          step 5900, remaining wall clock time:   280 s          step 6000, remaining wall clock time:   280 s          step 6100, remaining wall clock time:   279 s          step 6200, remaining wall clock time:   279 s          step 6300, remaining wall clock time:   279 s          step 6400, remaining wall clock time:   278 s          step 6500, remaining wall clock time:   278 s          step 6600, remaining wall clock time:   278 s          step 6700, remaining wall clock time:   278 s          step 6800, remaining wall clock time:   277 s          step 6900, remaining wall clock time:   277 s          step 7000, remaining wall clock time:   277 s          step 7100, remaining wall clock time:   276 s          step 7200, remaining wall clock time:   276 s          step 7300, remaining wall clock time:   276 s          step 7400, remaining wall clock time:   276 s          step 7500, remaining wall clock time:   275 s          step 7600, remaining wall clock time:   275 s          step 7700, remaining wall clock time:   275 s          step 7800, remaining wall clock time:   274 s          step 7900, remaining wall clock time:   274 s          step 8000, remaining wall clock time:   274 s          step 8100, remaining wall clock time:   274 s          step 8200, remaining wall clock time:   273 s          step 8300, remaining wall clock time:   273 s          step 8400, remaining wall clock time:   273 s          step 8500, remaining wall clock time:   273 s          step 8600, remaining wall clock time:   272 s          step 8700, remaining wall clock time:   272 s          step 8800, remaining wall clock time:   272 s          step 8900, remaining wall clock time:   272 s          step 9000, remaining wall clock time:   271 s          step 9100, remaining wall clock time:   271 s          step 9200, remaining wall clock time:   271 s          step 9300, remaining wall clock time:   271 s          step 9400, remaining wall clock time:   270 s          step 9500, remaining wall clock time:   270 s          step 9600, remaining wall clock time:   270 s          step 9700, remaining wall clock time:   270 s          step 9800, remaining wall clock time:   270 s          step 9900, remaining wall clock time:   269 s          step 10000, remaining wall clock time:   269 s          step 10100, remaining wall clock time:   269 s          step 10200, remaining wall clock time:   269 s          step 10300, remaining wall clock time:   268 s          step 10400, remaining wall clock time:   268 s          step 10500, remaining wall clock time:   268 s          step 10600, remaining wall clock time:   268 s          step 10700, remaining wall clock time:   268 s          step 10800, remaining wall clock time:   267 s          step 10900, remaining wall clock time:   267 s          step 11000, remaining wall clock time:   267 s          step 11100, remaining wall clock time:   267 s          step 11200, remaining wall clock time:   266 s          step 11300, remaining wall clock time:   266 s          step 11400, remaining wall clock time:   266 s          step 11500, remaining wall clock time:   266 s          step 11600, remaining wall clock time:   265 s          step 11700, remaining wall clock time:   265 s          step 11800, remaining wall clock time:   265 s          step 11900, remaining wall clock time:   265 s          step 12000, remaining wall clock time:   265 s          step 12100, remaining wall clock time:   264 s          step 12200, remaining wall clock time:   264 s          step 12300, remaining wall clock time:   264 s          step 12400, remaining wall clock time:   264 s          step 12500, remaining wall clock time:   263 s          step 12600, remaining wall clock time:   263 s          step 12700, remaining wall clock time:   263 s          step 12800, remaining wall clock time:   263 s          step 12900, remaining wall clock time:   263 s          step 13000, remaining wall clock time:   262 s          step 13100, remaining wall clock time:   262 s          step 13200, remaining wall clock time:   262 s          step 13300, remaining wall clock time:   262 s          step 13400, remaining wall clock time:   261 s          step 13500, remaining wall clock time:   261 s          step 13600, remaining wall clock time:   261 s          step 13700, remaining wall clock time:   261 s          step 13800, remaining wall clock time:   261 s          step 13900, remaining wall clock time:   260 s          step 14000, remaining wall clock time:   260 s          step 14100, remaining wall clock time:   260 s          step 14200, remaining wall clock time:   260 s          step 14300, remaining wall clock time:   259 s          step 14400, remaining wall clock time:   259 s          step 14500, remaining wall clock time:   259 s          step 14600, remaining wall clock time:   259 s          step 14700, remaining wall clock time:   259 s          step 14800, remaining wall clock time:   258 s          step 14900, remaining wall clock time:   258 s          step 15000, remaining wall clock time:   258 s          step 15100, remaining wall clock time:   258 s          step 15200, remaining wall clock time:   258 s          step 15300, remaining wall clock time:   257 s          step 15400, remaining wall clock time:   257 s          step 15500, remaining wall clock time:   257 s          step 15600, remaining wall clock time:   257 s          step 15700, remaining wall clock time:   256 s          step 15800, remaining wall clock time:   256 s          step 15900, remaining wall clock time:   256 s          step 16000, remaining wall clock time:   256 s          step 16100, remaining wall clock time:   256 s          step 16200, remaining wall clock time:   255 s          step 16300, remaining wall clock time:   255 s          step 16400, remaining wall clock time:   255 s          step 16500, remaining wall clock time:   255 s          step 16600, remaining wall clock time:   255 s          step 16700, remaining wall clock time:   254 s          step 16800, remaining wall clock time:   254 s          step 16900, remaining wall clock time:   254 s          step 17000, remaining wall clock time:   254 s          step 17100, remaining wall clock time:   253 s          step 17200, remaining wall clock time:   253 s          step 17300, remaining wall clock time:   253 s          step 17400, remaining wall clock time:   253 s          step 17500, remaining wall clock time:   253 s          step 17600, remaining wall clock time:   252 s          step 17700, remaining wall clock time:   252 s          step 17800, remaining wall clock time:   252 s          step 17900, remaining wall clock time:   252 s          step 18000, remaining wall clock time:   251 s          step 18100, remaining wall clock time:   251 s          step 18200, remaining wall clock time:   251 s          step 18300, remaining wall clock time:   251 s          step 18400, remaining wall clock time:   251 s          step 18500, remaining wall clock time:   250 s          step 18600, remaining wall clock time:   250 s          step 18700, remaining wall clock time:   250 s          step 18800, remaining wall clock time:   250 s          step 18900, remaining wall clock time:   250 s          step 19000, remaining wall clock time:   249 s          step 19100, remaining wall clock time:   249 s          step 19200, remaining wall clock time:   249 s          step 19300, remaining wall clock time:   249 s          step 19400, remaining wall clock time:   248 s          step 19500, remaining wall clock time:   248 s          step 19600, remaining wall clock time:   248 s          step 19700, remaining wall clock time:   248 s          step 19800, remaining wall clock time:   248 s          step 19900, remaining wall clock time:   247 s          step 20000, remaining wall clock time:   247 s          step 20100, remaining wall clock time:   247 s          step 20200, remaining wall clock time:   247 s          step 20300, remaining wall clock time:   247 s          step 20400, remaining wall clock time:   246 s          step 20500, remaining wall clock time:   246 s          step 20600, remaining wall clock time:   246 s          step 20700, remaining wall clock time:   246 s          step 20800, remaining wall clock time:   245 s          step 20900, remaining wall clock time:   245 s          step 21000, remaining wall clock time:   245 s          step 21100, remaining wall clock time:   245 s          step 21200, remaining wall clock time:   245 s          step 21300, remaining wall clock time:   244 s          step 21400, remaining wall clock time:   244 s          step 21500, remaining wall clock time:   244 s          step 21600, remaining wall clock time:   244 s          step 21700, remaining wall clock time:   244 s          step 21800, remaining wall clock time:   243 s          step 21900, remaining wall clock time:   243 s          step 22000, remaining wall clock time:   243 s          step 22100, remaining wall clock time:   243 s          step 22200, remaining wall clock time:   242 s          step 22300, remaining wall clock time:   242 s          step 22400, remaining wall clock time:   242 s          step 22500, remaining wall clock time:   242 s          step 22600, remaining wall clock time:   242 s          step 22700, remaining wall clock time:   241 s          step 22800, remaining wall clock time:   241 s          step 22900, remaining wall clock time:   241 s          step 23000, remaining wall clock time:   241 s          step 23100, remaining wall clock time:   240 s          step 23200, remaining wall clock time:   240 s          step 23300, remaining wall clock time:   240 s          step 23400, remaining wall clock time:   240 s          step 23500, remaining wall clock time:   240 s          step 23600, remaining wall clock time:   239 s          step 23700, remaining wall clock time:   239 s          step 23800, remaining wall clock time:   239 s          step 23900, remaining wall clock time:   239 s          step 24000, remaining wall clock time:   239 s          step 24100, remaining wall clock time:   238 s          step 24200, remaining wall clock time:   238 s          step 24300, remaining wall clock time:   238 s          step 24400, remaining wall clock time:   238 s          step 24500, remaining wall clock time:   237 s          step 24600, remaining wall clock time:   237 s          step 24700, remaining wall clock time:   237 s          step 24800, remaining wall clock time:   237 s          step 24900, remaining wall clock time:   237 s          step 25000, remaining wall clock time:   236 s          step 25100, remaining wall clock time:   236 s          step 25200, remaining wall clock time:   237 s          step 25300, remaining wall clock time:   236 s          step 25400, remaining wall clock time:   236 s          step 25500, remaining wall clock time:   236 s          step 25600, remaining wall clock time:   236 s          step 25700, remaining wall clock time:   235 s          step 25800, remaining wall clock time:   235 s          step 25900, remaining wall clock time:   235 s          step 26000, remaining wall clock time:   235 s          step 26100, remaining wall clock time:   235 s          step 26200, remaining wall clock time:   234 s          step 26300, remaining wall clock time:   234 s          step 26400, remaining wall clock time:   234 s          step 26500, remaining wall clock time:   234 s          step 26600, remaining wall clock time:   233 s          step 26700, remaining wall clock time:   233 s          step 26800, remaining wall clock time:   233 s          step 26900, remaining wall clock time:   233 s          step 27000, remaining wall clock time:   233 s          step 27100, remaining wall clock time:   232 s          step 27200, remaining wall clock time:   232 s          step 27300, remaining wall clock time:   232 s          step 27400, remaining wall clock time:   232 s          step 27500, remaining wall clock time:   231 s          step 27600, remaining wall clock time:   231 s          step 27700, remaining wall clock time:   231 s          step 27800, remaining wall clock time:   231 s          step 27900, remaining wall clock time:   231 s          step 28000, remaining wall clock time:   230 s          step 28100, remaining wall clock time:   230 s          step 28200, remaining wall clock time:   230 s          step 28300, remaining wall clock time:   230 s          step 28400, remaining wall clock time:   229 s          step 28500, remaining wall clock time:   229 s          step 28600, remaining wall clock time:   229 s          step 28700, remaining wall clock time:   229 s          step 28800, remaining wall clock time:   228 s          step 28900, remaining wall clock time:   228 s          step 29000, remaining wall clock time:   228 s          step 29100, remaining wall clock time:   228 s          step 29200, remaining wall clock time:   228 s          step 29300, remaining wall clock time:   227 s          step 29400, remaining wall clock time:   227 s          step 29500, remaining wall clock time:   227 s          step 29600, remaining wall clock time:   227 s          step 29700, remaining wall clock time:   226 s          step 29800, remaining wall clock time:   226 s          step 29900, remaining wall clock time:   226 s          step 30000, remaining wall clock time:   226 s          step 30100, remaining wall clock time:   226 s          step 30200, remaining wall clock time:   225 s          step 30300, remaining wall clock time:   225 s          step 30400, remaining wall clock time:   225 s          step 30500, remaining wall clock time:   225 s          step 30600, remaining wall clock time:   224 s          step 30700, remaining wall clock time:   224 s          step 30800, remaining wall clock time:   224 s          step 30900, remaining wall clock time:   224 s          step 31000, remaining wall clock time:   224 s          step 31100, remaining wall clock time:   223 s          step 31200, remaining wall clock time:   223 s          step 31300, remaining wall clock time:   223 s          step 31400, remaining wall clock time:   223 s          step 31500, remaining wall clock time:   222 s          step 31600, remaining wall clock time:   222 s          step 31700, remaining wall clock time:   222 s          step 31800, remaining wall clock time:   222 s          step 31900, remaining wall clock time:   221 s          step 32000, remaining wall clock time:   221 s          step 32100, remaining wall clock time:   221 s          step 32200, remaining wall clock time:   221 s          step 32300, remaining wall clock time:   221 s          step 32400, remaining wall clock time:   220 s          step 32500, remaining wall clock time:   220 s          step 32600, remaining wall clock time:   220 s          step 32700, remaining wall clock time:   220 s          step 32800, remaining wall clock time:   219 s          step 32900, remaining wall clock time:   219 s          step 33000, remaining wall clock time:   219 s          step 33100, remaining wall clock time:   219 s          step 33200, remaining wall clock time:   219 s          step 33300, remaining wall clock time:   218 s          step 33400, remaining wall clock time:   218 s          step 33500, remaining wall clock time:   218 s          step 33600, remaining wall clock time:   218 s          step 33700, remaining wall clock time:   217 s          step 33800, remaining wall clock time:   217 s          step 33900, remaining wall clock time:   217 s          step 34000, remaining wall clock time:   217 s          step 34100, remaining wall clock time:   217 s          step 34200, remaining wall clock time:   216 s          step 34300, remaining wall clock time:   216 s          step 34400, remaining wall clock time:   216 s          step 34500, remaining wall clock time:   216 s          step 34600, remaining wall clock time:   215 s          step 34700, remaining wall clock time:   215 s          step 34800, remaining wall clock time:   215 s          step 34900, remaining wall clock time:   215 s          step 35000, remaining wall clock time:   215 s          step 35100, remaining wall clock time:   214 s          step 35200, remaining wall clock time:   214 s          step 35300, remaining wall clock time:   214 s          step 35400, remaining wall clock time:   214 s          step 35500, remaining wall clock time:   213 s          step 35600, remaining wall clock time:   213 s          step 35700, remaining wall clock time:   213 s          step 35800, remaining wall clock time:   213 s          step 35900, remaining wall clock time:   212 s          step 36000, remaining wall clock time:   212 s          step 36100, remaining wall clock time:   212 s          step 36200, remaining wall clock time:   212 s          step 36300, remaining wall clock time:   212 s          step 36400, remaining wall clock time:   211 s          step 36500, remaining wall clock time:   211 s          step 36600, remaining wall clock time:   211 s          step 36700, remaining wall clock time:   211 s          step 36800, remaining wall clock time:   210 s          step 36900, remaining wall clock time:   210 s          step 37000, remaining wall clock time:   210 s          step 37100, remaining wall clock time:   210 s          step 37200, remaining wall clock time:   210 s          step 37300, remaining wall clock time:   209 s          step 37400, remaining wall clock time:   209 s          step 37500, remaining wall clock time:   209 s          step 37600, remaining wall clock time:   209 s          step 37700, remaining wall clock time:   208 s          step 37800, remaining wall clock time:   208 s          step 37900, remaining wall clock time:   208 s          step 38000, remaining wall clock time:   208 s          step 38100, remaining wall clock time:   207 s          step 38200, remaining wall clock time:   207 s          step 38300, remaining wall clock time:   207 s          step 38400, remaining wall clock time:   207 s          step 38500, remaining wall clock time:   206 s          step 38600, remaining wall clock time:   206 s          step 38700, remaining wall clock time:   206 s          step 38800, remaining wall clock time:   206 s          step 38900, remaining wall clock time:   206 s          step 39000, remaining wall clock time:   205 s          step 39100, remaining wall clock time:   205 s          step 39200, remaining wall clock time:   205 s          step 39300, remaining wall clock time:   205 s          step 39400, remaining wall clock time:   204 s          step 39500, remaining wall clock time:   204 s          step 39600, remaining wall clock time:   204 s          step 39700, remaining wall clock time:   204 s          step 39800, remaining wall clock time:   204 s          step 39900, remaining wall clock time:   203 s          step 40000, remaining wall clock time:   203 s          step 40100, remaining wall clock time:   203 s          step 40200, remaining wall clock time:   203 s          step 40300, remaining wall clock time:   202 s          step 40400, remaining wall clock time:   202 s          step 40500, remaining wall clock time:   202 s          step 40600, remaining wall clock time:   202 s          step 40700, remaining wall clock time:   201 s          step 40800, remaining wall clock time:   201 s          step 40900, remaining wall clock time:   201 s          step 41000, remaining wall clock time:   201 s          step 41100, remaining wall clock time:   201 s          step 41200, remaining wall clock time:   200 s          step 41300, remaining wall clock time:   200 s          step 41400, remaining wall clock time:   200 s          step 41500, remaining wall clock time:   200 s          step 41600, remaining wall clock time:   199 s          step 41700, remaining wall clock time:   199 s          step 41800, remaining wall clock time:   199 s          step 41900, remaining wall clock time:   199 s          step 42000, remaining wall clock time:   198 s          step 42100, remaining wall clock time:   198 s          step 42200, remaining wall clock time:   198 s          step 42300, remaining wall clock time:   198 s          step 42400, remaining wall clock time:   198 s          step 42500, remaining wall clock time:   197 s          step 42600, remaining wall clock time:   197 s          step 42700, remaining wall clock time:   197 s          step 42800, remaining wall clock time:   197 s          step 42900, remaining wall clock time:   196 s          step 43000, remaining wall clock time:   196 s          step 43100, remaining wall clock time:   196 s          step 43200, remaining wall clock time:   196 s          step 43300, remaining wall clock time:   195 s          step 43400, remaining wall clock time:   195 s          step 43500, remaining wall clock time:   195 s          step 43600, remaining wall clock time:   195 s          step 43700, remaining wall clock time:   195 s          step 43800, remaining wall clock time:   194 s          step 43900, remaining wall clock time:   194 s          step 44000, remaining wall clock time:   194 s          step 44100, remaining wall clock time:   194 s          step 44200, remaining wall clock time:   193 s          step 44300, remaining wall clock time:   193 s          step 44400, remaining wall clock time:   193 s          step 44500, remaining wall clock time:   193 s          step 44600, remaining wall clock time:   192 s          step 44700, remaining wall clock time:   192 s          step 44800, remaining wall clock time:   192 s          step 44900, remaining wall clock time:   192 s          step 45000, remaining wall clock time:   192 s          step 45100, remaining wall clock time:   191 s          step 45200, remaining wall clock time:   191 s          step 45300, remaining wall clock time:   191 s          step 45400, remaining wall clock time:   191 s          step 45500, remaining wall clock time:   190 s          step 45600, remaining wall clock time:   190 s          step 45700, remaining wall clock time:   190 s          step 45800, remaining wall clock time:   190 s          step 45900, remaining wall clock time:   190 s          step 46000, remaining wall clock time:   189 s          step 46100, remaining wall clock time:   189 s          step 46200, remaining wall clock time:   189 s          step 46300, remaining wall clock time:   189 s          step 46400, remaining wall clock time:   188 s          step 46500, remaining wall clock time:   188 s          step 46600, remaining wall clock time:   188 s          step 46700, remaining wall clock time:   188 s          step 46800, remaining wall clock time:   187 s          step 46900, remaining wall clock time:   187 s          step 47000, remaining wall clock time:   187 s          step 47100, remaining wall clock time:   187 s          step 47200, remaining wall clock time:   187 s          step 47300, remaining wall clock time:   186 s          step 47400, remaining wall clock time:   186 s          step 47500, remaining wall clock time:   186 s          step 47600, remaining wall clock time:   186 s          step 47700, remaining wall clock time:   185 s          step 47800, remaining wall clock time:   185 s          step 47900, remaining wall clock time:   185 s          step 48000, remaining wall clock time:   185 s          step 48100, remaining wall clock time:   184 s          step 48200, remaining wall clock time:   184 s          step 48300, remaining wall clock time:   184 s          step 48400, remaining wall clock time:   184 s          step 48500, remaining wall clock time:   183 s          step 48600, remaining wall clock time:   183 s          step 48700, remaining wall clock time:   183 s          step 48800, remaining wall clock time:   183 s          step 48900, remaining wall clock time:   183 s          step 49000, remaining wall clock time:   182 s          step 49100, remaining wall clock time:   182 s          step 49200, remaining wall clock time:   182 s          step 49300, remaining wall clock time:   182 s          step 49400, remaining wall clock time:   181 s          step 49500, remaining wall clock time:   181 s          step 49600, remaining wall clock time:   181 s          step 49700, remaining wall clock time:   181 s          step 49800, remaining wall clock time:   180 s          step 49900, remaining wall clock time:   180 s          step 50000, remaining wall clock time:   180 s          step 50100, remaining wall clock time:   180 s          step 50200, remaining wall clock time:   180 s          step 50300, remaining wall clock time:   179 s          step 50400, remaining wall clock time:   179 s          step 50500, remaining wall clock time:   179 s          step 50600, remaining wall clock time:   179 s          step 50700, remaining wall clock time:   178 s          step 50800, remaining wall clock time:   178 s          step 50900, remaining wall clock time:   178 s          step 51000, remaining wall clock time:   178 s          step 51100, remaining wall clock time:   177 s          step 51200, remaining wall clock time:   177 s          step 51300, remaining wall clock time:   177 s          step 51400, remaining wall clock time:   177 s          step 51500, remaining wall clock time:   176 s          step 51600, remaining wall clock time:   176 s          step 51700, remaining wall clock time:   176 s          step 51800, remaining wall clock time:   176 s          step 51900, remaining wall clock time:   176 s          step 52000, remaining wall clock time:   175 s          step 52100, remaining wall clock time:   175 s          step 52200, remaining wall clock time:   175 s          step 52300, remaining wall clock time:   175 s          step 52400, remaining wall clock time:   174 s          step 52500, remaining wall clock time:   174 s          step 52600, remaining wall clock time:   174 s          step 52700, remaining wall clock time:   174 s          step 52800, remaining wall clock time:   173 s          step 52900, remaining wall clock time:   173 s          step 53000, remaining wall clock time:   173 s          step 53100, remaining wall clock time:   173 s          step 53200, remaining wall clock time:   173 s          step 53300, remaining wall clock time:   172 s          step 53400, remaining wall clock time:   172 s          step 53500, remaining wall clock time:   172 s          step 53600, remaining wall clock time:   172 s          step 53700, remaining wall clock time:   171 s          step 53800, remaining wall clock time:   171 s          step 53900, remaining wall clock time:   171 s          step 54000, remaining wall clock time:   171 s          step 54100, remaining wall clock time:   170 s          step 54200, remaining wall clock time:   170 s          step 54300, remaining wall clock time:   170 s          step 54400, remaining wall clock time:   170 s          step 54500, remaining wall clock time:   169 s          step 54600, remaining wall clock time:   169 s          step 54700, remaining wall clock time:   169 s          step 54800, remaining wall clock time:   169 s          step 54900, remaining wall clock time:   169 s          step 55000, remaining wall clock time:   168 s          step 55100, remaining wall clock time:   168 s          step 55200, remaining wall clock time:   168 s          step 55300, remaining wall clock time:   168 s          step 55400, remaining wall clock time:   167 s          step 55500, remaining wall clock time:   167 s          step 55600, remaining wall clock time:   167 s          step 55700, remaining wall clock time:   167 s          step 55800, remaining wall clock time:   166 s          step 55900, remaining wall clock time:   166 s          step 56000, remaining wall clock time:   166 s          step 56100, remaining wall clock time:   166 s          step 56200, remaining wall clock time:   165 s          step 56300, remaining wall clock time:   165 s          step 56400, remaining wall clock time:   165 s          step 56500, remaining wall clock time:   165 s          step 56600, remaining wall clock time:   165 s          step 56700, remaining wall clock time:   164 s          step 56800, remaining wall clock time:   164 s          step 56900, remaining wall clock time:   164 s          step 57000, remaining wall clock time:   164 s          step 57100, remaining wall clock time:   163 s          step 57200, remaining wall clock time:   163 s          step 57300, remaining wall clock time:   163 s          step 57400, remaining wall clock time:   163 s          step 57500, remaining wall clock time:   162 s          step 57600, remaining wall clock time:   162 s          step 57700, remaining wall clock time:   162 s          step 57800, remaining wall clock time:   162 s          step 57900, remaining wall clock time:   161 s          step 58000, remaining wall clock time:   161 s          step 58100, remaining wall clock time:   161 s          step 58200, remaining wall clock time:   161 s          step 58300, remaining wall clock time:   161 s          step 58400, remaining wall clock time:   160 s          step 58500, remaining wall clock time:   160 s          step 58600, remaining wall clock time:   160 s          step 58700, remaining wall clock time:   160 s          step 58800, remaining wall clock time:   159 s          step 58900, remaining wall clock time:   159 s          step 59000, remaining wall clock time:   159 s          step 59100, remaining wall clock time:   159 s          step 59200, remaining wall clock time:   158 s          step 59300, remaining wall clock time:   158 s          step 59400, remaining wall clock time:   158 s          step 59500, remaining wall clock time:   158 s          step 59600, remaining wall clock time:   157 s          step 59700, remaining wall clock time:   157 s          step 59800, remaining wall clock time:   157 s          step 59900, remaining wall clock time:   157 s          step 60000, remaining wall clock time:   157 s          step 60100, remaining wall clock time:   156 s          step 60200, remaining wall clock time:   156 s          step 60300, remaining wall clock time:   156 s          step 60400, remaining wall clock time:   156 s          step 60500, remaining wall clock time:   155 s          step 60600, remaining wall clock time:   155 s          step 60700, remaining wall clock time:   155 s          step 60800, remaining wall clock time:   155 s          step 60900, remaining wall clock time:   154 s          step 61000, remaining wall clock time:   154 s          step 61100, remaining wall clock time:   154 s          step 61200, remaining wall clock time:   154 s          step 61300, remaining wall clock time:   153 s          step 61400, remaining wall clock time:   153 s          step 61500, remaining wall clock time:   153 s          step 61600, remaining wall clock time:   153 s          step 61700, remaining wall clock time:   152 s          step 61800, remaining wall clock time:   152 s          step 61900, remaining wall clock time:   152 s          step 62000, remaining wall clock time:   152 s          step 62100, remaining wall clock time:   152 s          step 62200, remaining wall clock time:   151 s          step 62300, remaining wall clock time:   151 s          step 62400, remaining wall clock time:   151 s          step 62500, remaining wall clock time:   151 s          step 62600, remaining wall clock time:   150 s          step 62700, remaining wall clock time:   150 s          step 62800, remaining wall clock time:   150 s          step 62900, remaining wall clock time:   150 s          step 63000, remaining wall clock time:   149 s          step 63100, remaining wall clock time:   149 s          step 63200, remaining wall clock time:   149 s          step 63300, remaining wall clock time:   149 s          step 63400, remaining wall clock time:   148 s          step 63500, remaining wall clock time:   148 s          step 63600, remaining wall clock time:   148 s          step 63700, remaining wall clock time:   148 s          step 63800, remaining wall clock time:   147 s          step 63900, remaining wall clock time:   147 s          step 64000, remaining wall clock time:   147 s          step 64100, remaining wall clock time:   147 s          step 64200, remaining wall clock time:   147 s          step 64300, remaining wall clock time:   146 s          step 64400, remaining wall clock time:   146 s          step 64500, remaining wall clock time:   146 s          step 64600, remaining wall clock time:   146 s          step 64700, remaining wall clock time:   145 s          step 64800, remaining wall clock time:   145 s          step 64900, remaining wall clock time:   145 s          step 65000, remaining wall clock time:   145 s          step 65100, remaining wall clock time:   144 s          step 65200, remaining wall clock time:   144 s          step 65300, remaining wall clock time:   144 s          step 65400, remaining wall clock time:   144 s          step 65500, remaining wall clock time:   143 s          step 65600, remaining wall clock time:   143 s          step 65700, remaining wall clock time:   143 s          step 65800, remaining wall clock time:   143 s          step 65900, remaining wall clock time:   142 s          step 66000, remaining wall clock time:   142 s          step 66100, remaining wall clock time:   142 s          step 66200, remaining wall clock time:   142 s          step 66300, remaining wall clock time:   142 s          step 66400, remaining wall clock time:   141 s          step 66500, remaining wall clock time:   141 s          step 66600, remaining wall clock time:   141 s          step 66700, remaining wall clock time:   141 s          step 66800, remaining wall clock time:   140 s          step 66900, remaining wall clock time:   140 s          step 67000, remaining wall clock time:   140 s          step 67100, remaining wall clock time:   140 s          step 67200, remaining wall clock time:   139 s          step 67300, remaining wall clock time:   139 s          step 67400, remaining wall clock time:   139 s          step 67500, remaining wall clock time:   139 s          step 67600, remaining wall clock time:   138 s          step 67700, remaining wall clock time:   138 s          step 67800, remaining wall clock time:   138 s          step 67900, remaining wall clock time:   138 s          step 68000, remaining wall clock time:   137 s          step 68100, remaining wall clock time:   137 s          step 68200, remaining wall clock time:   137 s          step 68300, remaining wall clock time:   137 s          step 68400, remaining wall clock time:   137 s          step 68500, remaining wall clock time:   136 s          step 68600, remaining wall clock time:   136 s          step 68700, remaining wall clock time:   136 s          step 68800, remaining wall clock time:   136 s          step 68900, remaining wall clock time:   135 s          step 69000, remaining wall clock time:   135 s          step 69100, remaining wall clock time:   135 s          step 69200, remaining wall clock time:   135 s          step 69300, remaining wall clock time:   134 s          step 69400, remaining wall clock time:   134 s          step 69500, remaining wall clock time:   134 s          step 69600, remaining wall clock time:   134 s          step 69700, remaining wall clock time:   133 s          step 69800, remaining wall clock time:   133 s          step 69900, remaining wall clock time:   133 s          step 70000, remaining wall clock time:   133 s          step 70100, remaining wall clock time:   132 s          step 70200, remaining wall clock time:   132 s          step 70300, remaining wall clock time:   132 s          step 70400, remaining wall clock time:   132 s          step 70500, remaining wall clock time:   132 s          step 70600, remaining wall clock time:   131 s          step 70700, remaining wall clock time:   131 s          step 70800, remaining wall clock time:   131 s          step 70900, remaining wall clock time:   131 s          step 71000, remaining wall clock time:   130 s          step 71100, remaining wall clock time:   130 s          step 71200, remaining wall clock time:   130 s          step 71300, remaining wall clock time:   130 s          step 71400, remaining wall clock time:   129 s          step 71500, remaining wall clock time:   129 s          step 71600, remaining wall clock time:   129 s          step 71700, remaining wall clock time:   129 s          step 71800, remaining wall clock time:   128 s          step 71900, remaining wall clock time:   128 s          step 72000, remaining wall clock time:   128 s          step 72100, remaining wall clock time:   128 s          step 72200, remaining wall clock time:   127 s          step 72300, remaining wall clock time:   127 s          step 72400, remaining wall clock time:   127 s          step 72500, remaining wall clock time:   127 s          step 72600, remaining wall clock time:   126 s          step 72700, remaining wall clock time:   126 s          step 72800, remaining wall clock time:   126 s          step 72900, remaining wall clock time:   126 s          step 73000, remaining wall clock time:   126 s          step 73100, remaining wall clock time:   125 s          step 73200, remaining wall clock time:   125 s          step 73300, remaining wall clock time:   125 s          step 73400, remaining wall clock time:   125 s          step 73500, remaining wall clock time:   124 s          step 73600, remaining wall clock time:   124 s          step 73700, remaining wall clock time:   124 s          step 73800, remaining wall clock time:   124 s          step 73900, remaining wall clock time:   123 s          step 74000, remaining wall clock time:   123 s          step 74100, remaining wall clock time:   123 s          step 74200, remaining wall clock time:   123 s          step 74300, remaining wall clock time:   122 s          step 74400, remaining wall clock time:   122 s          step 74500, remaining wall clock time:   122 s          step 74600, remaining wall clock time:   122 s          step 74700, remaining wall clock time:   121 s          step 74800, remaining wall clock time:   121 s          step 74900, remaining wall clock time:   121 s          step 75000, remaining wall clock time:   121 s          step 75100, remaining wall clock time:   121 s          step 75200, remaining wall clock time:   120 s          step 75300, remaining wall clock time:   120 s          step 75400, remaining wall clock time:   120 s          step 75500, remaining wall clock time:   120 s          step 75600, remaining wall clock time:   119 s          step 75700, remaining wall clock time:   119 s          step 75800, remaining wall clock time:   119 s          step 75900, remaining wall clock time:   119 s          step 76000, remaining wall clock time:   118 s          step 76100, remaining wall clock time:   118 s          step 76200, remaining wall clock time:   118 s          step 76300, remaining wall clock time:   118 s          step 76400, remaining wall clock time:   117 s          step 76500, remaining wall clock time:   117 s          step 76600, remaining wall clock time:   117 s          step 76700, remaining wall clock time:   117 s          step 76800, remaining wall clock time:   116 s          step 76900, remaining wall clock time:   116 s          step 77000, remaining wall clock time:   116 s          step 77100, remaining wall clock time:   116 s          step 77200, remaining wall clock time:   115 s          step 77300, remaining wall clock time:   115 s          step 77400, remaining wall clock time:   115 s          step 77500, remaining wall clock time:   115 s          step 77600, remaining wall clock time:   115 s          step 77700, remaining wall clock time:   114 s          step 77800, remaining wall clock time:   114 s          step 77900, remaining wall clock time:   114 s          step 78000, remaining wall clock time:   114 s          step 78100, remaining wall clock time:   113 s          step 78200, remaining wall clock time:   113 s          step 78300, remaining wall clock time:   113 s          step 78400, remaining wall clock time:   113 s          step 78500, remaining wall clock time:   112 s          step 78600, remaining wall clock time:   112 s          step 78700, remaining wall clock time:   112 s          step 78800, remaining wall clock time:   112 s          step 78900, remaining wall clock time:   111 s          step 79000, remaining wall clock time:   111 s          step 79100, remaining wall clock time:   111 s          step 79200, remaining wall clock time:   111 s          step 79300, remaining wall clock time:   110 s          step 79400, remaining wall clock time:   110 s          step 79500, remaining wall clock time:   110 s          step 79600, remaining wall clock time:   110 s          step 79700, remaining wall clock time:   109 s          step 79800, remaining wall clock time:   109 s          step 79900, remaining wall clock time:   109 s          step 80000, remaining wall clock time:   109 s          step 80100, remaining wall clock time:   109 s          step 80200, remaining wall clock time:   108 s          step 80300, remaining wall clock time:   108 s          step 80400, remaining wall clock time:   108 s          step 80500, remaining wall clock time:   108 s          step 80600, remaining wall clock time:   107 s          step 80700, remaining wall clock time:   107 s          step 80800, remaining wall clock time:   107 s          step 80900, remaining wall clock time:   107 s          step 81000, remaining wall clock time:   106 s          step 81100, remaining wall clock time:   106 s          step 81200, remaining wall clock time:   106 s          step 81300, remaining wall clock time:   106 s          step 81400, remaining wall clock time:   105 s          step 81500, remaining wall clock time:   105 s          step 81600, remaining wall clock time:   105 s          step 81700, remaining wall clock time:   105 s          step 81800, remaining wall clock time:   104 s          step 81900, remaining wall clock time:   104 s          step 82000, remaining wall clock time:   104 s          step 82100, remaining wall clock time:   104 s          step 82200, remaining wall clock time:   103 s          step 82300, remaining wall clock time:   103 s          step 82400, remaining wall clock time:   103 s          step 82500, remaining wall clock time:   103 s          step 82600, remaining wall clock time:   103 s          step 82700, remaining wall clock time:   102 s          step 82800, remaining wall clock time:   102 s          step 82900, remaining wall clock time:   102 s          step 83000, remaining wall clock time:   102 s          step 83100, remaining wall clock time:   101 s          step 83200, remaining wall clock time:   101 s          step 83300, remaining wall clock time:   101 s          step 83400, remaining wall clock time:   101 s          step 83500, remaining wall clock time:   100 s          step 83600, remaining wall clock time:   100 s          step 83700, remaining wall clock time:   100 s          step 83800, remaining wall clock time:   100 s          step 83900, remaining wall clock time:    99 s          step 84000, remaining wall clock time:    99 s          step 84100, remaining wall clock time:    99 s          step 84200, remaining wall clock time:    99 s          step 84300, remaining wall clock time:    98 s          step 84400, remaining wall clock time:    98 s          step 84500, remaining wall clock time:    98 s          step 84600, remaining wall clock time:    98 s          step 84700, remaining wall clock time:    97 s          step 84800, remaining wall clock time:    97 s          step 84900, remaining wall clock time:    97 s          step 85000, remaining wall clock time:    97 s          step 85100, remaining wall clock time:    96 s          step 85200, remaining wall clock time:    96 s          step 85300, remaining wall clock time:    96 s          step 85400, remaining wall clock time:    96 s          step 85500, remaining wall clock time:    96 s          step 85600, remaining wall clock time:    95 s          step 85700, remaining wall clock time:    95 s          step 85800, remaining wall clock time:    95 s          step 85900, remaining wall clock time:    95 s          step 86000, remaining wall clock time:    94 s          step 86100, remaining wall clock time:    94 s          step 86200, remaining wall clock time:    94 s          step 86300, remaining wall clock time:    94 s          step 86400, remaining wall clock time:    93 s          step 86500, remaining wall clock time:    93 s          step 86600, remaining wall clock time:    93 s          step 86700, remaining wall clock time:    93 s          step 86800, remaining wall clock time:    92 s          step 86900, remaining wall clock time:    92 s          step 87000, remaining wall clock time:    92 s          step 87100, remaining wall clock time:    92 s          step 87200, remaining wall clock time:    91 s          step 87300, remaining wall clock time:    91 s          step 87400, remaining wall clock time:    91 s          step 87500, remaining wall clock time:    91 s          step 87600, remaining wall clock time:    90 s          step 87700, remaining wall clock time:    90 s          step 87800, remaining wall clock time:    90 s          step 87900, remaining wall clock time:    90 s          step 88000, remaining wall clock time:    89 s          step 88100, remaining wall clock time:    89 s          step 88200, remaining wall clock time:    89 s          step 88300, remaining wall clock time:    89 s          step 88400, remaining wall clock time:    89 s          step 88500, remaining wall clock time:    88 s          step 88600, remaining wall clock time:    88 s          step 88700, remaining wall clock time:    88 s          step 88800, remaining wall clock time:    88 s          step 88900, remaining wall clock time:    87 s          step 89000, remaining wall clock time:    87 s          step 89100, remaining wall clock time:    87 s          step 89200, remaining wall clock time:    87 s          step 89300, remaining wall clock time:    86 s          step 89400, remaining wall clock time:    86 s          step 89500, remaining wall clock time:    86 s          step 89600, remaining wall clock time:    86 s          step 89700, remaining wall clock time:    85 s          step 89800, remaining wall clock time:    85 s          step 89900, remaining wall clock time:    85 s          step 90000, remaining wall clock time:    85 s          step 90100, remaining wall clock time:    84 s          step 90200, remaining wall clock time:    84 s          step 90300, remaining wall clock time:    84 s          step 90400, remaining wall clock time:    84 s          step 90500, remaining wall clock time:    83 s          step 90600, remaining wall clock time:    83 s          step 90700, remaining wall clock time:    83 s          step 90800, remaining wall clock time:    83 s          step 90900, remaining wall clock time:    82 s          step 91000, remaining wall clock time:    82 s          step 91100, remaining wall clock time:    82 s          step 91200, remaining wall clock time:    82 s          step 91300, remaining wall clock time:    82 s          step 91400, remaining wall clock time:    81 s          step 91500, remaining wall clock time:    81 s          step 91600, remaining wall clock time:    81 s          step 91700, remaining wall clock time:    81 s          step 91800, remaining wall clock time:    80 s          step 91900, remaining wall clock time:    80 s          step 92000, remaining wall clock time:    80 s          step 92100, remaining wall clock time:    80 s          step 92200, remaining wall clock time:    79 s          step 92300, remaining wall clock time:    79 s          step 92400, remaining wall clock time:    79 s          step 92500, remaining wall clock time:    79 s          step 92600, remaining wall clock time:    78 s          step 92700, remaining wall clock time:    78 s          step 92800, remaining wall clock time:    78 s          step 92900, remaining wall clock time:    78 s          step 93000, remaining wall clock time:    77 s          step 93100, remaining wall clock time:    77 s          step 93200, remaining wall clock time:    77 s          step 93300, remaining wall clock time:    77 s          step 93400, remaining wall clock time:    76 s          step 93500, remaining wall clock time:    76 s          step 93600, remaining wall clock time:    76 s          step 93700, remaining wall clock time:    76 s          step 93800, remaining wall clock time:    75 s          step 93900, remaining wall clock time:    75 s          step 94000, remaining wall clock time:    75 s          step 94100, remaining wall clock time:    75 s          step 94200, remaining wall clock time:    74 s          step 94300, remaining wall clock time:    74 s          step 94400, remaining wall clock time:    74 s          step 94500, remaining wall clock time:    74 s          step 94600, remaining wall clock time:    74 s          step 94700, remaining wall clock time:    73 s          step 94800, remaining wall clock time:    73 s          step 94900, remaining wall clock time:    73 s          step 95000, remaining wall clock time:    73 s          step 95100, remaining wall clock time:    72 s          step 95200, remaining wall clock time:    72 s          step 95300, remaining wall clock time:    72 s          step 95400, remaining wall clock time:    72 s          step 95500, remaining wall clock time:    71 s          step 95600, remaining wall clock time:    71 s          step 95700, remaining wall clock time:    71 s          step 95800, remaining wall clock time:    71 s          step 95900, remaining wall clock time:    70 s          step 96000, remaining wall clock time:    70 s          step 96100, remaining wall clock time:    70 s          step 96200, remaining wall clock time:    70 s          step 96300, remaining wall clock time:    69 s          step 96400, remaining wall clock time:    69 s          step 96500, remaining wall clock time:    69 s          step 96600, remaining wall clock time:    69 s          step 96700, remaining wall clock time:    68 s          step 96800, remaining wall clock time:    68 s          step 96900, remaining wall clock time:    68 s          step 97000, remaining wall clock time:    68 s          step 97100, remaining wall clock time:    67 s          step 97200, remaining wall clock time:    67 s          step 97300, remaining wall clock time:    67 s          step 97400, remaining wall clock time:    67 s          step 97500, remaining wall clock time:    67 s          step 97600, remaining wall clock time:    66 s          step 97700, remaining wall clock time:    66 s          step 97800, remaining wall clock time:    66 s          step 97900, remaining wall clock time:    66 s          step 98000, remaining wall clock time:    65 s          step 98100, remaining wall clock time:    65 s          step 98200, remaining wall clock time:    65 s          step 98300, remaining wall clock time:    65 s          step 98400, remaining wall clock time:    64 s          step 98500, remaining wall clock time:    64 s          step 98600, remaining wall clock time:    64 s          step 98700, remaining wall clock time:    64 s          step 98800, remaining wall clock time:    63 s          step 98900, remaining wall clock time:    63 s          step 99000, remaining wall clock time:    63 s          step 99100, remaining wall clock time:    63 s          step 99200, remaining wall clock time:    62 s          step 99300, remaining wall clock time:    62 s          step 99400, remaining wall clock time:    62 s          step 99500, remaining wall clock time:    62 s          step 99600, remaining wall clock time:    61 s          step 99700, remaining wall clock time:    61 s          step 99800, remaining wall clock time:    61 s          step 99900, remaining wall clock time:    61 s          step 100000, remaining wall clock time:    60 s          step 100100, remaining wall clock time:    60 s          step 100200, remaining wall clock time:    60 s          step 100300, remaining wall clock time:    60 s          step 100400, remaining wall clock time:    59 s          step 100500, remaining wall clock time:    59 s          step 100600, remaining wall clock time:    59 s          step 100700, remaining wall clock time:    59 s          step 100800, remaining wall clock time:    59 s          step 100900, remaining wall clock time:    58 s          step 101000, remaining wall clock time:    58 s          step 101100, remaining wall clock time:    58 s          step 101200, remaining wall clock time:    58 s          step 101300, remaining wall clock time:    57 s          step 101400, remaining wall clock time:    57 s          step 101500, remaining wall clock time:    57 s          step 101600, remaining wall clock time:    57 s          step 101700, remaining wall clock time:    56 s          step 101800, remaining wall clock time:    56 s          step 101900, remaining wall clock time:    56 s          step 102000, remaining wall clock time:    56 s          step 102100, remaining wall clock time:    55 s          step 102200, remaining wall clock time:    55 s          step 102300, remaining wall clock time:    55 s          step 102400, remaining wall clock time:    55 s          step 102500, remaining wall clock time:    54 s          step 102600, remaining wall clock time:    54 s          step 102700, remaining wall clock time:    54 s          step 102800, remaining wall clock time:    54 s          step 102900, remaining wall clock time:    53 s          step 103000, remaining wall clock time:    53 s          step 103100, remaining wall clock time:    53 s          step 103200, remaining wall clock time:    53 s          step 103300, remaining wall clock time:    52 s          step 103400, remaining wall clock time:    52 s          step 103500, remaining wall clock time:    52 s          step 103600, remaining wall clock time:    52 s          step 103700, remaining wall clock time:    51 s          step 103800, remaining wall clock time:    51 s          step 103900, remaining wall clock time:    51 s          step 104000, remaining wall clock time:    51 s          step 104100, remaining wall clock time:    50 s          step 104200, remaining wall clock time:    50 s          step 104300, remaining wall clock time:    50 s          step 104400, remaining wall clock time:    50 s          step 104500, remaining wall clock time:    50 s          step 104600, remaining wall clock time:    49 s          step 104700, remaining wall clock time:    49 s          step 104800, remaining wall clock time:    49 s          step 104900, remaining wall clock time:    49 s          step 105000, remaining wall clock time:    48 s          step 105100, remaining wall clock time:    48 s          step 105200, remaining wall clock time:    48 s          step 105300, remaining wall clock time:    48 s          step 105400, remaining wall clock time:    47 s          step 105500, remaining wall clock time:    47 s          step 105600, remaining wall clock time:    47 s          step 105700, remaining wall clock time:    47 s          step 105800, remaining wall clock time:    46 s          step 105900, remaining wall clock time:    46 s          step 106000, remaining wall clock time:    46 s          step 106100, remaining wall clock time:    46 s          step 106200, remaining wall clock time:    45 s          step 106300, remaining wall clock time:    45 s          step 106400, remaining wall clock time:    45 s          step 106500, remaining wall clock time:    45 s          step 106600, remaining wall clock time:    44 s          step 106700, remaining wall clock time:    44 s          step 106800, remaining wall clock time:    44 s          step 106900, remaining wall clock time:    44 s          step 107000, remaining wall clock time:    43 s          step 107100, remaining wall clock time:    43 s          step 107200, remaining wall clock time:    43 s          step 107300, remaining wall clock time:    43 s          step 107400, remaining wall clock time:    42 s          step 107500, remaining wall clock time:    42 s          step 107600, remaining wall clock time:    42 s          step 107700, remaining wall clock time:    42 s          step 107800, remaining wall clock time:    41 s          step 107900, remaining wall clock time:    41 s          step 108000, remaining wall clock time:    41 s          step 108100, remaining wall clock time:    41 s          step 108200, remaining wall clock time:    41 s          step 108300, remaining wall clock time:    40 s          step 108400, remaining wall clock time:    40 s          step 108500, remaining wall clock time:    40 s          step 108600, remaining wall clock time:    40 s          step 108700, remaining wall clock time:    39 s          step 108800, remaining wall clock time:    39 s          step 108900, remaining wall clock time:    39 s          step 109000, remaining wall clock time:    39 s          step 109100, remaining wall clock time:    38 s          step 109200, remaining wall clock time:    38 s          step 109300, remaining wall clock time:    38 s          step 109400, remaining wall clock time:    38 s          step 109500, remaining wall clock time:    37 s          step 109600, remaining wall clock time:    37 s          step 109700, remaining wall clock time:    37 s          step 109800, remaining wall clock time:    37 s          step 109900, remaining wall clock time:    36 s          step 110000, remaining wall clock time:    36 s          step 110100, remaining wall clock time:    36 s          step 110200, remaining wall clock time:    36 s          step 110300, remaining wall clock time:    35 s          step 110400, remaining wall clock time:    35 s          step 110500, remaining wall clock time:    35 s          step 110600, remaining wall clock time:    35 s          step 110700, remaining wall clock time:    34 s          step 110800, remaining wall clock time:    34 s          step 110900, remaining wall clock time:    34 s          step 111000, remaining wall clock time:    34 s          step 111100, remaining wall clock time:    33 s          step 111200, remaining wall clock time:    33 s          step 111300, remaining wall clock time:    33 s          step 111400, remaining wall clock time:    33 s          step 111500, remaining wall clock time:    32 s          step 111600, remaining wall clock time:    32 s          step 111700, remaining wall clock time:    32 s          step 111800, remaining wall clock time:    32 s          step 111900, remaining wall clock time:    31 s          step 112000, remaining wall clock time:    31 s          step 112100, remaining wall clock time:    31 s          step 112200, remaining wall clock time:    31 s          step 112300, remaining wall clock time:    31 s          step 112400, remaining wall clock time:    30 s          step 112500, remaining wall clock time:    30 s          step 112600, remaining wall clock time:    30 s          step 112700, remaining wall clock time:    30 s          step 112800, remaining wall clock time:    29 s          step 112900, remaining wall clock time:    29 s          step 113000, remaining wall clock time:    29 s          step 113100, remaining wall clock time:    29 s          step 113200, remaining wall clock time:    28 s          step 113300, remaining wall clock time:    28 s          step 113400, remaining wall clock time:    28 s          step 113500, remaining wall clock time:    28 s          step 113600, remaining wall clock time:    27 s          step 113700, remaining wall clock time:    27 s          step 113800, remaining wall clock time:    27 s          step 113900, remaining wall clock time:    27 s          step 114000, remaining wall clock time:    26 s          step 114100, remaining wall clock time:    26 s          step 114200, remaining wall clock time:    26 s          step 114300, remaining wall clock time:    26 s          step 114400, remaining wall clock time:    25 s          step 114500, remaining wall clock time:    25 s          step 114600, remaining wall clock time:    25 s          step 114700, remaining wall clock time:    25 s          step 114800, remaining wall clock time:    24 s          step 114900, remaining wall clock time:    24 s          step 115000, remaining wall clock time:    24 s          step 115100, remaining wall clock time:    24 s          step 115200, remaining wall clock time:    23 s          step 115300, remaining wall clock time:    23 s          step 115400, remaining wall clock time:    23 s          step 115500, remaining wall clock time:    23 s          step 115600, remaining wall clock time:    22 s          step 115700, remaining wall clock time:    22 s          step 115800, remaining wall clock time:    22 s          step 115900, remaining wall clock time:    22 s          step 116000, remaining wall clock time:    21 s          step 116100, remaining wall clock time:    21 s          step 116200, remaining wall clock time:    21 s          step 116300, remaining wall clock time:    21 s          step 116400, remaining wall clock time:    21 s          step 116500, remaining wall clock time:    20 s          step 116600, remaining wall clock time:    20 s          step 116700, remaining wall clock time:    20 s          step 116800, remaining wall clock time:    20 s          step 116900, remaining wall clock time:    19 s          step 117000, remaining wall clock time:    19 s          step 117100, remaining wall clock time:    19 s          step 117200, remaining wall clock time:    19 s          step 117300, remaining wall clock time:    18 s          step 117400, remaining wall clock time:    18 s          step 117500, remaining wall clock time:    18 s          step 117600, remaining wall clock time:    18 s          step 117700, remaining wall clock time:    17 s          step 117800, remaining wall clock time:    17 s          step 117900, remaining wall clock time:    17 s          step 118000, remaining wall clock time:    17 s          step 118100, remaining wall clock time:    16 s          step 118200, remaining wall clock time:    16 s          step 118300, remaining wall clock time:    16 s          step 118400, remaining wall clock time:    16 s          step 118500, remaining wall clock time:    15 s          step 118600, remaining wall clock time:    15 s          step 118700, remaining wall clock time:    15 s          step 118800, remaining wall clock time:    15 s          step 118900, remaining wall clock time:    14 s          step 119000, remaining wall clock time:    14 s          step 119100, remaining wall clock time:    14 s          step 119200, remaining wall clock time:    14 s          step 119300, remaining wall clock time:    13 s          step 119400, remaining wall clock time:    13 s          step 119500, remaining wall clock time:    13 s          step 119600, remaining wall clock time:    13 s          step 119700, remaining wall clock time:    12 s          step 119800, remaining wall clock time:    12 s          step 119900, remaining wall clock time:    12 s          step 120000, remaining wall clock time:    12 s          step 120100, remaining wall clock time:    11 s          step 120200, remaining wall clock time:    11 s          step 120300, remaining wall clock time:    11 s          step 120400, remaining wall clock time:    11 s          step 120500, remaining wall clock time:    11 s          step 120600, remaining wall clock time:    10 s          step 120700, remaining wall clock time:    10 s          step 120800, remaining wall clock time:    10 s          step 120900, remaining wall clock time:    10 s          step 121000, remaining wall clock time:     9 s          step 121100, remaining wall clock time:     9 s          step 121200, remaining wall clock time:     9 s          step 121300, remaining wall clock time:     9 s          step 121400, remaining wall clock time:     8 s          step 121500, remaining wall clock time:     8 s          step 121600, remaining wall clock time:     8 s          step 121700, remaining wall clock time:     8 s          step 121800, remaining wall clock time:     7 s          step 121900, remaining wall clock time:     7 s          step 122000, remaining wall clock time:     7 s          step 122100, remaining wall clock time:     7 s          step 122200, remaining wall clock time:     6 s          step 122300, remaining wall clock time:     6 s          step 122400, remaining wall clock time:     6 s          step 122500, remaining wall clock time:     6 s          step 122600, remaining wall clock time:     5 s          step 122700, remaining wall clock time:     5 s          step 122800, remaining wall clock time:     5 s          step 122900, remaining wall clock time:     5 s          step 123000, remaining wall clock time:     4 s          step 123100, remaining wall clock time:     4 s          step 123200, remaining wall clock time:     4 s          step 123300, remaining wall clock time:     4 s          step 123400, remaining wall clock time:     3 s          step 123500, remaining wall clock time:     3 s          step 123600, remaining wall clock time:     3 s          step 123700, remaining wall clock time:     3 s          step 123800, remaining wall clock time:     2 s          step 123900, remaining wall clock time:     2 s          step 124000, remaining wall clock time:     2 s          step 124100, remaining wall clock time:     2 s          step 124200, remaining wall clock time:     1 s          step 124300, remaining wall clock time:     1 s          step 124400, remaining wall clock time:     1 s          step 124500, remaining wall clock time:     1 s          step 124600, remaining wall clock time:     0 s          step 124700, remaining wall clock time:     0 s          step 124800, remaining wall clock time:     0 s          step 124900, remaining wall clock time:     0 s          
+Writing final coordinates.
+step 125000, remaining wall clock time:     0 s          
+NOTE: 12 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      306.144      306.207      100.0
+                 (ns/day)    (hour/ns)
+Performance:       35.271        0.680
+
+GROMACS reminds you: "You Own the Sun" (Throwing Muses)
+
+/var/spool/slurmd/job02031/slurm_script: line 45: syntax error: unexpected end of file
