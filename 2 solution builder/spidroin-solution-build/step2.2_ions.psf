@@ -5,7 +5,7 @@ PSF EXT CMAP XPLOR
 * SET NPOSTOT = 136                                                             
 * SET NNEGTOT = 130                                                             
 * SET NIONTOT = 266                                                             
-*  DATE:     6/ 7/24     12:16:26      CREATED BY USER: apache                  
+*  DATE:     6/ 7/24     14:25:35      CREATED BY USER: apache                  
 
        266 !NATOM
          1 IONS     1        SOD      SOD      SOD       1.00000       22.9898           0
