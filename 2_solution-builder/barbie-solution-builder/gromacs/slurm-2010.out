@@ -1,40 +1,0 @@
-Loading gromacs/2023.3
-  Loading requirement: cuda/12.2 openmpi/4.1.1 mkl/2023.2.0
-                      :-) GROMACS - gmx energy, 2023.3 (-:
-
-Executable:   /opt/apps/gromacs/2023.3/build/bin/gmx_mpi
-Data prefix:  /opt/apps/gromacs/2023.3/build
-Working dir:  /home/pedro.zanineli/work/iGEM/barbie-rep/2 solution builder/barbie-solution-builder/gromacs
-Command line:
-  gmx_mpi energy -f step4.1_equilibration.edr -o potential_energy.xvg
-
-Opened step4.1_equilibration.edr as single precision energy file
-
-Select the terms you want from the following list by
-selecting either (part of) the name or the number or a combination.
-End your selection with an empty line or a zero.
--------------------------------------------------------------------
-  1  Bond             2  U-B              3  Proper-Dih.      4  Improper-Dih. 
-  5  CMAP-Dih.        6  LJ-14            7  Coulomb-14       8  LJ-(SR)       
-  9  Coulomb-(SR)    10  Coul.-recip.    11  Position-Rest.  12  Potential     
- 13  Kinetic-En.     14  Total-Energy    15  Conserved-En.   16  Temperature   
- 17  Pressure        18  Constr.-rmsd    19  Vir-XX          20  Vir-XY        
- 21  Vir-XZ          22  Vir-YX          23  Vir-YY          24  Vir-YZ        
- 25  Vir-ZX          26  Vir-ZY          27  Vir-ZZ          28  Pres-XX       
- 29  Pres-XY         30  Pres-XZ         31  Pres-YX         32  Pres-YY       
- 33  Pres-YZ         34  Pres-ZX         35  Pres-ZY         36  Pres-ZZ       
- 37  #Surf*SurfTen   38  T-SOLU          39  T-SOLV        
-
-
-Back Off! I just backed up potential_energy.xvg to ./#potential_energy.xvg.1#
-Reading energy frame      0 time    0.000         Reading energy frame      1 time    1.000         Reading energy frame      2 time    2.000         Reading energy frame      3 time    3.000         Reading energy frame      4 time    4.000         Reading energy frame      5 time    5.000         Reading energy frame      6 time    6.000         Reading energy frame      7 time    7.000         Reading energy frame      8 time    8.000         Reading energy frame      9 time    9.000         Reading energy frame     10 time   10.000         Reading energy frame     11 time   11.000         Reading energy frame     12 time   12.000         Reading energy frame     13 time   13.000         Reading energy frame     14 time   14.000         Reading energy frame     15 time   15.000         Reading energy frame     16 time   16.000         Reading energy frame     17 time   17.000         Reading energy frame     18 time   18.000         Reading energy frame     19 time   19.000         Reading energy frame     20 time   20.000         Reading energy frame     30 time   30.000         Reading energy frame     40 time   40.000         Reading energy frame     50 time   50.000         Reading energy frame     60 time   60.000         Reading energy frame     70 time   70.000         Reading energy frame     80 time   80.000         Reading energy frame     90 time   90.000         Reading energy frame    100 time  100.000         Reading energy frame    110 time  110.000         Reading energy frame    120 time  120.000         Last energy frame read 125 time  125.000         
-
-GROMACS reminds you: "When you get right down to it, almost every explanation Man came up with for anything until about 1926 was stupid." (Dave Barry)
-
-
-Statistics over 125001 steps [ 0.0000 through 125.0000 ps ], 1 data sets
-All statistics are over 1251 points
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Potential                   -465728         35    3782.94   -64.6355  (kJ/mol)
