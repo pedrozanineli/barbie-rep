@@ -8,13 +8,17 @@ In light of the importance of understanding the thermodynamics basis for structu
 
 Although the optimized Barbie1-CBM (B1-CBM) protein oligomer state was unknown and needed to be understood, the spidroin protein that forms the nanofiber has already been explored in literature [doi.org/10.1038/nchembio.2269]. This study relies on the experimental formation of the nanofibers, exploring firstly the formation of dimers in neutral pHs followed by the formation of the fiber itself in acid environments (pH = 5). Therefore, the prediction of the oligomer state of the spidroin protein is not necessary.
 
+The proposed proteins to be evaluated in Alpha Pulldown are the B1-CBM (Figure 1. a), BaCBM2 (Figure 1. b), and 1A3N (Figure 1. c), which is a reference protein that forms the deoxy human hemoglobin.
+
 ![vis](protein-comparative.png)
 
-The proposed proteins to be evaluated in Alpha Pulldown are the B1-CBM (Figure 1. a), BaCBM2 (Figure 1. b), and 1A3N (Figure 1. c), which is a reference protein that forms the deoxy human hemoglobin.
+Figure 1.
+
+With 4 subunits as shown in Figure 2, this multicomplex protein forms a pocket in the middle region to store oxygen molecules. Since this reference protein was resolved with more subunits, it can serve as a baseline for the prediction of the other proteins.
 
 ![hemoglobin](hemoglobin.png)
 
-Since this reference protein was resolved with more subunits, it can serve as a baseline for the prediction of the other proteins.
+Figure 2.
 
 In the table below, the results from Alpha Fold for each protein were evaluated based on the predicted template modeling (pTM) and interface predicted template modeling (iPTM) score. Both of these measures evaluate the accuracy of the entire structure [doi.org/10.1002/prot.20264,doi.org/10.1093/bioinformatics/btq066].
 
