@@ -1,0 +1,9 @@
+001 - Water- Pathway 1 mm Mickey Cell
+002 - NPL 100 nm - 0.005 g.mL - dilluted 10x from stock solution 200x
+003 - NPL 100 nm - 0.0005 g.mL - dilluted 10x from previous solution 0.005 g.mL
+004 - CBM 100x dilluted
+005 - CBM 100x dilluted + NPL 100 nm - add 30 uL from stock solution 200x - final plastic 0.0005 g.mL
+006 - Barbie1 5x dilluted
+007 - Barbie1 5x dilluted + NPL 100 nm - add 30 uL from stock solution 200x - final plastic 0.0005 g.mL
+008 - Background Barbie 1 - Buffer 5x dilluted
+009 - CBM 50x dilluted

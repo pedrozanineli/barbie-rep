@@ -1,0 +1,7 @@
+20 C / Mickey 1 mm
+
+001 - Buffer HEPES Gly 15% NaCl 150 mM
+002 - BACBM2 dilluted 50x in Water
+003 - BACBM2 dilluted 100x in Water
+004 - B1-CBM in Water (0.247 mg/mL) 5x in Water
+004 - B1-CBM in Water (0.247 mg/mL) 5x in Water - 260 - 200
