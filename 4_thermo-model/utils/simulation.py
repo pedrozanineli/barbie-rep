@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 # b1_ps = 0.454
 # spid_ps = 4.9042
 
-b1_ps = 10
-spid_ps = 2
+b1_ps = 20
+spid_ps = 1
 
 def filtration_sim(filtro,mps_dic,display=True):
 
@@ -49,17 +49,24 @@ def filtration_sim(filtro,mps_dic,display=True):
                 cbm_count = list(regiao_overlap).count(2)
                 energia = fibra_count*spid_ps + cbm_count*b1_ps
                 
-                # p_reter = ((fibra_count+cbm_count) - vazio_count)/mp_tamanho
-                p_reter = ((spid_ps*fibra_count+b1_ps*cbm_count) - vazio_count)/mp_tamanho
+                # p_reter = ((spid_ps*fibra_count+b1_ps*cbm_count) - vazio_count)/mp_tamanho
+                
+                T = 1
+                kB = 1
+
+                beta = 1/kB*T
+                p_reter = 1 - abs(np.exp(-beta*(spid_ps*fibra_count+cbm_count*b1_ps)/mp_tamanho))
+
             else:
-                p_reter = (spid_ps*fibra_count - vazio_count)/mp_tamanho
+                # p_reter = (spid_ps*fibra_count - vazio_count)/mp_tamanho
 
-            # calculo da probabilidade, depende de
-                # overlap fibra
-                # overlap cbm
-                # overlap buracos
+                T = 1
+                kB = 1
 
-            if p_reter > np.random.random():
+                beta = 1/kB*T
+                p_reter = 1 - abs(np.exp(-beta*(spid_ps*fibra_count)/mp_tamanho))
+
+            if p_reter > (vazio_count/mp_tamanho)*np.random.random():
                 
                 rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
                 mps_retidos += 1
