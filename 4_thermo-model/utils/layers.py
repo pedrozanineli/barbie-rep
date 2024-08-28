@@ -35,20 +35,27 @@ def layers_creation(tamanho_rede=1000,porosidade=0.3,camadas=6,limite_tamanho_po
 
         if CBM:
             
-            proteinas = round(concentracao_cbm * tamanho_rede)
+            # proteinas = round(concentracao_cbm * tamanho_rede)
+
+            # Ao inves de calcular para a rede inteira
+            # pode ser uma boa opcao calcular para os espacos livres
+
+            espaco_fibra = list(rede.flatten()).count(0)
+            proteinas = round(concentracao_cbm * espaco_fibra)
 
             for proteina in range(proteinas):
                 
-                condicao = True
-
-                while condicao:
+                while True:
 
                     posicao_prot_x,posicao_prot_y = np.random.randint(tamanho_rede),np.random.randint(tamanho_rede)
+
+                    # Nao estamos considerando o possivel overlap de proteinas
+                    # Adicionar isso no codigo
 
                     if rede[posicao_prot_x,posicao_prot_y] != -1 and int(posicao_prot_x+tamanho_cbm) < tamanho_rede and int(posicao_prot_y+tamanho_cbm) < tamanho_rede:
 
                         rede[posicao_prot_x:int(posicao_prot_x+tamanho_cbm),posicao_prot_y:int(posicao_prot_y+tamanho_cbm)] = 2
-                        condicao = False
+                        break
 
         # exibir rede
 
