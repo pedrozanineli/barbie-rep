@@ -1,0 +1,11 @@
+Input_File = full_production.xtc
+Topology = topol.tpr
+Complex = step5_production_1.gro
+Receptor = BARBIE1.pdb
+Ligand = ps.pdb
+Index_File = custom_index.ndx
+Mode = MMPBSA               # Define o modo de cálculo para MMPBSA
+Calculation_Type = binding  # Especifica que o cálculo é para energia de ligação
+Entropy = 1                 # Inclui o cálculo da entropia
+Energy = 1                  # Inclui o cálculo da energia (necessário para binding)
+
