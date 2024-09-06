@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # b1_ps = 0.454
 # spid_ps = 4.9042
 
-b1_ps = -0.5
+b1_ps = -24.05
 spid_ps = -0.05
 
 def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,prob=False):
