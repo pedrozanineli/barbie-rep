@@ -1,7 +1,9 @@
+import time
 import numpy as np
 
 def mps_creation(qnt_mps = 1000,tamanho_limite_mp = 100,tamanho_rede=1000):
 
+    inicio = time.time()
     mps_dic = {}
 
     # gerar microplasticos
@@ -10,7 +12,7 @@ def mps_creation(qnt_mps = 1000,tamanho_limite_mp = 100,tamanho_rede=1000):
 
         while True:
 
-            tamanho_mp = np.random.randint(1,tamanho_limite_mp)
+            tamanho_mp = np.random.randint(5,tamanho_limite_mp)
             posicao_mp_x,posicao_mp_y = np.random.randint(tamanho_rede),np.random.randint(tamanho_rede)
 
             while posicao_mp_x+tamanho_mp > tamanho_rede or posicao_mp_y+tamanho_mp > tamanho_rede:
@@ -45,4 +47,7 @@ def mps_creation(qnt_mps = 1000,tamanho_limite_mp = 100,tamanho_rede=1000):
 
         mps_dic.update({mp:[tamanho_mp,[posicao_mp_x,posicao_mp_y]]})
 
+    fim = time.time()
+    print(f'MPs criados, {round(fim-inicio,2)}')
+    
     return mps_dic

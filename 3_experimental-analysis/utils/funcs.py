@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from scipy import stats
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 
@@ -41,7 +42,7 @@ def cdproc(index,caminho,water=False):
     normalized = (cd_abs_actual - avg) / std
     standard_error = std / np.sqrt(len(cd_abs_actual))
 
-    # cd_abs_actual = normalized.copy()
+    cd_abs_actual = normalized.copy()
     cd_abs_actual = smooth(cd_abs_actual)
 
     return np.array(df['WL']), cd_abs_actual, standard_error
@@ -52,7 +53,7 @@ def cdplot(wls,ramp_plot,l,c):
 
     plt.plot(wls,ramp_plot,label=l,color=c)
 
-    plt.xlabel('Wavelength (nm)',fontsize=12),plt.ylabel('CD Absorbance (millidegrees)',fontsize=12)
+    plt.xlabel('Wavelength (nm)',fontsize=14),plt.ylabel('CD Absorbance (millidegrees)',fontsize=14)
     plt.legend(fontsize=12)    
 
 def wlspectra(wl,wls,temperaturas,cd_abs,error):
@@ -75,9 +76,10 @@ def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
         
         df = pd.read_csv(f'{caminho}/1_converted_{i}.txt',names=['WL','CD Abs'],sep=' ')
 
-        if i % 6 == 0 and i != 1:
+        if i % 6 == 0 and i != 1 and i != 96:
                         
             cd_abs_actual = [x/6 for x in cd_abs_actual]
+            cd_abs_actual = cd_abs_actual[list(df['WL']).index(250):list(df['WL']).index(200)]
             cd_abs_actual = np.array(cd_abs_actual)
 
             if water:
@@ -89,9 +91,9 @@ def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
             normalized = (cd_abs_actual - avg) / std
             standard_error = std / np.sqrt(len(cd_abs_actual))
 
-            # cd_abs_actual = smooth(cd_abs_actual)
             # Descomentar para normalizar
-            # cd_abs_actual = smooth(normalized)
+            cd_abs_actual = smooth(normalized)
+            # cd_abs_actual = smooth(cd_abs_actual)
 
             wls.append(list(df['WL']))
             temp.append(actual_temp)
@@ -100,34 +102,86 @@ def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
 
             actual_temp += 5
 
-        if i % 6 == 0 or i == 1: cd_abs_actual = list(df['CD Abs'])
+        if i % 6 == 0 or i == 1 or i == 96: cd_abs_actual = list(df['CD Abs'])
         else: cd_abs_actual = np.add(np.array(df['CD Abs']),cd_abs_actual)
 
     return wls[0], temp, np.array(ramp_plot), error
 
 def rampplot(wls,temp,ramp_plot):
 
+    from scipy import interpolate
+
+    wls = wls[wls.index(250):wls.index(200)]
+
     X_b1, Y_b1 = np.meshgrid(wls, temp)
     Z_b1 = np.array([ramp_plot[i] for i in range(len(temp))])
 
-    fig = plt.figure(figsize=(15,5))
+    Q1 = np.percentile(Z_b1, 25, axis=None)
+    Q3 = np.percentile(Z_b1, 75, axis=None)
+    IQR = Q3 - Q1
+
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    outliers_mask = (Z_b1 < lower_bound) | (Z_b1 > upper_bound)
+
+    Z_b1_cleaned = Z_b1.copy()
+    Z_b1_cleaned[outliers_mask] = np.nan
+
+    X_valid = X_b1[~outliers_mask]
+    Y_valid = Y_b1[~outliers_mask]
+    Z_valid = Z_b1_cleaned[~outliers_mask]
+
+    interp_func = interpolate.griddata((X_valid, Y_valid), Z_valid, (X_b1, Y_b1), method='linear')
+
+    Z_b1 = np.where(outliers_mask, interp_func, Z_b1)
+
+    fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111, projection='3d')
 
-    ax.plot_surface(X_b1, Y_b1, Z_b1, cmap='viridis')
+    im = ax.plot_surface(X_b1, Y_b1, Z_b1, cmap='viridis')
 
-    ax.set_ylabel('Temp')
+    ax.set_xlabel('Wavelength (nm)\n',fontsize=18)
+    ax.set_ylabel('Temperature (ºC)',fontsize=18)
+    # ax.set_zlabel('CD Absorbance (millidegrees)',fontsize=14)
 
-    ax.set_xlabel('Wavelength (nm)')
-    ax.set_ylabel('Temperature (ºC)')
-    ax.set_zlabel('CD Absorbance (millidegrees)')
+    ax.set_xlim(200,250)
 
-    ax.view_init(10,-30)
+    cbar = fig.colorbar(im,shrink=0.65,pad=-0.15,orientation='horizontal')
+    cbar.set_label('CD Absorbance (millidegrees)', fontsize=18)
+    cbar.ax.tick_params(labelsize=12)
 
     plt.tight_layout()
 
     return ax
 
+def rampplot2D(wls,temp,ramp_plot):
+
+    wls = wls[wls.index(250):wls.index(200)]
+
+    X_b1, Y_b1 = np.meshgrid(wls, temp)
+    
+    min_value = np.min(ramp_plot)
+    max_value = np.max(ramp_plot)
+    ramp_plot = (ramp_plot - min_value) / (max_value - min_value)
+
+    sc = plt.pcolormesh(X_b1,Y_b1,ramp_plot,cmap='viridis',shading='auto')
+    
+    plt.xlabel('Wavelength (nm)',fontsize=14)
+    plt.ylabel('Temperature (ºC)',fontsize=14)
+
+    # cb = plt.colorbar(sc)
+    # cb.set_label('CD Absorbance (millidegrees)', fontsize=14)
+
+    return sc
+
 def pontualspectra(caminho,l,c):
 
     df = pd.read_csv(f'{caminho}',sep='\t',names=['Temperature','CD Absorbance'])
-    plt.plot(df['Temperature'],df['CD Absorbance'],'-o',label=l,color=c)
+
+    temp, cdabs = df['Temperature'],df['CD Absorbance']
+
+    # cdabs = (cdabs - min(cdabs)) / (max(cdabs) - min(cdabs))
+    # cdabs = smooth(cdabs)
+
+    plt.plot(temp, cdabs,'-o',label=l,color=c,markersize=4)

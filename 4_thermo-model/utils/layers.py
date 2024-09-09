@@ -1,8 +1,10 @@
+import time
 import numpy as np
 import matplotlib.pyplot as plt
 
 def layers_creation(tamanho_rede=1000,porosidade=0.3,camadas=6,limite_tamanho_poro=100,CBM=True,concentracao_cbm=0.9,tamanho_cbm=4,display=True):
 
+    inicio = time.time()
     filtro = []
     
     for camada in range(camadas):
@@ -61,9 +63,17 @@ def layers_creation(tamanho_rede=1000,porosidade=0.3,camadas=6,limite_tamanho_po
 
         if display:
             plt.imshow(rede,vmin=-1,vmax=2)
-            plt.colorbar()
+            # plt.colorbar()
+            plt.xticks([]),plt.yticks([])
+            plt.tight_layout()
+
+            plt.savefig(f'results/{porosidade}.png',transparent=True,dpi=500)
+
             plt.show()
 
         filtro.append(rede)
+
+    fim = time.time()
+    print(f'Filtro criado, {round(fim-inicio,2)}')
 
     return filtro
