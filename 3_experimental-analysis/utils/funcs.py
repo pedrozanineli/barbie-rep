@@ -3,6 +3,7 @@ import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
+from scipy.optimize import curve_fit
 
 from matplotlib import font_manager
 
@@ -34,8 +35,13 @@ def cdproc(index,caminho,water=False):
     cd_abs_actual = np.array(cd_abs_actual)
 
     if water:
-        # Read Water Before!
-        cd_abs_actual = np.subtract(cd_abs_actual,cd_abs_w[30:])
+
+        wl_water, abs_water, se_water = cdproc(3,'CD_data/water_data')
+
+        if len(list((df['WL']))) > len(wl_water):
+            cd_abs_actual = cd_abs_actual[list(df['WL']).index(251):list(df['WL']).index(190)]
+
+        cd_abs_actual = np.subtract(cd_abs_actual,abs_water)
 
     avg = cd_abs_actual.mean()
     std = cd_abs_actual.std()
@@ -45,7 +51,12 @@ def cdproc(index,caminho,water=False):
     cd_abs_actual = normalized.copy()
     cd_abs_actual = smooth(cd_abs_actual)
 
-    return np.array(df['WL']), cd_abs_actual, standard_error
+    # return np.array(df['WL']), cd_abs_actual, standard_error
+
+    if water:
+        return list(range(190,251))[::-1], cd_abs_actual, standard_error
+    else:
+        return np.array(df['WL']), cd_abs_actual, standard_error
 
 # cd_plot(water)
 
@@ -55,17 +66,6 @@ def cdplot(wls,ramp_plot,l,c):
 
     plt.xlabel('Wavelength (nm)',fontsize=14),plt.ylabel('CD Absorbance (millidegrees)',fontsize=14)
     plt.legend(fontsize=12)    
-
-def wlspectra(wl,wls,temperaturas,cd_abs,error):
-
-    index = wls.index(wl)
-    wl_cd = []
-
-    for i in range(len(cd_abs)):
-        wl_cd.append(cd_abs[i][index])
-
-    plt.errorbar(temperaturas,wl_cd,yerr=error,capsize=3,fmt="r--o",color="#E0218A",ecolor = "black")
-    plt.xlabel('Temperature ºC'),plt.ylabel('CD Abs')
 
 def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
     
@@ -92,8 +92,8 @@ def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
             standard_error = std / np.sqrt(len(cd_abs_actual))
 
             # Descomentar para normalizar
-            cd_abs_actual = smooth(normalized)
-            # cd_abs_actual = smooth(cd_abs_actual)
+            # cd_abs_actual = smooth(normalized)
+            cd_abs_actual = smooth(cd_abs_actual)
 
             wls.append(list(df['WL']))
             temp.append(actual_temp)
@@ -106,6 +106,26 @@ def rampproc(caminho,temp_min,arqinicio,arqfim,water=False):
         else: cd_abs_actual = np.add(np.array(df['CD Abs']),cd_abs_actual)
 
     return wls[0], temp, np.array(ramp_plot), error
+
+def boltzmann(x, A1, A2, x0, dx):
+    return A2 + (A1 - A2) / (1 + np.exp((x - x0) / dx))
+
+def wlspectra(wl,wls,temperaturas,cd_abs,error,TM=False):
+
+    index = wls.index(wl)
+    wl_cd = []
+
+    for i in range(len(cd_abs)):
+        wl_cd.append(cd_abs[i][index])
+
+    plt.errorbar(temperaturas,wl_cd,yerr=error,capsize=3,fmt="r--o",color="#E0218A",ecolor = "black")
+    plt.xlabel('Temperature ºC'),plt.ylabel('CD Abs')
+
+    if TM:
+        popt, pcov = curve_fit(boltzmann, temperaturas, wl_cd, p0=[0, 10, 30, 10])
+        plt.plot(range(20,100), boltzmann(range(20,100), *popt), color='gray', linestyle='--', label=f'Boltzmann')
+        plt.legend()
+        print(popt)
 
 def rampplot(wls,temp,ramp_plot):
 

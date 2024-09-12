@@ -45,26 +45,26 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
 
             # fibra = -1 | vazio = 0 | cbm = 2
 
-            fibra_count = list(regiao_overlap).count(0)
-            vazio_count = list(regiao_overlap).count(-1)
+            fibra_count = list(regiao_overlap).count(-1)
+            vazio_count = list(regiao_overlap).count(0)
 
             if CBM:
                 cbm_count = list(regiao_overlap).count(2)                
 
                 energia = (fibra_count*spid_ps + cbm_count*b1_ps)/mp_tamanho
-                p_reter = 1/(1 + np.exp(-0.1*(-energia - 10)))
+                p_reter = 1/(1 + np.exp(-2.5*(-energia - 2.5)))
                 
             else:
                 # p_reter = (spid_ps*fibra_count - vazio_count)/mp_tamanho
 
                 energia = (fibra_count*spid_ps)/mp_tamanho
-                p_reter = 1/(1 + np.exp(-0.1*(-energia - 10)))
+                p_reter = 1/(1 + np.exp(-2.5*(-energia - 2.5)))
 
             # if p_reter > vazio_count*np.random.random():
             if p_reter > np.random.random():
                 
                 # rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
-                rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 3
+                rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
 
                 mps_retidos += 1
                 mps_retidos_camada += 1
@@ -102,21 +102,25 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
         #     plt.show()
 
         if display:
-            plt.imshow(rede,vmin=-1,vmax=3)
+            plt.imshow(rede,cmap='plasma')
             # plt.title(f'Camada {i+1} - retidos: {mps_retidos_camada}, passaram: {len(mps_dic)}')
             plt.title(f'Layer {i+1} - retained: {mps_retidos_camada}')
+
+            plt.xticks([])
+            plt.yticks([])
+
             plt.tight_layout()
-            plt.savefig(f'results/sim_{i+1}.png',transparent=True,dpi=500)
+            # plt.savefig(f'results/simulation/sim_{i+1}.png',transparent=True,dpi=500)
             
-            # plt.colorbar()
             plt.show()
 
     if prob:
-        # plt.scatter(energias,probabilidade,color='royalblue') ; plt.show()
         plt.hist(energias,density=True,color='#477081',bins=20)
         plt.xlabel('Energy (eV)',fontsize=14)
         plt.ylabel('Count',fontsize=14)
+        
         plt.grid(),plt.tight_layout()
+        
         plt.savefig('results/energies_dist.png',transparent=True,dpi=500)
         plt.show()
 
