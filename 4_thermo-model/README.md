@@ -1,3 +1,49 @@
-#### Modelagem Termodinâmica
+The random walk is a mathematical and statistical concept that describes the process of a sequential movement, in which every step is taken in a random way. Its main idea is that at each instant of time, an object realizes a movement in one direction or magnitude ruled by a probabilistic rule without a standard pattern.
+In our case, it can be applied in the sense that the microplastics will be inserted in a filter with many layers. For each one, the microplastic would have a probabilistic chance dependent on its interaction energy to be retained or to pass to the next. If the particle is not retained, it can randomly move due to eventual collisions inside the filter.
+It is very important to state that although this technique might be very useful for assessing our filter method, further experimental information is required to properly approximate it to reality. Since many of these data are not trivial to be calculated, some assumptions will be made. Once we can find all of the information, the modeling can be refined.
+At the first moment, we are considering a hydrogel like the one shown in Figure 33. In the left image, the filtration structure is composed of the fused spidroin with BARBIE1 composing a cylinder that can be splitted in many layers.In the right of Figure 33, a zoom in one layer is shown. Essentially, each layer is configured as a random arrangement of the fiber that plays a fundamental role in retaining the particles.
 
-Sistema proposto baseado na proteína BARBIE1-CBM (B1-CBM) sustentada por nanofibrilas de espidroína, a proteína da fibra da aranha.
+Figure 33. On the left, hydrogel representation is divided into layers. On the right, nanometric representation of a single layer with its protein nanofibrils.
+Using Python, we created a simulation for the described setup with the following pipeline:
+Filter assemble: defining the grid size, porosity of the nanofibrils, layers count, pore limit size, and concentration of the plastic binding protein. This function creates an object that contains our filter. The components present are represented as values in our matrixes;
+Microplastics creation: for a N specific amount of microplastics with a determined maximum size MS, the this function creates N particles without overlapping with a random size with MS as its maximum possible size of diameter;
+Simulation run: with the specified filter and microplastics positions to be inserted, it is possible to run the simulation.
+MEV Image and Explanation in Figure 34
+Considering in a first moment that the water filter would be only applied to domestic use, we can also suppose only nanoplastics would be present in the samples. Therefore, its minimum and maximum defined size would be 50 and 200 respectively, with a particle number of 1.000.
+This is a point of attention, since there is not enough information about microplastics concentration in drinkable water with high precision, especially regarding its size. With the proposed sensor in our project, we are going to better understand the problem and properly design the filter.
+In Figure 34, the designed matrix is represented as an image, in which the purple parts represent the pores and empty space, in blue it represents the spidroin, and green represents BARBIE1. Its design considered a medium porosity at first of 0.5 with a BARBIE1 concentration of spidroin occupation of 0.1.
+
+Figure 34. Computationally designed water filter system representation.
+Thereafter, we can proceed to the microplastic insertion. For this purpose, we need to calculate the on-site interaction energy given by the microplastic position in the system. The chosen approach was calculating the superficial interaction energy, which takes in account the contact area and interaction energy, given by
+$$E_{\text{int}} = \gamma_{\text{S-P}}\cdot A_{\text{S-P}} + \gamma_{\text{B-P}}\cdot A_{\text{B-P}},$$
+where
+$E_{\text{int}}$ is the total interaction energy of the microplastic in a given system position;
+$\gamma_{\text{S-P}}$ and $\gamma_{\text{B-P}}$ are the interaction energy between spidroin-plastic and BARBIE1-plastic, respectively;
+$A_{\text{S-P}}$ and $A_{\text{B-P}}$ are the surface interaction between spidroin-plastic and BARBIE1-plastic, respectively.
+Since the values we encountered for energy interaction between spidroin-polystyrene and BARBIE1-polystyrene are in kcal/mol, we converted it to eV/mol and divided it by 1 mol. The found values are -0.24 eV for spidroin-polystyrene and -0.69 eV for BARBIE1-polystyrene. The total resulting interaction energy is then normalized by the microplastics particle size.
+If we consider $\gamma_{\text{S-P}}\cdot A_{\text{S-P}}$ as the spidroin interaction energy $E_{S}$ and $\gamma_{\text{B-P}}\cdot A_{\text{B-P}}$ as the BARBIE1 interaction energy $E_{B}$, we simplify the interaction energy writing as $E_{\text{int}} = E_{S} + E_{B}$. With this term, we can calculate the system’s partition function.
+In general, the partition function ($Z$) is the sum of all possible energetical states of a given system. For example, for this specific case, the microplastic can have two possible configurations: (i) when it is binded to the proteins, and (ii) when it does not have any interaction and it is not binded. The second configuration is given by a free energy term $E_{\text{free}}$.
+Thus, with only two possible states for the particles, the partition function $Z$ can be calculated as
+$$Z = e^{-\beta E_{\text{int}}} + e^{-\beta E_{\text{free}}},$$
+with $\beta$ representing $\frac{1}{k_BT}, in which $k_B$ stands for the Boltzmann constant and $T$ the temperature. Then, to calculate the retention probability $P_{\text{retention}}$, we can arrange the terms as
+$$P_{\text{retention}} = \frac{e^{-\beta E_{\text{int}}}}{Z} = \frac{e^{-\beta E_{\text{int}}}}{e^{-\beta E_{\text{int}}} + e^{-\beta E_{\text{free}}}}.$$
+With this, we can note that the microplastic energy is varying only with the BARBIE1 and spidroin interaction. Once the particle is positioned in a pore, it does not have an energy interaction, which makes us simplify $E_{\text{free}}$ as zero. As a result, the retention probability equation is given by
+$$e^{-\beta\cdot 0} = 1 \quad \xrightarrow{} \quad P_{\text{retention}} = \frac{1}{1+e^{-\beta E_{\text{int}}}}.$$
+The resulting equation is a sigmoid function, in which the retention probability increases as far as the interaction energy decreases. As shown in Figure 35, we simulated how the interaction energy of microplastics in the system would be, resulting in the left histogram. As shown, the values vary in a range of -20 and 0 eV.
+
+Figure 35. Energy distribution of microplastics when in contact with the filter proteins on the left and sigmoid function found for probability calculation on the right.
+Therefore, with the known energy range, the sigmoid function was adapted using a random search of the parameters. Once again, experimental assays can further improve our model to approximate it to reality. For each microplastic, a random value $Rv$ between zero and one is generated and compared to the retaining probability, allowing the piecewise function for result $R$ creation:
+R = \begin{cases} \text{If } P_R > R_V & \text{Retain} \\ \text{Else,} & \text{Pass} \end{cases}
+At last, it is possible to simulate the microplastics flow through the filter. In Figure 36, the whole computationally designed filter is divided in many layers, in which the microplastics (in yellow) are positioned. As it is possible to see on the right part of the image, most microplastics are retained in the first layers, mainly because of their size.
+
+Figure 36. Microplastics filtration in the proposed system represented in the multiple layers.
+As it is possible to note, with only a few layers, 88% of the imputed microplastics are retained. Although it is an already interesting result, it is very important to note that each of these layers are extremely thin, making the hydrogel composed of many more layers. With experimental results that can be obtained by using TEM, it might be possible to estimate the hydrogel’s layers amount.
+Moreover, an interesting approach for the designed system is removing the plastic binding protein in order to evaluate how it behaves without our differential, that is the BARBIE1. As a result, it is possible to realize the hydrogel by itself is already a very interesting method for retaining microplastics, but the addition of BARBIE1 increases even more the retention rate.
+For this reason, although there might be many steps for actually implementing the methodology in water filters, this preliminary result supports the importance of the fused spidroin with BARBIE1.
+
+Figure 37. System representation comparison of a filter with and without BARBIE1 on the left and their respective filtration on the right.
+At last, it was also evaluated how the porosity of the hydrogel alteres the microplastics filtration. As represented on the left of Figure 38, the tested porosities were 0.1, 0.3, 0.5, 0.7, and 0.9. For each one, the microplastics filtered were counted and are plotted on the right.
+As expected, with the increase of porosity, the filtered microplastics count decreased, since there is a lower space for retention of the particles. The result shown on the right of Figure 38 explicits the inverse correlation between the porosity and particle retention.
+This might be very useful for the hydrogel synthesis, in which we can explore how the production alters the porosity in order to produce the one with the greater balance between low porosity and a system with a good water flow. That is important because if the porosity is too high, it might prevent a continuous water flow in the filter.
+
+Figure 38. Microplastics filtration evaluation regarding the porosity. On the left, the filter with different porosities and on the right the MPs filtration count for each system.

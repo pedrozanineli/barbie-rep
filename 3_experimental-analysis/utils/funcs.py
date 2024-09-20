@@ -123,7 +123,7 @@ def wlspectra(wl,wls,temperaturas,cd_abs,error,TM=False):
 
     if TM:
         popt, pcov = curve_fit(boltzmann, temperaturas, wl_cd, p0=[0, 10, 30, 10])
-        plt.plot(range(20,100), boltzmann(range(20,100), *popt), color='gray', linestyle='--', label=f'Boltzmann')
+        plt.plot(range(20,100), boltzmann(range(20,100), *popt), color='gray', linestyle='--', label=f'TM = {round(popt[2],2)}ºC')
         plt.legend()
         print(popt)
 
@@ -132,6 +132,7 @@ def rampplot(wls,temp,ramp_plot):
     from scipy import interpolate
 
     wls = wls[wls.index(250):wls.index(200)]
+    # wls = wls[wls.index(250):wls.index(190)]
 
     X_b1, Y_b1 = np.meshgrid(wls, temp)
     Z_b1 = np.array([ramp_plot[i] for i in range(len(temp))])
@@ -156,18 +157,18 @@ def rampplot(wls,temp,ramp_plot):
 
     Z_b1 = np.where(outliers_mask, interp_func, Z_b1)
 
-    fig = plt.figure(figsize=(10,10))
+    fig = plt.figure(figsize=(15,10))
     ax = fig.add_subplot(111, projection='3d')
 
     im = ax.plot_surface(X_b1, Y_b1, Z_b1, cmap='viridis')
 
-    ax.set_xlabel('Wavelength (nm)\n',fontsize=18)
+    ax.set_xlabel('\nWavelength (nm)\n',fontsize=18)
     ax.set_ylabel('Temperature (ºC)',fontsize=18)
     # ax.set_zlabel('CD Absorbance (millidegrees)',fontsize=14)
 
     ax.set_xlim(200,250)
 
-    cbar = fig.colorbar(im,shrink=0.65,pad=-0.15,orientation='horizontal')
+    cbar = fig.colorbar(im,shrink=0.5,pad=0.01,orientation='horizontal')
     cbar.set_label('CD Absorbance (millidegrees)', fontsize=18)
     cbar.ax.tick_params(labelsize=12)
 

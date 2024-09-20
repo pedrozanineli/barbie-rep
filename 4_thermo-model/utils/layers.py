@@ -3,6 +3,18 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+from matplotlib.colors import ListedColormap, BoundaryNorm
+
+# colors = ['#EFB475', '#477081', '#AEC5FB', '#F77B7F']
+# colors = ['#EFB475', '#F0F3FC', '#477081', '#F77B7F']
+
+colors = ['#7DA6B7', '#EFB475', '#BCCAF2', '#F77B7F']
+
+cmap = ListedColormap(colors)
+bounds = [-1.5, -0.5, 0.5, 1.5, 2.5]
+norm = BoundaryNorm(bounds, cmap.N, clip=True)
+
 def layer_creation(dim, porosidade, diametro_max):
 
     matriz = np.zeros((dim, dim), dtype=int)    
@@ -13,7 +25,6 @@ def layer_creation(dim, porosidade, diametro_max):
         x, y = random.randint(0, dim-1), random.randint(0, dim-1)
         direcao = random.choice(['N', 'S', 'L', 'O'])
         
-        # Tamanho que a fibra pode ter 5 até diametro
         for _ in range(random.randint(3*dim/4, dim)):
             for dx in range(-diametro//2, diametro//2 + 1):
                 for dy in range(-diametro//2, diametro//2 + 1):
@@ -29,7 +40,7 @@ def layer_creation(dim, porosidade, diametro_max):
             elif direcao == 'O':
                 y = max(0, y - 1)
             
-            if random.random() < 0.3:
+            if random.random() < 0.1:
                 direcao = random.choice(['N', 'S', 'L', 'O'])
 
     for _ in range(num_fibras):
@@ -61,7 +72,7 @@ def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentra
                     # Nao estamos considerando o possivel overlap de proteinas
                     # Adicionar isso no codigo
 
-                    if rede[posicao_prot_x,posicao_prot_y] != -1 and int(posicao_prot_x+tamanho_cbm) < tamanho_rede and int(posicao_prot_y+tamanho_cbm) < tamanho_rede:
+                    if rede[posicao_prot_x,posicao_prot_y] != 0 and int(posicao_prot_x+tamanho_cbm) < tamanho_rede and int(posicao_prot_y+tamanho_cbm) < tamanho_rede:
 
                         rede[posicao_prot_x:int(posicao_prot_x+tamanho_cbm),posicao_prot_y:int(posicao_prot_y+tamanho_cbm)] = 2
                         break
@@ -69,7 +80,11 @@ def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentra
         filtro.append(rede)
 
         if display:
-            plt.imshow(rede,vmin=-1,vmax=2,cmap='plasma')
+
+            cax = plt.imshow(rede, cmap=cmap, norm=norm)
+            cbar = plt.colorbar(cax, ticks=[-1,0,1,2])
+            cbar.set_ticklabels(['Fiber', 'Pore', 'Microplastic', 'BARBIE1'])            
+
             plt.xticks([]),plt.yticks([])
             plt.tight_layout()
 

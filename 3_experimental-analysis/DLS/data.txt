@@ -1,0 +1,26 @@
+Record	Type	Sample Name	Measurement Date and Time	T	Z-Ave	PdI	ZP	Derived Count Rate	Total Count Rate	Attenuation Factor
+ 		 	 	°C	d.nm	 	mV	kcps	kcps	 
+10	Size	2_PS_100 1	quinta-feira, 12 de setembro de 2024 14:09:50	25,0	128,0	0,003		290879,8		0,00142
+11	Size	2_PS_100 2	quinta-feira, 12 de setembro de 2024 14:11:33	25,0	126,7	0,014		290669,1		0,00142
+12	Size	2_PS_100 3	quinta-feira, 12 de setembro de 2024 14:13:15	25,0	127,8	0,025		292200,4		0,00142
+13	Size	2_PS_100_12uL 1	quinta-feira, 12 de setembro de 2024 14:29:09	25,0	123,7	0,018		284178,0		0,00142
+14	Size	2_PS_100_12uL 2	quinta-feira, 12 de setembro de 2024 14:30:51	25,0	122,9	0,006		285392,3		0,00142
+15	Size	2_PS_100_12uL 3	quinta-feira, 12 de setembro de 2024 14:32:34	25,0	124,2	0,033		284290,1		0,00142
+16	Size	2_PS_100_24uL 1	quinta-feira, 12 de setembro de 2024 14:48:37	25,0	123,1	0,002		282832,0		0,00142
+17	Size	2_PS_100_24uL 2	quinta-feira, 12 de setembro de 2024 14:50:20	25,0	122,0	0,009		275591,7		0,00142
+18	Size	2_PS_100_24uL 3	quinta-feira, 12 de setembro de 2024 14:52:02	25,0	123,1	0,030		280662,7		0,00142
+19	Size	2_PS_100_48uL 1	quinta-feira, 12 de setembro de 2024 15:07:36	25,0	124,3	0,002		278416,4		0,00142
+20	Size	2_PS_100_48uL 2	quinta-feira, 12 de setembro de 2024 15:09:19	25,0	124,9	0,013		278056,6		0,00142
+21	Size	2_PS_100_48uL 3	quinta-feira, 12 de setembro de 2024 15:11:02	25,0	127,5	0,020		275505,6		0,00142
+22	Size	2_PS_100_72uL 1	quinta-feira, 12 de setembro de 2024 15:27:26	25,0	129,1	0,002		265192,7		0,00142
+23	Size	2_PS_100_72uL 2	quinta-feira, 12 de setembro de 2024 15:29:09	25,0	128,8	0,048		269143,9		0,00142
+24	Size	2_PS_100_72uL 3	quinta-feira, 12 de setembro de 2024 15:30:51	25,0	127,6	0,009		269403,5		0,00142
+25	Size	2_PS_100_96uL 1	quinta-feira, 12 de setembro de 2024 15:46:53	25,0	127,4	0,028		262162,0		0,00142
+26	Size	2_PS_100_96uL 2	quinta-feira, 12 de setembro de 2024 15:48:35	25,0	129,3	0,016		262436,4		0,00142
+27	Size	2_PS_100_96uL 3	quinta-feira, 12 de setembro de 2024 15:50:18	25,0	128,6	0,002		264052,0		0,00142
+28	Size	2_PS_100_120uL 1	quinta-feira, 12 de setembro de 2024 16:06:19	25,0	128,0	0,015		261016,7		0,00142
+29	Size	2_PS_100_120uL 2	quinta-feira, 12 de setembro de 2024 16:08:02	25,0	130,3	0,015		259801,7		0,00142
+30	Size	2_PS_100_120uL 3	quinta-feira, 12 de setembro de 2024 16:09:45	25,0	128,5	0,002		260262,2		0,00142
+
+Mean 10-30				25,0	126,5	0,015		274864,1		0,00142
+Std Dev 				0,0	2,538	0,012		11033,5		1,61e-11

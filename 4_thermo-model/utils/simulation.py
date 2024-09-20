@@ -6,8 +6,20 @@ import matplotlib.pyplot as plt
 # b1_ps = 0.454
 # spid_ps = 4.9042
 
-b1_ps = -0.69
-spid_ps = -0.24
+b1_ps = -0.53
+spid_ps = -0.44
+
+from matplotlib.colors import ListedColormap, BoundaryNorm
+
+# colors = ['#EFB475', '#477081', '#AEC5FB', '#F77B7F']
+# colors = ['#EFB475', '#F0F3FC', '#477081', '#F77B7F']
+
+colors = ['#7DA6B7', '#EFB475', '#BCCAF2', '#F77B7F']
+
+cmap = ListedColormap(colors)
+bounds = [-1.5, -0.5, 0.5, 1.5, 2.5]
+norm = BoundaryNorm(bounds, cmap.N)
+cmap.set_bad(color='#477081')
 
 def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,prob=False):
 
@@ -35,9 +47,6 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
 
             mp_tamanho,mp_posicao = mps_dic[mp_k]
             
-            # se o mp estiver em cima de cbm, calcular overlap
-            # se nao, P = 0
-
             regiao_overlap = rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho]
             regiao_overlap_vizinhos = rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho]
 
@@ -48,27 +57,43 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
             fibra_count = list(regiao_overlap).count(-1)
             vazio_count = list(regiao_overlap).count(0)
 
+            kB = 8.617333e-5
+            T = 300
+            beta = kB*T
+
             if CBM:
-                cbm_count = list(regiao_overlap).count(2)                
+                cbm_count = list(regiao_overlap).count(2)
 
                 energia = (fibra_count*spid_ps + cbm_count*b1_ps)/mp_tamanho
                 p_reter = 1/(1 + np.exp(-2.5*(-energia - 2.5)))
+                # p_reter = 1/(1 + np.exp(beta*(-energia)))
                 
             else:
-                # p_reter = (spid_ps*fibra_count - vazio_count)/mp_tamanho
 
                 energia = (fibra_count*spid_ps)/mp_tamanho
                 p_reter = 1/(1 + np.exp(-2.5*(-energia - 2.5)))
+                # p_reter = 1/(1 + np.exp(beta*(-energia)))
 
-            # if p_reter > vazio_count*np.random.random():
             if p_reter > np.random.random():
                 
-                # rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
-                rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
+                # supondo que nao possa existir sobreposicao de MPs
 
-                mps_retidos += 1
-                mps_retidos_camada += 1
-                del mps_dic[mp_k]
+                if list(rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho].flatten()).count(1) < 1 and list(rede[mp_posicao[1]:mp_posicao[1]+mp_tamanho].flatten()).count(1) < 1:
+
+                    # rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
+                    rede[mp_posicao[0]:mp_posicao[0]+mp_tamanho,mp_posicao[1]:mp_posicao[1]+mp_tamanho] = 1
+                    
+                    posx = mp_posicao[0]-1
+                    posy = mp_posicao[1]-1
+
+                    rede[posx:posx+mp_tamanho,posy] = -2
+                    rede[posx+mp_tamanho,posy:posy+mp_tamanho] = -2
+                    rede[posx:posx+mp_tamanho,posy+mp_tamanho] = -2
+                    rede[posx,posy:posy+mp_tamanho] = -2
+
+                    mps_retidos += 1
+                    mps_retidos_camada += 1
+                    del mps_dic[mp_k]
 
             else:
                 if deslocamento:
@@ -93,17 +118,16 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
         else:
             retencao_camada.append(mps_retidos_camada)
 
-        # if prob:
-        #     # plt.scatter(energias,probabilidade,color='royalblue') ; plt.show()
-        #     plt.hist(energias,density=True)
-        #     plt.xlabel('Energies (eV)',fontsize=14)
-        #     plt.ylabel('Count',fontsize=14)
-        #     plt.grid(),plt.tight_layout()
-        #     plt.show()
-
         if display:
-            plt.imshow(rede,cmap='plasma')
+            # plt.imshow(rede,cmap='plasma')
             # plt.title(f'Camada {i+1} - retidos: {mps_retidos_camada}, passaram: {len(mps_dic)}')
+            
+            rede = np.where(rede == -2, np.nan, rede)
+
+            cax = plt.imshow(rede, cmap=cmap, norm=norm)
+            cbar = plt.colorbar(cax, ticks=[-1,0,1,2])
+            cbar.set_ticklabels(['Fiber', 'Pore', 'Microplastic', 'BARBIE1'])
+            
             plt.title(f'Layer {i+1} - retained: {mps_retidos_camada}')
 
             plt.xticks([])
@@ -121,7 +145,7 @@ def filtration_sim(filtro,mps_dic,tamanho_rede,display=True,deslocamento=False,p
         
         plt.grid(),plt.tight_layout()
         
-        plt.savefig('results/energies_dist.png',transparent=True,dpi=500)
+        # plt.savefig('results/energies_dist.png',transparent=True,dpi=500)
         plt.show()
 
     fim = time.time()
