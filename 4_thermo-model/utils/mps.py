@@ -1,24 +1,25 @@
 import time
 import numpy as np
 
-def mps_creation(qnt_mps = 1000,tamanho_limite_mp = 100,tamanho_rede=1000):
+def mps_creation(qnt_mps,tamanho_limite_mp,tamanho_rede):
 
     inicio = time.time()
     mps_dic = {}
-
-    # gerar microplasticos
 
     for mp in range(qnt_mps):
 
         while True:
 
-            tamanho_mp = np.random.randint(5,tamanho_limite_mp)
+            # tamanho_mp = np.random.randint(5,tamanho_limite_mp)
+            tamanho_mp = tamanho_limite_mp
+            max_overlap = tamanho_mp**2*0.5
+            
             posicao_mp_x,posicao_mp_y = np.random.randint(tamanho_rede),np.random.randint(tamanho_rede)
             
             while posicao_mp_x+tamanho_mp > tamanho_rede or posicao_mp_y+tamanho_mp > tamanho_rede:
                     posicao_mp_x,posicao_mp_y = np.random.randint(tamanho_rede),np.random.randint(tamanho_rede)
 
-            if len(mps_dic) == 0: break
+            if len(mps_dic) == 0: overlap_area=0; break;
 
             for mp_k,mp_v in mps_dic.items():
 
@@ -37,9 +38,9 @@ def mps_creation(qnt_mps = 1000,tamanho_limite_mp = 100,tamanho_rede=1000):
                 
                 overlap_area = overlap_x * overlap_y
 
-                if overlap_area > 0: break
+                if overlap_area > max_overlap: break
             
-            if overlap_area == 0: break
+            if overlap_area <= max_overlap: break
 
         mps_dic.update({mp:[tamanho_mp,[posicao_mp_x,posicao_mp_y]]})
 

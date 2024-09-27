@@ -20,6 +20,7 @@ def layer_creation(dim, porosidade, diametro_max):
     matriz = np.zeros((dim, dim), dtype=int)    
     # num_fibras = max(0, int((1 - porosidade) * dim))
     num_fibras = max(0, int(porosidade * dim))
+    count = 0
     
     def adicionar_fibra(diametro):
         x, y = random.randint(0, dim-1), random.randint(0, dim-1)
@@ -43,13 +44,14 @@ def layer_creation(dim, porosidade, diametro_max):
             if random.random() < 0.1:
                 direcao = random.choice(['N', 'S', 'L', 'O'])
 
-    for _ in range(num_fibras):
-        diametro = random.randint(diametro_max//2, diametro_max)
-        adicionar_fibra(diametro)
+    for i in range(1,num_fibras+1):
+        if count/(i*dim**2) <= porosidade:
+            diametro = random.randint(diametro_max//2, diametro_max)
+            adicionar_fibra(diametro)
     
     return matriz
 
-def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentracao_cbm, tamanho_cbm, CBM=True, display=False):
+def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentracao_cbm, tamanho_cbm, CBM=True, display=False, B1=True):
 
     inicio = time.time()
 
@@ -59,7 +61,10 @@ def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentra
         rede = layer_creation(tamanho_rede,porosidade,diametro_fibra)
 
         if CBM:
-                
+            
+            if B1: pbp=2
+            else: pbp=3
+
             espaco_fibra = list(rede.flatten()).count(-1)
             proteinas = round(concentracao_cbm * espaco_fibra)
 
@@ -74,23 +79,26 @@ def filter_creation(tamanho_rede, porosidade, camadas, diametro_fibra, concentra
 
                     if rede[posicao_prot_x,posicao_prot_y] != 0 and int(posicao_prot_x+tamanho_cbm) < tamanho_rede and int(posicao_prot_y+tamanho_cbm) < tamanho_rede:
 
-                        rede[posicao_prot_x:int(posicao_prot_x+tamanho_cbm),posicao_prot_y:int(posicao_prot_y+tamanho_cbm)] = 2
+                        rede[posicao_prot_x:int(posicao_prot_x+tamanho_cbm),posicao_prot_y:int(posicao_prot_y+tamanho_cbm)] = pbp
                         break
     
         filtro.append(rede)
 
         if display:
 
-            cax = plt.imshow(rede, cmap=cmap, norm=norm)
-            cbar = plt.colorbar(cax, ticks=[-1,0,1,2])
-            cbar.set_ticklabels(['Fiber', 'Pore', 'Microplastic', 'BARBIE1'])            
+            if camada == 0:
 
-            plt.xticks([]),plt.yticks([])
-            plt.tight_layout()
+                cax = plt.imshow(rede, cmap=cmap, norm=norm)
+                # plt.title(f'Layer {camada+1}',fontsize=16)
+                # cbar = plt.colorbar(cax, ticks=[-1,0,1,2])
+                # cbar.set_ticklabels(['Fiber', 'Pore', 'Microplastic', 'BARBIE1'])            
 
-            # plt.savefig(f'results/filter/filter_{camada+1}.png',transparent=True,dpi=500)
+                plt.xticks([]),plt.yticks([])
+                plt.tight_layout()
 
-            plt.show()
+                plt.savefig(f'results/filter/{porosidade}_filter_{camada+1}.png',transparent=True,dpi=500)
+
+                plt.show()
 
     fim = time.time()
     print(f'Filtro criado, {round(fim-inicio,2)}')

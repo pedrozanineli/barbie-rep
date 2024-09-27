@@ -1,0 +1,8 @@
+OLIS Experiment version:1.0
+Name=Experiment1
+Dataset=1;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\spectrum h2o\1.ols
+Dataset=2;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\spectrum Nt2repct\2.ols
+Dataset=3;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\3.ols
+Dataset=4-PMT 1 HVs;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\4-PMT 1 HVs.ols
+Dataset=4-PMT 2 HVs;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\4-PMT 2 HVs.ols
+Dataset=4;C:\Users\Olis\Desktop\OLIS DATA 2\09-23-24\4.ols
