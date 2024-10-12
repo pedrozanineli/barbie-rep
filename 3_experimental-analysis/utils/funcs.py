@@ -24,7 +24,7 @@ def smooth(y):
     
     return y_smooth
 
-def cdproc(index,caminho,water=False):
+def cdproc(index,caminho,water=False,aq=7):
     
     count = 0
     for i in range(1,7):
@@ -32,7 +32,7 @@ def cdproc(index,caminho,water=False):
         if os.path.isfile(f'{caminho}/{index}_converted_{i}.txt'):
             df = pd.read_csv(f'{caminho}/{index}_converted_{i}.txt',names=['WL','CD Abs'],sep=' ')
             count+=1
-        
+
         if i == 1: cd_abs_actual = df['CD Abs']
         else: cd_abs_actual = np.add(np.array(df['CD Abs']),cd_abs_actual)
     
