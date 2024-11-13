@@ -186,6 +186,50 @@ def rampplot(wls,temp,ramp_plot):
 
     return ax
 
+def rampplot_new(wls,temp,ramp_plot):
+
+    from scipy import interpolate
+
+    min_temp,max_temp = min(temp),max(temp)
+    wls = wls[wls.index(250):wls.index(200)]
+    # wls = wls[wls.index(250):wls.index(190)]
+
+    X_b1, Y_b1 = np.meshgrid(wls, temp)
+    Z_b1 = np.array([ramp_plot[i] for i in range(len(temp))])
+
+    Q1 = np.percentile(Z_b1, 25, axis=None)
+    Q3 = np.percentile(Z_b1, 75, axis=None)
+    IQR = Q3 - Q1
+
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    outliers_mask = (Z_b1 < lower_bound) | (Z_b1 > upper_bound)
+
+    Z_b1_cleaned = Z_b1.copy()
+    Z_b1_cleaned[outliers_mask] = np.nan
+
+    X_valid = X_b1[~outliers_mask]
+    Y_valid = Y_b1[~outliers_mask]
+    Z_valid = Z_b1_cleaned[~outliers_mask]
+
+    interp_func = interpolate.griddata((X_valid, Y_valid), Z_valid, (X_b1, Y_b1), method='linear')
+
+    Z_b1 = np.where(outliers_mask, interp_func, Z_b1)
+
+    fig = plt.figure(figsize=(15,10))
+    ax = fig.add_subplot(111, projection='3d')
+
+    im = ax.plot_surface(X_b1, Y_b1, Z_b1, alpha=0.5)
+
+    ax.set_xlabel('Wavelength (nm)\n\n\n',fontsize=18,rotation=0)
+    ax.set_ylabel('\nTemperature (ºC)',fontsize=18)
+    ax.set_zlabel('CD Absorbance (millidegrees)',fontsize=18,rotation=-180)
+
+    plt.tight_layout()
+
+    return ax
+
 def rampplot2D(wls,temp,ramp_plot):
 
     wls = wls[wls.index(250):wls.index(200)]
