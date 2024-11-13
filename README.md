@@ -4,9 +4,9 @@
 
 <!-- <div style='font-size: 18px'>Avaliação de um filtro biológico de microplásticos por meio de modelos termodinâmicos estatísticos integrados a dinâmica molecular</div> -->
 
-## Avaliação de um filtro biológico de microplásticos por meio de modelos termodinâmicos estatísticos integrados a dinâmica molecular
+### Avaliação de um filtro biológico de microplásticos por meio de modelos termodinâmicos estatísticos integrados a dinâmica molecular
 
-Pedro H. M. Zanineli, Pedro H. Sophia, Gabriel X. Pereira, Marcos C. L. Pimentel
+---
 
 O presente repositório armazena o trabalho de conclusão de curso e desenvolvimento computacional do projeto B.A.R.B.I.E., participante da competição iGEM de 2024.
 
@@ -18,3 +18,5 @@ O presente repositório armazena o trabalho de conclusão de curso e desenvolvim
 5. Thermodynamical model
 6. Sensor
 7. Filter viability
+
+Realização por Pedro H. M. Zanineli, Pedro H. Sophia e colaboração de Gabriel X. Pereira, Marcos C. L. Pimentel
