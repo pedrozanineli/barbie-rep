@@ -1,7 +1,20 @@
-![barbie-project](barbie-project.png)
+<!-- ![barbie-project](barbie-project.png) -->
 
-The present repository stores the modeling of the BARBIE Project, developed by the iGEM team CNPEM.BRAZIL in the 2024 edition.
+![header](header.png)
 
+<!-- <div style='font-size: 18px'>Avaliação de um filtro biológico de microplásticos por meio de modelos termodinâmicos estatísticos integrados a dinâmica molecular</div> -->
+
+## Avaliação de um filtro biológico de microplásticos por meio de modelos termodinâmicos estatísticos integrados a dinâmica molecular
+
+Pedro H. M. Zanineli, Pedro H. Sophia, Gabriel X. Pereira, Marcos C. L. Pimentel
+
+O presente repositório armazena o trabalho de conclusão de curso e desenvolvimento computacional do projeto B.A.R.B.I.E., participante da competição iGEM de 2024.
+
+0. Molecules
 1. Homo-oligomer
 2. Molecular dynamic analysis
 3. Experimental analysis
+4. Protein corona
+5. Thermodynamical model
+6. Sensor
+7. Filter viability
